@@ -1,0 +1,4 @@
+﻿  문제.c
+C:\Users\psm90\Desktop\testFolder\c_psm\workspace\학원 강의\230316\복습\복습\문제.c(6,10): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'char *'입니다.
+C:\Users\psm90\Desktop\testFolder\c_psm\workspace\학원 강의\230316\복습\복습\문제.c(6,10): message : 이 인수는 버퍼 크기로 사용됩니다.
+  복습.vcxproj -> C:\Users\psm90\Desktop\testFolder\c_psm\workspace\학원 강의\230316\복습\Debug\복습.exe

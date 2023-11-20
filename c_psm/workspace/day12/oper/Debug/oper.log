@@ -1,0 +1,4 @@
+﻿  operTest.c
+C:\c_psm\workspace\day12\oper\operTest.c(26,49): warning C4047: ':': 'char [18]'의 간접 참조 수준이 'int'과(와) 다릅니다.
+C:\c_psm\workspace\day12\oper\operTest.c(26,49): warning C4047: ':': 'int'의 간접 참조 수준이 'char *'과(와) 다릅니다.
+  oper.vcxproj -> C:\c_psm\workspace\day12\Debug\oper.exe

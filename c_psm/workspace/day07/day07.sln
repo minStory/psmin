@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "casting", "casting\casting.vcxproj", "{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}.Debug|x64.ActiveCfg = Debug|x64
+		{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}.Debug|x64.Build.0 = Debug|x64
+		{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}.Debug|x86.ActiveCfg = Debug|Win32
+		{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}.Debug|x86.Build.0 = Debug|Win32
+		{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}.Release|x64.ActiveCfg = Release|x64
+		{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}.Release|x64.Build.0 = Release|x64
+		{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}.Release|x86.ActiveCfg = Release|Win32
+		{BFC7B6B7-E94C-48E6-9D5E-79D17E86BF11}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61BB0751-D889-4CF6-B69D-247CDADA6216}
+	EndGlobalSection
+EndGlobal

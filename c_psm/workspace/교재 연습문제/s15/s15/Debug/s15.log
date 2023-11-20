@@ -1,0 +1,4 @@
+﻿  prac-15-05.c
+C:\Users\psm90\Desktop\testFolder\c_psm\workspace\교재 연습문제\s15\s15\prac-15-05.c(6,6): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\psm90\Desktop\testFolder\c_psm\workspace\교재 연습문제\s15\s15\prac-15-05.c(15): warning C4716: 'time': 값을 반환해야 합니다.
+  s15.vcxproj -> C:\Users\psm90\Desktop\testFolder\c_psm\workspace\교재 연습문제\s15\Debug\s15.exe

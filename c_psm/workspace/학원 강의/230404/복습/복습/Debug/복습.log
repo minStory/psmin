@@ -1,0 +1,4 @@
+﻿  문제3과제.c
+C:\Users\psm90\Desktop\testFolder\c_psm\workspace\학원 강의\230404\복습\복습\문제3과제.c(35,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\psm90\Desktop\testFolder\c_psm\workspace\학원 강의\230404\복습\복습\문제3과제.c(43,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  복습.vcxproj -> C:\Users\psm90\Desktop\testFolder\c_psm\workspace\학원 강의\230404\복습\Debug\복습.exe

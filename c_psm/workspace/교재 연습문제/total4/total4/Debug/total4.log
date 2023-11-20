@@ -1,0 +1,3 @@
+﻿  total-04-04.c
+C:\Users\psm90\Desktop\testFolder\c_psm\workspace\교재 연습문제\total4\total4\total-04-04.c(7,9): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
+C:\Users\psm90\Desktop\testFolder\c_psm\workspace\교재 연습문제\total4\total4\total-04-04.c(9,2): error C2059: 구문 오류: '상수'
