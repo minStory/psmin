@@ -1,0 +1,46 @@
+되돌리기
+	특정 상태로 다시 되돌아 가는 방법
+
+reset
+	git reset 옵션 커밋ID
+		--soft
+			해당 커밋 상태로 돌아가되 수정사항이 working tree와 stage에 남아있는 상태
+		--mixed
+			해당 커밋 상태로 돌아가되 수정사항이 working tree에는 남아 있으나
+			stage에 남아있지 않은 상태
+		--hard
+			해당 커밋 상태로 돌아가며 수정사항 자체가 남아있지 않은 상태
+		옵션 생략 시 자동으로 --mixed가 적용
+
+		커밋ID 자리에는 HEAD를 기준으로 상대적인 이동을 할 수도 있다
+		git reset HEAD~
+			--> HEAD 뒤로 한 칸
+		git reset HEAD~~
+			--> HEAD 뒤로 두 칸
+		git reset HEAD^
+			--> HEAD 뒤로 한 칸
+		git reset HEAD^^
+			--> HEAD 뒤로 두 칸
+revert
+	git revert 되돌릴커밋ID
+
+	revert는 반드시 한 번에 한 개의 커밋을 취소하는 습관을 길러야한다(충돌때문에)
+	가장 최근 커밋부터 차례로 취소해 나간다
+
+	git revert ID1.. ID2
+	ID2부터 ID1까지 되돌리기(ID1은 되돌리기 포함 X)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

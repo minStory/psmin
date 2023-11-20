@@ -1,0 +1,80 @@
+파일 확장자
+	해당 파일이 어떤 파일인지 알려주는 역할
+	파일마다 정해져있다(.txt, .pptx, .xlsx,....)
+	보기 --> 파일확장자 체크
+
+GUI(Graphic User Interface)
+	사용자가 편히 사용할 수 있도록 버튼이나 아이콘과 같은 그래픽 기반의 사용환경
+
+CLI(Command Line Interface)
+	명령어 기반 사용환경
+
+소스트리(source tree)
+	git을 쉽게 사용할 수 있도록 도와주는 외부 gui tool
+
+git의 공간 분리
+	동작과 이력을 효율적으로 처리하기 위해서 저장공간을 논리적으로 분리
+	- 작업공간(working directory/working tree)
+	- 임시저장공간(stage)
+	- 실질적으로 저장되고 기록되는 공간(repository)
+
+작업공간(working tree)
+	작업을 하는 공간
+	로컬저장소에 접근하여 파일을 생성, 수정 그리고 저장하는 공간
+	스테이지 영역과 맞닿아 있다
+	작업공간에 새롭게 만들어진 파일들은 최초 모두 untracked 상태이다
+	따라서 해당 파일들의 수정 사항을 반영하고 싶다면 tracked 상태로 바꾸어 주어야한다
+	(이 파일 관리해줘~ 통지)
+
+		git add 파일명
+
+	해당 명령어를 실행하면 해당 파일이 tracked 상태로 변경이 되고,
+	stage에 등록이 된다
+
+	GUI(sourcetree)에서는 파일 옆의 + 버튼을 클릭하면 tracked 상태로 변경이 되고,
+	stage에 등록이 된다
+
+임시저장공간(stage)
+	tracked 된 파일들을 관리하는 영역
+	작업공간과 연결되어있다
+	tracked 된 파일들의 추적상태를 잠시 복사하여 저장한다
+	stage 영역에 저장된 파일들은 모두 tracked 상태가 된다!
+
+	stage에 올라가지 않은 작업공간에 새롭게 만들어진 파일(untracked 파일)도 unstage 상태라고 할 수 있다
+	stage상태
+	최종적인 파일의 변화를 영구적으로 저장하기 위해서는 모든 파일의 상태가 stage상태가 되어야한다
+
+	unstage상태
+	unstage상태는 스테이지 영역에 있는 파일과 working directory 안의 파일이 서로 차이가 있을 때를 의미한다
+
+	원본과 수정본의 기록을 구분하기 위해 modified unmodified로 나누어 관리
+
+	working directory
+		tracked
+			test.txt
+				unmodified 상태 --> stage 상태
+			test2.txt
+				modified 상태 --> untage 상태
+		untracked
+			test3.txt --> unstage 상태
+
+깃 명령어(CLI에서 사용되는...)
+	git 으로 시작한다
+		git 깃명령어
+	초기화 명령어(저장소 만들어줘~)
+		init
+	track 상태로 바꿔줘(통지)
+		add 파일명
+	상태 확인 명령어
+		status
+
+
+
+
+
+
+
+
+
+
+

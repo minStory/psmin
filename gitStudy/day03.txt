@@ -1,0 +1,47 @@
+작업공간 <--> stage <--> repository
+
+stage에 올리기(untracted파일 혹은 modified파일)
+	git add 파일명
+	모든 파일을 stage에 올리고 싶다면 파일명 자리에 *을 사용한다
+
+stage에서 내리기
+	git rm --cached 파일명
+	모든 파일을 stage에 내리고 싶다면 파일명 자리에 *을 사용한다
+
+commit
+	stage 상태의 파일(modified파일 혹은 untracked파일 X)들을 영구적으로 저장
+	커밋(영구저장) 메시지를 남겨야한다(권장사항)
+	git commit
+
+vi 에디터(커밋 메시지 입력 편집기)
+	#은 주석(해석하지 않음)
+
+	esc i --> 내용 삽입(insert) --> esc
+
+	: wq 엔터 --> 해당 커밋 메시지가 적용된다.
+
+커밋 단축옵션(-m)
+	git commit -m '커밋메시지'
+
+	vi 에디터를 열지 않고도 간단하게 작은 따옴표나 쌍따옴표 안쪽 내용을
+	커밋 메시지로 작성할 수 있도록 도와주는 옵션
+
+커밋 단축옵션(-a)
+	tracked되어 modified된 파일에만 적용할 수가 있다
+	git commit -a
+
+	add되지 않은(unstage된) 파일을 커밋하고 싶은데 매번 add 명령어를 실행시키기가 귀찮다면 사용(-a)
+
+커밋 단축옵션(-am)
+	git commit -am '커밋메시지'
+
+
+
+
+
+
+
+
+
+
+
