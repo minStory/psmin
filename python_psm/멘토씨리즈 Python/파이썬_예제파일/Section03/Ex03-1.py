@@ -1,0 +1,6 @@
+print('Hello \'World\'')
+print("Hello \"World\"")
+print('*\n**\n***')
+print('이름\t연락처')
+print('제시카\t02-123-4567')
+print('마틴\t010-8765-1234')
