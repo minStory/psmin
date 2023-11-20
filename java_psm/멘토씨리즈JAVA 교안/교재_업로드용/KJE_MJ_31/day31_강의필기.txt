@@ -1,0 +1,10 @@
+정수형 int
+실수형 float ,double
+문자형 char
+문자열 String
+
+<객체생성방법>
+	클래스명 인스턴스변수명 = new 생성자( );
+	
+	String 변수명 ="값"
+

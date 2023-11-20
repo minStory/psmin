@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;day10.While2&apos; to &apos;Updown_Game&apos;&#x0D;&#x0A;- Original project: &apos;day10&apos;&#x0D;&#x0A;- Original element: &apos;day10.While2&apos;&#x0D;&#x0A;- Renamed element: &apos;day10.Updown_Game&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;While2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;day10{While2.java[While2" matchStrategy="1" name="Updown_Game" qualified="false" references="true" similarDeclarations="false" stamp="1681121286144" textual="false" version="1.0"/>
+</session>

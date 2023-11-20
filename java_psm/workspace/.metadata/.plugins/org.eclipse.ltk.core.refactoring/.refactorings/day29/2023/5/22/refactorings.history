@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;day29.Exception3&apos; to &apos;Finally&apos;&#x0D;&#x0A;- Original project: &apos;day29&apos;&#x0D;&#x0A;- Original element: &apos;day29.Exception3&apos;&#x0D;&#x0A;- Renamed element: &apos;day29.Finally&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Exception3&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;day29{Exception3.java[Exception3" matchStrategy="1" name="Finally" qualified="false" references="true" similarDeclarations="false" stamp="1685525728012" textual="false" version="1.0"/>
+</session>

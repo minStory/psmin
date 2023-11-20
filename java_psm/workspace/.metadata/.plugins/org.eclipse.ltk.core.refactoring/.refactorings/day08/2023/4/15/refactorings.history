@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;day08.Poketmon&apos; to &apos;Pokemon&apos;&#x0D;&#x0A;- Original project: &apos;day08&apos;&#x0D;&#x0A;- Original element: &apos;day08.Poketmon&apos;&#x0D;&#x0A;- Renamed element: &apos;day08.Pokemon&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Poketmon&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;day08{Poketmon.java[Poketmon" matchStrategy="1" name="Pokemon" qualified="false" references="true" similarDeclarations="false" stamp="1681116035218" textual="false" version="1.0"/>
+</session>

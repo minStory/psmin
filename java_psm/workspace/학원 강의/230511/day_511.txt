@@ -1,0 +1,125 @@
+객체지향
+코드의 재사용성이 높고 유지보수가 용이하며 프로그램 개발과 유지보수에 드는 시간과 비용을 획기적으로 개선함
+
+클래스의 정의 : 객체를 정의해 놓은것
+클래스의 용도: 객체를 생성하는데 사용
+
+객체 "실제로 존재하는 것" 
+의자 핸드폰 
+객체의 정의: 실제로 존재하는 것, 사물 또는 개념
+객체의 용도: 객체가 가지고 있는 기능과 속성에 따라 다르다
+
+
+유형 객체: 책상. 의자, 자동차
+무형 객체: 수학 공식, 논리나 개념
+
+붕어빵틀  붕어빵 
+
+객체의 구성요서 - 속성 기능
+
+
+속성 : 크기, 길이, 무게,화면, 채널
+기능: 켜기,끄기, 볼륨조절,채널 변경
+
+(올바은 예)
+Test02.java
+public class Test02.{}
+         class Test03{}    -->  public class가 있는 경우, 소스파일의 이름은 반드시 public class의 이름과 일치해야한다.
+
+
+Test03.java
+class Test03 {}
+class Test04 {}  --> public clas가 하나도 없는 경우, 소스파일의 이름은 "Test03.java","Test04.java" 둘 다 가능
+소스파일(*.java)  클래스파일(*.class)  -->클래스 파일 2개 생성
+
+(잘못된 예)
+Test01.java
+public class Test01 {}
+public class Test02 {}  --> 하나의 소스파일에 둘 이상의 public class가 존재하면 안된다 
+			이런경우는 각 클래스를 별도의 소스파일에 나눠서 저장하거나, 아니면 둘 중 하나는 public을 붙이지 않는다 
+
+Test02.java
+public class Test03 {}
+         class Test02 {}  -->  소스파일의 이름이 public class의 이름과 일치하지 않는경우, 소스파일의 이름을 "Test03.java"로 바꾸는게 맞다
+
+
+Test03.java
+public class test03 {}
+        class test04 {}   --> 소스파일의 이름과 public class의 이름이 일치하지 않는경우 대소문자를 구분하므로
+	                     대소문자까지 일치해야한다  소스파일의 이름에서 "T"를 "t"로 변경하는게 맞다
+
+ 객체는 참조변수를 통해서만 다룰 수 있으며, 참조변수의 타입은 객체의 타입과 일치해야한다.
+
+
+객체배열
+
+Tv t1, t2,t3;
+Tv[] tvarr = new Tv[3];  //참조변수 배열을 생성
+tvarr[0] = new Tv();
+tvarr[1] = new Tv();
+tvarr[2] = new Tv();
+
+
+변수: 하나의 데이터를 저장할 수 있는 공간
+배열: 같은 종류의 여러 데이터를 하나의 집합으로 저장할 수 있는 공간
+구조체: 서로 관련된 여러 데이터를 종류에 관계없이 하나의 집합으로 저장할 수 있는 공간
+클래스: 데이터와 함수의 결합(구조체 + 함수)
+
+사용자 정의 타입~ == 참조변수
+
+int h ; 시간
+int m ; 분
+int s; 초
+
+int h1,h2,h3;  
+int m1,m2,m3;
+int s1,s2,s3;  --> 비객체지향적 코드
+
+int[] h = new int[3];
+int[] m = new int[3];
+int[] s = new int[3];
+
+class time {
+	int h;
+	int m;
+	int s;  -> 객체지향적 코드
+}
+
+
+int h1,h2,h3;  
+int m1,m2,m3;
+int s1,s2,s3;
+
+time t1 = new time();
+time t2 = new time();
+time t3 = new time();
+
+int[] h = new int[3];
+int[] m = new int[3];
+int[] s = new int[3];
+
+time[] t = new time[3];
+t[0] = new time();
+t[1] = new time();
+t[2] = new time();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
