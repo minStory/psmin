@@ -1,0 +1,244 @@
+01 신기술 용어
+
+중앙 집중식 인프라, 클라우드 서비스
+: 타사 제공업체가 호스팅하여 인터넷을 통해 사용자에게 제공하는 인프라, 플랫폼, 소프트웨어
+
+서비스 제공 형태
+	1) 퍼블릭 클라우드
+		- 모든 사용자를 위한 클라우드 서비스 모델
+	2) 프라이빗 클라우드 ::온프레미스
+		- 특정 기업이나 특정 사용자만을 대상으로 하는 클라우드
+	3) 하이브리드 클라우드
+		- 퍼블릭 클라우드 + 프라이빗 클라우드 병행
+		- 클라우드(가상서버) + 온프레미스(물리서버)
+
+서비스 유형 ::아이쿠 허리가 파스 붙이면 싹 낫겠네
+	- IaaS : 클라우드로 인프라자원을 제공
+	- PaaS : 소프트웨어를 개발할 수 있는 플랫폼 제공
+	- SaaS : 사용자가 필요로하는 소프트웨어를 제공 (네이버 Docs 등)
+	- BaaS : 블록체인 개발 지원 서비스 제공
+	- SecaaS : 보안 서비스 제공
+	- DaaS : 기업 내부망 제공
+	- FaaS : 기능을 서비스 형태로 등록하여 제공, 함수
+
+도커(Docker)
+	- 컨테이너 응용프로그램의 배포를 자동화하는 오픈소스 엔진
+
+하이퍼바이저(컴퓨팅 가상화 솔루션)
+	- 하나의 컴퓨터에서 다수의 운영체제를 구동시키는 소프트웨어 가상화 플랫폼
+
+소프트웨어 정의 기술(SDx / SDE, Software-Defined Everything)
+	- SDN(Software-Defined Networking) : 소프트웨어 정의 네트워킹
+	- SDS(Software-Defined Storage) : 소프트웨어 정의 스토리지
+	- SDC(Software-Defined Computing) : 소프트웨어 정의 컴퓨팅
+	- SDDC(Software-Defined Data Center) : 소프트웨어 정의 데이터 센터
+
+양자컴퓨터(Quantum Computer)
+	- 양자역학 기반 컴퓨터
+	- 자료의 양은 큐비트로 측정
+
+인공지능(Artificial Intelligence)
+: 인간이 지닌 지적 능력의 일부 또는 전체, 혹은 그렇게 생각되는 능력을 인공적으로 구현한 것
+
+인공지능 분야의 기술
+	- 기계학습(Machine Learning) : 자동으로 데이터에서 규칙을 학습
+	- 인공 신경망 : 인간의 뉴런 구조를 본떠 만든 기계 학습 모델
+	- 딥 러닝(Deep Learning) : 인공 신경망을 기반으로 한 방법들을 통칭(텐서플로,파이토치)
+
+인공지능 키워드
+	- 사이킷런(Scikit-Learn) : 구글 썸머 코드에서 구현
+	- 텐서플로(tensorFlow) : 구글, CPU와 GPU 사용
+	- 파이토치(Pytorch) : Facebook에서 개발
+	- 케라스(Keras) : 파이썬 기반
+
+신속한 애플리케이션 개발
+	1) No Code
+		- 코드를 사용하지 않고 애플리케이션을 개발하는 것
+	2) Low-Code
+		- 약간의 기술지식을 가지고 빠르고 편하게 개발하는 것
+
+클라이언트 측 웹 프레임워크
+	1) React
+		- 자바스크립트 라이브러리, 페이스북에서 개발
+	2) Vue.js
+		- Evan You에 의해 개발
+	3) AngularJS
+		- 구글에서 개발
+	4) Ajax(Asynchronous JavaScript and XML)
+		- 비동기적인 웹 애플리케이션 개발 기법
+
+REST(Representational State Transfer)
+: 자원을 이름으로 구분하여 해당 자원의 상태를 주고받는 모든 것, ROA(자원 지향 아키텍처) 기반
+
+REST의 구성요소
+	- 자원(Resource) : HTTP URI
+	- 자원에 대한 행위(Verb) : HTTP Method
+	- 자원에 대한 행위의 표현(Representations) : HTTP Message Pay Load
+
+전송 데이터
+	- JSON(JavaScript Object Notation) : 'key-value 쌍' 형태의 데이터
+	- XML(eXtensible Markup Language) : W3C 권장 다목적 마크업 언어
+
+SOA(Service Oriented Architecture)
+: 서비스 지향 아키텍처
+
+SOA 핵심기술
+	- 데이터교환(XML) : 인터넷 데이터 교환 기술
+	- 미들웨어(ESB) : 메시징을 통한 다수의 시스템 약결합 방식
+	- 서비스호출(SOAP) : 분산 환경에서의 정보교환을 위한 프로토콜
+	- 서비스기록(WSDL) : 웹서비스의 기능, 사용법을 기술한 XML기반 언어
+	- 서비스등록(UDDI) : 웹서비스에 대한 정보 등록
+
+시멘틱 웹(Semantic Web) ::검색 목적
+: 컴퓨터가 이해할 수 있는 방식으로 웹사이트를 제작함으로써
+  다양한 정보를 컴퓨터가 쉽게 이해하고 해석할 수 있도록 하는 것
+
+온톨로지(Ontology)
+: 사람들이 세상에 대해 느끼고 생각한 것을 컴퓨터에서 다룰 수 있는 형태로 표현
+
+기타 용어 정리
+	1) 블록체인(Blockchain)
+		- 분산 컴퓨팅 기술 기반의 데이터 위변조 방지 기술
+		- '블록'은 개인과 개인의 거래(P2P)의 데이터가 기록되는 장부
+		- 제네시스 블록(Genesis block)은 블록체인의 가장 첫 번째 블록이다
+	2) 비트코인(Bitcoin)
+		- 블록체인 기반 암호화폐
+	3) 매시업(Mashup) ::지도+부동산 -> 부동산어플
+		- 제공된 정보와 서비스를 융합하여 새로운 서비스를 만드는 것
+	4) 디지털 트윈(Digital Twin)
+		- 물리적 자산을 소프트웨어로 표현
+	5) 메타버스(Metaverse)
+		- 가상(Meta)와 세계(Universe)의 합성어
+	6) 코드 커터족(Cord Cutters) ::선을 끊는다
+		- 기존 TV 방송 서비스를 이용하지 않고 인터넷으로 방송을 보는 소비자
+	7) 핀테크(FinTech)
+		- 금융(Finance)과 기술(Technology)의 합성어
+	8) 포스퀘어(Foursquare)
+		- 위치 기반 소셜 네트워크
+	9) 디지털 발자국(Digital Footprint)
+		- 온라인 활동을 하며 남긴 기록
+	10) 노모포비아(Nomophobia)
+		- 휴대전화가 없으면 불안감과 공포감에 휩싸이는 공포증
+	11) 소셜 다이닝(Social Dining)
+		- 소셜 미디어를 통해 관심사가 비슷한 사람들끼리 식사를 즐기는 것
+	12) 디지털 포렌식(Digital Forensics)
+		- 디지털 증거물을 수사에 활용하고, 증거 능력을 향상시키는 과학 수사 기법
+	13) 위치기반 SNS(LBSNS)
+		- GPS를 통해 위치 또는 정보를 공유하는 서비스
+	14) 디지털 프로슈머(Digital Prosumer)
+		- 공급자(Producer)와 소비자(Consumer)의 합성어
+	15) 크리슈머(Cresumer) ::유튜버
+		- 프로슈머보다 발전한 개념
+	16) 인포러스트(Infolust)
+		- 정보의 검색에 그치지 않고 널리 퍼뜨리는 존재
+	17) 커넥티드 카(Connected Car)
+		- 인터넷에 연결할 수 있는 자동차
+	18) 웨버홀리즘(Webaholism)
+		- 인터넷 중독
+
+네트워크 신기술 용어
+	1) IoT(Internet of Things), 사물 인터넷
+		- 실세계와 가상세계의 다양한 사물들을 연결하여 진보된 서비스 제공
+	2) M2M(Machine to Machine), 사물 통신
+		- 기계와 기계 사이의 통신
+	3) BLE(Bluetooth Low Energy), 저전력 블루투스
+		- 저전력 블루투스 기술
+	4) NFC(Near Field Communication), 근접 무선 통신
+		- 근거리 자기장 통신 기술
+	5) 지능형 초연결망
+		- 네트워크 전체에 소프트웨어 정의 기술(SDE)을 적용
+	6) RFID(Radio Frequency IDentification), 전파 식별 ::싱가포르 주차장
+		- 사물에 부착된 얇은 평면 형태의 태그를 식별하여 정보 처리
+	7) ZigBee ::암, 수 통신
+		- 저속, 저비용, 저전력의 무선망
+	8) Ad-hoc Network
+		- 노드들에 의해 자율적으로 구성되는 기반 구조가 없는 네트워크
+	9) Mesh Network
+		- 다른 노드의 작동 여부에 상관없이 항상 네트워크 가동
+	10) Mobile Computing, 이동 컴퓨팅
+		- 휴대형 기기로 이동하면서 자유로이 네트워크에 접속
+	11) 지능형 전력망
+		- 기존 전력 시스템에 IT 기술 부가
+	12) Smart Grid
+		- 일반적인 전력망에 ICT기술 접목, 차세대 전력망
+	13) Wi-Sun
+		- 스마트 그리드를 제공하기 위한 와이파이 기반의 저전력 장거리 통신기술
+	14) NDN(Named Data Networking), 데이터 중심의 네트워크
+		- 데이터의 이름을 활용하여 정보의 효율적인 검색 및 배포
+	15) Piconet
+		- 블루투스 기술 사용하여 연결된 네트워크
+	16) UWB(Ultra-WideBand Technology), 초 광대역 기술
+		- 500MHz 이상의 광대역 채널
+	17) SON(Self-Organizing Network), 자동 구성 네트워크
+		- 주변 상황에 자동적으로 적응하여 스스로 망을 구성
+	18) GIS(Geographical Information System), 지리 정보 시스템
+		- 지도 정보 해석 시스템
+	19) USN(Ubiquitous Sensor Network), 유비쿼터스 센서 네트워크
+		- 각종 센서에서 감지한 정보를 무선으로 수집
+	20) WPAN(Wireless Personal Area Network), 무선 사설망
+		- 무선의 개인영역 네트워크
+	21) WDM(Wavelength Division Multiplexer), 파중 분할 다중화기
+		- 하나의 광섬유 채널을 빛의 파장에 의해 분할
+	22) VPN(Virtual Private Network), 가상 사설 통신망
+		- 공중망에 사설망을 구축하여 마치 전용망을 사용하는 효과
+	23) MQTT(Message Queuing Telemetry Transport)
+		- 발행-구동 기반의 메시징 프로토콜
+	24) N-Screen
+		- 동일 콘텐츠를 N개의 이종 단말기에서 자유롭게 이용
+	25) Vlan(Virtual Local Area Network)
+		- 논리적으로 LAN을 구성
+	26) IMS(IP Multimedia Subsystem)
+		- All IP 기반의 멀티미디어 서비스
+
+데이터베이스 신기술 용어
+	1) 빅데이터(Big Data) ::5V-정.규.가.속.다
+		- 디지털 환경에서 발생하는 대량의 모든 데이터
+		- 규모(Volume), 다양성(Variety), 속도(Velocity), 정확성(Veracity), 가치(Value)
+	2) 정형 데이터(Structured Data)
+		- 미리 정해 놓은 형식과 구조로 저장된 데이터
+	3) 비정형 데이터(Unstructured Data)
+		- 정의된 구조가 없는 데이터
+	4) 메타 데이터(Meta Data)
+		- 다른 데이터를 설명해 주는 데이터
+	5) 데이터 웨어하우스(Data Warehouse) ::삼성
+		- 데이터를 변환해서 관리하는 데이터베이스
+	6) 데이터 마트(Data Mart) ::삼성전자, 삼성물산
+		- 작은 규모의 데이터 웨어하우스
+	7) 데이터 마이닝(Data Mining)
+		- 저장된 데이터 안에서 자동적으로 패턴을 찾아내는 것
+	8) 텍스트 마이닝(Text Mining)
+		- 비정형 텍스트 데이터에서 패턴을 찾아내는 것
+	9) 하둡(Hadoop, High-Availability Distributed Object-Oriented Platform)
+		- 다수의 범용 컴퓨터를 하나의 시스템처럼 작동하도록 분산처리하는 것
+	10) Sqoop(SQL to Hadoop)
+		- 관계형 데이터베이스와 분산 파일 시스템 사이의 양방향 데이터 전송
+	11) 맵리듀스(MapReduce)
+		- 분산 처리하는 Map 함수 단계와 다시 합치는 Reduce 함수 단계로 나뉜다
+	12) 타조(Tajo)
+		- 아파치 하둡(Apache Hadoop) 기반
+	13) R
+		- 양이 많은 데이터를 통계적으로 분석할 때 사용
+	14) OLAP(On-Line Analytical Processing)
+		- 이용자가 직접 문제점이나 해결책을 찾는 분석형 애플리케이션
+	15) NoSQL(Not Only SQL) ::SQL말고 다른 특성도 사용하겠다
+		- DBMS의 특성뿐만 아니라 다른 특성들을 부가적으로 지원
+
+소프트웨어 공학관련 용어
+	1) 브룩스의 법칙
+		- 지체되는 프로젝트에 인력을 추가하는 것을 개발을 늦출 뿐이다
+	2) 파레토 법칙
+		- 20%의 모듈에서 80%의 결함이 발견된다 -> 결함집중의 원리
+	3) 롱테일 법칙
+		- 사소해 보이는 다수 80%가 핵심인 소수 20%보다 뛰어난 가치를 창출해낸다
+	4) Boehm의 법칙
+		- 초기 개발 단계에서 결함을 발견하면 많은 시간과 비용을 절약할 수 있지만
+		  나중 단계에서 발견하면 많은 비용이 발생한다
+	5) 무어의 법칙
+		- 반도체 집적회로의 성능이 18~24개월마다 2배로 증가한다
+
+
+
+
+
+
+

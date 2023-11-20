@@ -1,0 +1,24 @@
+X	O
+
+	1. BDCDD
+2. Oauth
+	3. chmod 751
+	4. 34
+	5. ->
+	6. A 4 3 2 1
+	7. MAC RBAC DAC
+	8. 5040
+9. Package Diagram
+	10. KOREA OREA K E O
+	11. 2
+	12. NAT
+13. ATM
+	14. split
+15. 7
+	16. Equivalence Partitioning
+	17. Iaas, PaaS, SaaS
+	18. RIP
+	19. join, project, select, division
+	20. 참조
+
+6     /	17
