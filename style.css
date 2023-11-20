@@ -1,0 +1,17 @@
+@import url('./reset.css');
+
+main div{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:200px;
+}
+main h1{
+color:blue;
+font-size:60px;
+}
+main p{
+color:fff;
+background-color:orange;
+}
