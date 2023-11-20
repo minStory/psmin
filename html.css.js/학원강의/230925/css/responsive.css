@@ -1,0 +1,49 @@
+/* 반응형 */
+/* rem : html의 font-size 기준 ex)1rem -> 16px */
+/* em : 직속상위 요소의 font-size 기준 */
+/* vw : 웹 사이트 창 너비 기준 1/100 1903px -> 19.03vw */
+/* vh : 웹 사이트 창 높이 기준 1/100 */
+
+/* 부트스트랩 */
+
+@import url('./reset.css');
+
+.card{
+    width:100vw;
+    height:100vh;
+}
+
+.card-list{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    height:100vh;
+}
+
+.card-list__item{
+    width:20vw;
+    padding: 30px 20px;
+    border:1px solid #dedede;
+    border-radius: 10px;
+}
+
+.card-list__item+.card-list__item{
+    margin-left:5vw;
+}
+
+/* max-width */
+/* min-width */
+@media (max-width:1024px){
+    .card-list{
+        display:block;
+    }
+
+    .card-list__item{
+        width:100%;
+    }
+
+    .card-list__item+.card-list__item{
+        margin-left: 0;
+    }
+}

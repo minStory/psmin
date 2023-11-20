@@ -1,0 +1,21 @@
+ul {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li + li {
+    margin-left: 20px;
+}
+
+button {
+    width: 138px;
+    height: 48px;
+    border: 1px solid #dedede;
+}
+
+button.active{
+    background-color: orange;
+    color: #fff;
+}

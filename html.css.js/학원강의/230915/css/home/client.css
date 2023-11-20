@@ -1,0 +1,18 @@
+.client-container{
+    margin:0 auto;
+}
+
+.client ul{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 33px;
+    margin-top:80px;
+}
+.client ul li{
+    width:186px;
+}
+
+.client ul li img{
+    display:block;
+    width:100%;
+}

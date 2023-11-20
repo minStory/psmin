@@ -1,0 +1,23 @@
+/* 포지션 속성 */
+/* 자유롭게 배치할 수 있다. */
+
+/* relative -> 현재 요소를 기준으로 움직일 수 있고, 기준점이 된다. */
+/* relative, fixed, absolute를 사용하면 top, left, right, bottom 속성을 사용할 수 있다. */
+.relative{
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color: darkcyan;
+    left:100px;
+    top:200px;
+}
+
+/* absolute -> 부모요소(상위요소)에 Relative가 있으면 그 요소를 기준으로 자유롭게 움직일 수 있다. */
+.absolute{
+    position:absolute;
+    width:10px;
+    height:10px;
+    background-color:darkgoldenrod;
+    right:0;
+    bottom:0;
+}

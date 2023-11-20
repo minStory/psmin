@@ -1,0 +1,29 @@
+header{
+    height:100px;
+    background-color: gray;
+}
+main{
+    /* display:flex; */
+    position:relative;
+    height:500px;
+}
+main section:first-of-type{
+    position:absolute;
+    height:100%;
+    left:0;
+    top:0;
+    background-color: blue;
+    width:30%;
+}
+main section:last-of-type{
+    position:absolute;
+    height:100%;
+    right:0;
+    top:0;
+    background-color:aqua;
+    width:70%;
+}
+footer{
+    height:100px;
+    background-color: red;
+}

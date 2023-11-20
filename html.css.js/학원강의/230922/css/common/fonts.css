@@ -1,0 +1,17 @@
+@font-face{
+    font-family: 'Noto Sans KR';
+    src:url('../../fonts/NotoSansKR-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: 'Noto Sans KR';
+    src:url('../../fonts/NotoSansKR-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face{
+    font-family: 'Noto Sans KR';
+    src:url('../../fonts/NotoSansKR-Regular.ttf');
+    font-weight: 400;
+}

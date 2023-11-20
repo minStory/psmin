@@ -1,0 +1,19 @@
+/* 정렬되어야할 대상의 상위 요소한테 display: flex */
+ul{
+    /* display:flex; */
+    /* justify-content : flex-start, flex-end, center, space-between, space-around */
+    /* justify-content: space-around;
+    height:100px;
+    align-items:center;
+    flex-direction:column; */
+}
+ul{
+    display:flex;
+    /* 사이즈가 100% 초과하면 자동 줄바꿈 */
+    flex-wrap:wrap;
+}
+li{
+    width:20%;
+    height:200px;
+    background-color:red;
+}

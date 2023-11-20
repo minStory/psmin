@@ -1,0 +1,39 @@
+/* CSS 링크 연결 방법 */
+/* @import url('./header.css');
+@import url('./layout.css');
+@import url('./footer.css'); */
+
+header{
+    background-color: red;
+    height:100px;
+}
+main section{
+    display:flex;
+}
+.s1 div{
+    width:33.33%;
+    height:500px;
+}
+.s2 div{
+    width:50%;
+    height:200px;
+}
+.s1 div:first-of-type{
+    background-color: orange;
+}
+.s1 div:nth-last-of-type(2){
+    background-color: yellow;
+}
+.s1 div:last-of-type{
+    background-color: green;
+}
+.s2 div:first-of-type{
+    background-color: blue;
+}
+.s2 div:last-of-type{
+    background-color: navy;
+}
+footer{
+    background-color:purple;
+    height:100px;
+}

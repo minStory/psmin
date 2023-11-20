@@ -1,0 +1,27 @@
+/* ! 탭 버튼 */
+.tab-btns {
+    display: flex;
+}
+
+.tab-btns li {
+    padding: 20px;
+}
+
+.tab-btns li.active {
+    border-bottom: 1px solid red;
+}
+
+/* ! 탭 목록 */
+.tab-list {
+    height: 300px;
+}
+
+.tab-item {
+    display: none;
+    height: 100%;
+    border: 1px solid blue;
+}
+
+.tab-item.active {
+    display: block;
+}

@@ -1,0 +1,8 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    /* 하이퍼링크 밑줄 제거 */
+    text-decoration: none;
+    list-style:none;
+}

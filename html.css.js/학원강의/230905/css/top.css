@@ -1,0 +1,26 @@
+main section h3{
+    display:flex;
+    justify-content: center;
+    margin:30px auto 10px auto;
+    font-size:50px;
+}
+
+main .top {
+    display:flex;
+    gap:10px;
+}
+
+main .top div{
+    background: url('../imgs/img2.jpg') no-repeat center / cover;
+    height:200px;
+    width:100%;
+    border-radius: 10px;
+}
+
+main .top h4{
+    font-size:30px;
+}
+
+main .top p{
+    font-size:20px;
+}

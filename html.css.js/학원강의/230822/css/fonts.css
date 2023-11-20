@@ -1,0 +1,16 @@
+/* font-face */
+@font-face{
+    font-family:"Gaegu";
+    src:url("../fonts/Gaegu-Bold.ttf");
+    font-weight:700;
+}
+@font-face{
+    font-family:"Gaegu1";
+    src:url("../fonts/Gaegu-Light.ttf");
+    font-weight:400;
+}
+@font-face{
+    font-family:"Gaegu2";
+    src:url("../fonts/Gaegu-Regular.ttf");
+    font-weight:300;
+}

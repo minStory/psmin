@@ -1,0 +1,13 @@
+footer{
+    background-color: #838383;
+    height:200px;
+    position:relative;
+}
+footer div{
+    position:absolute;
+    font-weight:bold;
+    font-size:20px;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}

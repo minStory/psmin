@@ -1,0 +1,27 @@
+.container {
+    width: 1500px;
+}
+
+.section-title{
+    font-size:48px;
+    text-align: center;
+}
+
+.margin-200{
+    margin:200px 0;
+}
+
+.button-hover__link{
+    display:block;
+    margin:32px;
+    padding:15px 50px;
+    border:2px solid #fff;
+    width:max-content;
+    border-radius: 4px;
+    transition:0.5s;
+}
+
+.button-hover__link:hover{
+    color:#1e90ff;
+    background-color: #fff;
+}

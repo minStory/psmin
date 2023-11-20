@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <form method="post" action="">
+        <fieldset>
+            <legend>성별</legend>
+            <div>
+                <label for="man">남</label>
+                <input type="radio" id="man" name="gender" value="남자" />
+            </div>
+            <div>
+                <label for="woman">여</label>
+                <input type="radio" id="woman" name="gender" value="여자" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Checkbox</legend>
+            <div>
+                <label for="html">html</label>
+                <input type="checkbox" id="html" name="subject" value="html" />
+            </div>
+            <div>
+                <label for="css">css</label>
+                <input type="checkbox" id="css" name="subject" value="css" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Date</legend>
+            <div>
+                <label for="date">날짜</label>
+                <input type="date" id="date" name="date" value="2023-08-10" min="2023-08-01" max="2023-08-31" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Subject Select</legend>
+            <label for="subject-select">과목선택</label>
+            <select name="subject-select" id="subject-select" />
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JS">JS</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>File 첨부</legend>
+            <div>
+                <label for="file">File</label>
+                <input type="file" id="file">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>TextArea</legend>
+            <div>
+                <label for="textarea">Text</label>
+                <textarea id="textarea" name="textarea" cols="100" rows="10" />내용</textarea>
+            </div>
+        </fieldset>
+        <input type="submit" value="전송" />
+        <button type="reset" disabled>초기화</button>
+        <!-- form 태그 안에서 button의 기본 타입은 submit -->
+        <!-- 버튼으로 사용 시 type="button" 입력 -->
+    </form>
+</body>
+</html>

@@ -1,0 +1,157 @@
+@import url('./reset.css');
+
+.container{
+    max-width:1280px;
+    width:100%;
+}
+
+header{
+    background-color:#fff;
+    /* height:100px; */
+    border-bottom:1px solid #dedede;
+}
+
+.header-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 auto;
+    height:100px;
+}
+
+.header-gnb ul{
+    display:flex;
+}
+
+.header-gnb ul li+li{
+    margin-left:20px;
+}
+
+.sec1{
+    background-color:#f7f7f7;
+}
+
+.sec1-container{
+    padding:50px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sec1-text p{
+    margin:20px 0;
+}
+
+.sec1-image ul{
+    display:flex;
+    justify-content: space-between;
+}
+
+.sec1-image ul li{
+    width:300px;
+    height:400px;
+    background-color: aqua;
+}
+
+.sec1-image a{
+    display:block;
+    width:max-content;
+    margin:30px auto 0 auto;
+    padding:20px 50px;
+    border:1px solid yellowgreen;
+}
+
+.sec2-container{
+    margin:0 auto;
+    padding:50px 0;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.sec2-container > div{
+    width:45%;
+}
+
+.sec2-text p{
+    margin:20px 0;
+}
+
+.sec2-image div{
+    width:100%;
+    height:500px;
+    background-color: coral;
+}
+
+.hamburger-menu{
+    display:none;
+    width:25px;
+    height:20px;
+    position:relative;
+}
+
+.hamburger-menu span{
+    position:absolute;
+    left:0;
+    width:100%;
+    height:2px;
+    background-color: black;
+}
+
+.hamburger-menu span:first-of-type{
+    top:0;
+}
+
+.hamburger-menu span:nth-of-type(2){
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.hamburger-menu span:last-of-type{
+    bottom:0;
+}
+
+/* 1280 태블릿 */
+@media(max-width:1280px){
+    .hamburger-menu{
+        display:block;
+    }
+
+    .header-gnb{
+        display:none;
+    }
+    .container{
+        padding:50px 20px;
+    }
+    
+    .sec1-image ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:2.3752vw;
+    }
+
+    .sec1-image ul li{
+        width:48%;
+    }
+}
+
+/* 768 모바일 */
+@media(max-width:768px){
+    .sec1-image ul{
+        display:block;
+    }
+
+    .sec1-image ul li{
+        width:100%;
+    }
+
+    .sec1-image ul li+li{
+        margin-top:20px;
+    }
+
+    .sec2-container{
+        display:block;
+    }
+    .sec2-container > div{
+        width:100%;
+    }
+}

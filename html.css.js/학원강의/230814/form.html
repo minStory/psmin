@@ -1,0 +1,38 @@
+    <!-- 입력 양식 태그 (로그인, 회원가입) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <!-- 사용자가 입력하는 공간을 폼이라고 부른다. -->
+    <!-- form 태그 : 사용자가 입력한 정보를 서버로 보내주는 역할 -->
+    <!-- method -->
+    <!-- POST, GET -->
+    <!-- POST는 일반적으로 민감한 정보에 사용한다. -->
+    <!-- GET은 검색할 때 사용한다. 정보를 입력하면 주소창에 노출된다. -->
+    <!-- action 속성은 서버로 보낼 파일이다. -->
+    <form method="GET" action="" name="login">
+        <!-- 폼태그 안에서 섹션을 나눌 때 사용하는 태그 -->
+        <fieldset>
+            <!-- 섹션 안에서 타이틀을 사용할 때 -->
+            <legend>로그인</legend>
+            <!-- 사용자가 입력할 수 있는 태그, 단일태그 -->
+            <!-- 종류 (텍스트, 디오박스, 체크박스, 날짜선택, 패스워드 등등) -->
+            <span>아이디</span>
+            <input type="text" />
+            <br />
+            
+            <span>비밀번호</span>
+            <input type="password" />
+            <br />
+            <!-- submit : 제출하다 -->
+            <!-- 입력한 정보를 form에 넘겨서 form에 있는 action(서버)으로 전달된다. -->
+            <input type="submit" value="로그인"/>
+        </fieldset>
+    </form>
+</body>
+</html>

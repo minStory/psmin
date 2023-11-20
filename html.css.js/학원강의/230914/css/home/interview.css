@@ -1,0 +1,16 @@
+.interview-container{
+    margin:200px auto 0 auto;
+    height:380px;
+    background: url('../../imgs/img-interview/img-interview.jpg') no-repeat center / cover;
+    background-attachment: fixed;
+    color:#fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.interview h3{
+    font-size:36px;
+    text-align:center;
+}

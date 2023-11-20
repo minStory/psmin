@@ -1,0 +1,69 @@
+@import url('./reset.css');
+
+/* GNB */
+.gnb{
+    display:flex;
+    justify-content: center;
+}
+
+.gnb-list{
+    position:relative;
+}
+
+.gnb-list + .gnb-list{
+    margin-left:120px;
+}
+
+.gnb-list:after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    background-color:#2D3A80;
+    width:240px;
+    height:0;
+    z-index:-1;
+    transform:translate(-50%);
+    transition:0.5s;
+}
+
+.gnb-list > a{
+    display:block;
+    padding:40px 0;
+    font-size:20px;
+    font-weight:700;
+    transition:0.5s;
+}
+
+/* LNB */
+.lnb{
+    position:absolute;
+    left:50%;
+    top:100%;
+    width:240px;
+    transform:translateX(-50%);
+    text-align:center;
+    display:none;
+    color:white;
+}
+
+.lnb-list{
+    font-size:14px;
+}
+
+.lnb-list+.lnb-list{
+    margin-top:10px;
+}
+
+/* hover */
+.gnb-list:hover:after{
+    height:300px;
+}
+
+.gnb-list:hover a{
+    color:white;
+}
+
+.gnb-list:hover > ul{
+    display:block;
+}

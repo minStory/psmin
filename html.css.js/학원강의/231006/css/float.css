@@ -1,0 +1,45 @@
+@import url('./reset.css');
+
+ul{
+    border:1px solid blue;
+}
+
+li{
+    width:150px;
+    height:48px;
+    border-radius:10px;
+    background-color: yellowgreen;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    float:left;
+}
+
+ul:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+div{
+    /* position:relative; */
+    height:48px;
+    width:100px;
+    background-color: blue;
+}
+
+section{
+    width:40%;
+    margin:0 auto;
+}
+
+img{
+    width:50%;
+    float:right;
+}
+
+p{
+    font-size:20px;
+    line-height:1.5;
+}

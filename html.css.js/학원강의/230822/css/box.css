@@ -1,0 +1,25 @@
+ul{
+    margin-left: 30px;
+}
+/* display 속성 : 화면에 어떻게 보여줄지를 결정한다 */
+span{
+    display:block;
+    width:200px;
+    margin:20px;
+}
+.inline-block{
+    /* display block과 inline이 합쳐져있다. */
+    display:inline-block;
+    /* width:100px; */
+    /* background-color: red; */
+}
+.ul{
+    font-size:0;
+    background-color: red;
+}
+li{
+    font-size:20px;
+}
+/* position : 자유롭게 배치를 해주는 속성 */
+
+/* display : flex; */

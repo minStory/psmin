@@ -1,0 +1,62 @@
+.header {
+    /* position: fixed, absolute 사용하면 높이를 잃어버린다. */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom:1px solid #dedede;
+    z-index:9999;
+}
+
+.header-container {
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width:90%;
+}
+
+.header-nav ul {
+    display: flex;
+}
+
+.header-nav ul li {
+    transition: 0.3s;
+}
+
+.header-nav ul li:hover {
+    color: #1e90ff;
+}
+
+.header-nav ul li + li {
+    margin-left: 40px;
+}
+
+.header-util {
+    display: flex;
+}
+
+.header-util a {
+    display: block;
+    font-size: 14px;
+    padding: 10px 14px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.header-util a:first-of-type {
+    color: #8e8e8e;
+    transition: 0.3s;
+}
+
+.header-util a:first-of-type:hover {
+    background-color: #f4f4f4;
+}
+
+.header-util a + a {
+    background-color: #1e90ff;
+    margin-left: 12px;
+    color: #fff;
+}

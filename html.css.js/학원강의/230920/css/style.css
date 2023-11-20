@@ -1,0 +1,71 @@
+@import url('./reset.css');
+
+/* overlfow */
+/* 컨텐츠가 지정한 높이보다 클 경우 스크롤을 할 것인지 
+    안보이게 할 것인지 처리하는 속성 */
+/* .overflow{
+    width:200px;
+    height:100px;
+    border:1px solid red;
+    overflow:hidden;
+} */
+
+.box{
+    font-size:30px;
+    height:40px;
+    overflow:hidden;
+}
+
+.box p{
+    transition:0.5s;
+    transform:translateY(100%);
+}
+
+.box:hover p{
+    transform:translateY(0%);
+}
+
+html, body, main{
+    height:100%;
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width:250px;
+    height:250px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card + .card{
+    margin-left:50px;
+}
+
+.image{
+    height:250px;
+    overflow:hidden;
+}
+
+.image img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position: center;
+    transition:0.3s;
+}
+
+/* hover */
+.card:hover {
+    /* margin-top:55px; */
+    height:305px;
+}
+
+.card:hover img{
+    transform:scale(1.2);
+}

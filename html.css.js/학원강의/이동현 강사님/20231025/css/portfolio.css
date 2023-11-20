@@ -1,0 +1,50 @@
+/* Portfolio */
+.portfolio-container ul {
+    margin-top: 60px;
+}
+
+.portfolio-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 20px;
+}
+
+.portfolio-container ul li:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.portfolio-container ul li + li {
+    margin-top: 50px;
+}
+
+
+.portfolio-image img {
+    display: block;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.portfolio-image img.opacity {
+    opacity: 1;
+}
+
+.portfolio-text h4 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.portfolio-text p {
+    margin: 10px 0 20px 0;
+}
+
+.portfolio-text p,
+.portfolio-text a {
+    color: #767676;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.portfolio-text a {
+    font-weight: 700;
+}

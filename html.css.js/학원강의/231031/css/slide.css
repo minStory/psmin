@@ -1,0 +1,57 @@
+@import url('./reset.css');
+
+.slide {
+    height:700px;
+    overflow:hidden;
+    position:relative;
+}
+
+.slide ul{
+    display:flex;
+    height:100%;
+    transition:0.5s;
+}
+
+.slide ul li{
+    height:100%;
+    width:100%;
+    flex-shrink:0;
+    color:#fff;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    font-size:60px;
+}
+
+.slide ul li:first-of-type{
+    background-color: purple;
+}
+
+.slide ul li:nth-of-type(2){
+    background-color: orange;
+}
+
+.slide ul li:last-of-type{
+    background-color: aqua;
+}
+
+
+.arrows button:first-of-type{
+    position:absolute;
+    left:3%;
+    top:50%;
+    transform:translateY(-50%);
+}
+.arrows button:last-of-type{
+    position:absolute;
+    right:3%;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.arrows i{
+    font-size:60px;
+    background-color:blue;
+    color:#fff;
+    pointer-events: none;
+}

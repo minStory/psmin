@@ -1,0 +1,146 @@
+.bottom{
+    display:flex;
+    padding:150px 0 200px;
+}
+
+.bottom h3{
+    font-size:46px;
+    width:300px;
+}
+
+.bottom article{
+    width:calc(100% - 300px);
+    display:flex;
+    flex-direction: column;
+    gap:180px;
+}
+
+.bottom article div ul{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.info1 ul{
+    gap:24px;
+}
+
+.info1 ul li{
+    padding:40px 30px;
+    width:30%;
+    height:289px;
+    border: 1px solid #dddddd;
+    border-radius:10px;
+}
+
+.info1 ul li span{
+    display:block;
+    font-size:18px;
+    color:#AAAAAA;
+    margin:80px 0 20px 0;
+}
+
+.info1 ul li h4{
+    font-size:24px;
+    color:#333333;
+}
+
+.info1 ul li h4 p{
+    display:inline;
+    font-size:18px;
+    color:#333333;
+    margin-left:5px;
+    font-weight:500;
+}
+
+.info2 h5{
+    font-size:24px;
+    color:#2D3A80;
+    margin-bottom:30px;
+}
+
+.info2 ul{
+    gap:90px;
+}
+
+.info2 ul li{
+    width:28%;
+    height:414px;
+    text-align: center;
+}
+
+.info2 ul li div{
+    padding:95px 0 0;
+    height:340px;
+    background-color: #f8f8f8;
+    border-radius: 50%;
+    position:relative;
+}
+
+.info2 ul li+li div:after{
+    content:"";
+    background: url('../imgs/img_cross.png') no-repeat center / cover;
+    width:20px;
+    height:20px;
+    position:absolute;
+    top:50%;
+    left:-45px;
+    transform:translateX(-50%);
+}
+
+.info2 ul li div img{
+    display:inline-block;
+    justify-content: center;
+}
+
+.info2 ul li div h6{
+    margin-top:40px;
+    font-size:22px;
+    color:#333333;
+}
+
+.info2 ul li p{
+    margin-top:40px;
+    font-size:20px;
+    font-weight:300;
+    line-height:1.7;
+}
+
+.info2 ul li h6 em{
+    display:block;
+    margin-top:10px;
+    font-size:18px;
+    color:#666666;
+    font-style:normal;
+    font-weight:400;
+}
+
+.info3 h5{
+    font-size:24px;
+    color:#2D3A80;
+}
+
+.info3 h6{
+    font-size:20px;
+    font-weight:400;
+    color:#333333;
+    margin:30px 0 20px 0;
+}
+
+.info3 h6:nth-of-type(2){
+    margin-top:90px;
+}
+
+.info3 ul{
+    gap:60px 20px;
+}
+
+.info3 ul li{
+    width:25%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.info3 ul li p{
+    margin-top:20px;
+}

@@ -1,0 +1,32 @@
+.center{
+    position:relative;
+}
+
+.center div{
+    background: url('../imgs/img1.jpg') no-repeat center / cover;
+    height:300px;
+    margin:300px 0px 200px 0;
+}
+.center div h4{
+    font-size: 50px;
+    left:50%;
+    top:20%;
+    transform: translate(-50%,-50%);
+    position:absolute;
+}
+.center div p{
+    font-size:30px;
+    left:50%;
+    top:50%;
+    width:70%;
+    transform: translate(-50%,-50%);
+    position:absolute;
+}
+
+.center div button{
+    font-size:30px;
+    left:50%;
+    top:70%;
+    transform: translate(-50%,-50%);
+    position:absolute;
+}

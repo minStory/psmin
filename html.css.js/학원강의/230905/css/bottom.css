@@ -1,0 +1,56 @@
+
+.bottom .fir{
+    display:flex;
+    gap:10px;
+    margin-bottom:30px;
+    height:200px;
+}
+
+.bottom .fir div:first-of-type{
+    border-radius: 10px;
+    background: url('../imgs/img3.jpg') no-repeat center / cover;
+    width:25%;
+}
+.bottom .fir div:nth-of-type(2){
+    border-radius: 10px;
+    background: url('../imgs/img3.jpg') no-repeat center / cover;
+    width:25%;
+}
+.bottom .fir div:nth-of-type(3){
+    border-radius: 10px;
+    background: url('../imgs/img3.jpg') no-repeat center / cover;
+    width:25%;
+}
+.bottom .fir div:last-of-type{
+    border-radius: 10px;
+    background: url('../imgs/img3.jpg') no-repeat center / cover;
+    width:25%;
+}
+
+.bottom .sec{
+    display:flex;
+    gap:10px;
+    margin-bottom: 100px;
+    height:200px;
+}
+
+.bottom .sec div:first-of-type{
+    border-radius: 10px;
+    background: url('../imgs/img3.jpg') no-repeat center / cover;
+    width:25%;
+}
+.bottom .sec div:nth-of-type(2){
+    border-radius: 10px;
+    background: url('../imgs/img3.jpg') no-repeat center / cover;
+    width:25%;
+}
+.bottom .sec div:nth-of-type(3){
+    border-radius: 10px;
+    background: url('../imgs/img3.jpg') no-repeat center / cover;
+    width:25%;
+}
+.bottom .sec div:last-of-type{
+    border-radius: 10px;
+    background: url('../imgs/img3.jpg') no-repeat center / cover;
+    width:25%;
+}

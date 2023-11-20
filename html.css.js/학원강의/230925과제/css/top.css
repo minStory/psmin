@@ -1,0 +1,23 @@
+.top-text h2{
+    font-size:96px;
+}
+
+.top-text ul{
+    display:flex;
+    margin:60px 0 45px;
+}
+
+.top-text ul li{
+    color: #2D3A80;
+    font-size:20px;
+    font-weight:700;
+}
+
+.top-text ul li+li{
+    margin-left:45px;
+}
+
+.top-image{
+    background:url('../imgs/img1.jpg') no-repeat center / cover;
+    height:500px;
+}

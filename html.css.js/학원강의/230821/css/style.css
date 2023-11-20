@@ -1,0 +1,37 @@
+h1{
+    font-size:24px;
+
+}
+.box-layout{
+    width:200px;
+    height:200px;
+}
+.box-blue{
+    background-color:blue;
+    /* rgba -> alpha, 투명도 */
+    /* hex -> #0000ff */
+}
+.inline-box{
+    color:coral;
+    font-size:50px;
+}
+.box-image{
+    /* background 속성을 이용해서 이미지를 넣을 경우에는 이미지를 반복하는 것이 기본 설정이다. */
+    /* background-image: url("../images/image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    /* background : url ("이미지경로") 반복여부 포지션 size */
+    background : url("../images/image.jpg") no-repeat center / cover;
+    color:white;
+    font-size:50px;
+    width:1500px;
+    height:500px;
+}
+
+img{
+    width:1500px;
+    height:500px;
+    object-fit:cover;
+    object-position:center;
+}

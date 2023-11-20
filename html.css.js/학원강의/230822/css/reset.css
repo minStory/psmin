@@ -1,0 +1,9 @@
+/* Reset CSS */
+/* 작업자가 작업하기 좋은 환경으로 만든다. */
+/* 브라우저의 기본 스타일을 없애준다 */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    list-style:none;
+}

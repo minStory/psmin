@@ -1,0 +1,95 @@
+@import url('./reset.css');
+@import url('./fonts.css');
+
+.container{
+    width:1500px;
+    margin:0 auto;
+}
+
+.header-container{
+    height:100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a img{
+    height:34px;
+    width:224px;
+}
+
+.menu .lnb{
+    display:flex;
+}
+
+.menu > ul > li{
+    line-height: 100px;
+    padding:0 30px;
+    position:relative;
+}
+
+.menu > ul > li > a{
+    color:#222222;
+    display:block;
+    height:100px;
+}
+
+.lnb1, .lnb2, .lnb3, .lnb4, .lnb5, .lnb6{
+    position:absolute;
+    padding-top:20px;
+    color:#08151D;
+    font-size:14px;
+    line-height: 26px;
+    text-align: center;
+    width:100%;
+    left:0;
+    display:none;
+    height:140px;
+}
+
+.util{
+    padding:15px;
+    background-color: #F5F9FF;
+    border-radius: 30px;
+    font-size:0;
+}
+
+.util a{
+    padding:5px;
+    position:relative;
+    font-size:13px;
+    color:#7E7E7E;
+}
+
+.util a+a:before{
+    content:"";
+    position:absolute;
+    background-color: #848484;
+    width:1px;
+    height:12px;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+}
+
+/* .menu:hover{
+    background-color: red;
+}
+
+.menu:hover ul > li > ul {
+    display:block;
+    background-color: red;
+    height:140px;
+} */
+
+.header-container:hover{
+    background-color: red;
+}
+
+.header-container:hover .menu .lnb li{
+}
+
+.header-container:hover .menu .lnb li ul{
+    display:block;
+    background-color: red;
+}

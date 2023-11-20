@@ -1,0 +1,112 @@
+.visual{
+    height:600px;
+    background-color:#747474;
+}
+
+header{
+    width:1300px;
+    height:70px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translate(-50%);
+    z-index:100;
+}
+
+header nav ul{
+    display:flex;
+}
+
+/* 첫번째를 제외한 나머지 */
+header nav ul li+li{
+    margin-left:20px;
+}
+
+.content-1{
+    margin:50px 0;
+}
+
+.content-1 h2{
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.content-1 ul{
+    display:flex;
+    width:1300px;
+    margin:0 auto;
+}
+
+.content-1 ul li+li{
+    margin-left:20px;
+}
+
+.content-1 ul div{
+    height:200px;
+    background-color: #676767;
+}
+
+.content-1 ul li h3{
+    margin:10px 0 5px 0;
+}
+
+.content-1 ul li p{
+    color:#676767;
+    font-size:13px;
+}
+
+.banner{
+    height:400px;
+    background-color: #9c9c9c;
+    text-align: center;
+    position:relative;
+}
+
+.banner div{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+
+.banner h2{
+    font-size:36px;
+}
+
+.banner p{
+    margin:10px 0 20px 0;
+}
+
+.banner a{
+    display:block;
+    width:130px;
+    height:36px;
+    border-radius: 10px;
+    background-color: orange;
+    color:#fff;
+    margin:0 auto;
+    line-height: 36px;
+}
+
+.portfolio{
+    width:1300px;
+    margin:50px auto;
+}
+
+.portfolio ul{
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+}
+
+.portfolio ul li{
+    width:23%;
+    height:200px;
+    background-color: #ffdddd;
+}

@@ -1,0 +1,25 @@
+/* 웹 폰트 사용하는 방법 */
+/* 구글 폰트, 넥슨, 네이버, 배달의 민족, 카카오 */
+/* 상업용도로 사용가능한지. */
+@font-face {
+    font-family: 'Noto Sans KR';
+    src: url("../fonts/NotoSansKR-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    src: url("../fonts/NotoSansKR-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    src: url("../fonts/NotoSansKR-Regular.ttf");
+    font-weight: 400;
+}
+@font-face{
+    font-family: 'Moirai One';
+    src:url('../fonts/MoiraiOne-Regular.ttf');
+    font-weight: 400;
+}

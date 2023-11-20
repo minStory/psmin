@@ -1,0 +1,63 @@
+header{
+    background-color: red;
+    height:100px;
+}
+main section:first-of-type{
+    display:flex;
+    height:400px;
+}
+main section:last-of-type{
+    display:flex;
+    height:200px;
+}
+div{
+    width:100%;
+    height:100%;
+}
+.s1 div:first-of-type{
+    background-color: orange;
+}
+.s1 div:nth-of-type(2){
+    background-color: yellow;
+}
+.s1 div:nth-of-type(3){
+    background-color: green;
+}
+.s2 div:first-of-type{
+    background-color: blue;
+}
+.s2 div:nth-of-type(2){
+    background-color: navy;
+}
+
+footer{
+    background-color:purple;
+    height:100px;
+}
+
+
+/* .a {
+    height:400px;
+    width:34%;
+    background-color: darkgreen;
+}
+.b {
+    height:100%;
+    width:34%;
+    background-color:darkgoldenrod;
+}
+.c {
+    height:400px;
+    width:34%;
+    background-color:darkkhaki;
+}
+.d {
+    height:400px;
+    width:50%;
+    background-color:greenyellow;
+}
+.e {
+    height:400px;
+    width:50%;
+    background-color:dodgerblue;
+} */

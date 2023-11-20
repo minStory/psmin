@@ -1,0 +1,18 @@
+header{
+    background: url('../imgs/img1.jpg') no-repeat center / cover;
+    height:400px;
+    font-size:30px;
+
+}
+header div{
+    display:flex;
+    justify-content: space-between;
+}
+
+header div ul{
+    display:flex;
+}
+
+header div ul li+li{
+    margin-left:20px;
+}

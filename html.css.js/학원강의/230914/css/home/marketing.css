@@ -1,0 +1,90 @@
+.marketing-container{
+    margin:0 auto;
+}
+
+.marketing ul{
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:80px;
+}
+
+.marketing ul li{
+    width:33.33%;
+    text-align: center;
+    padding:40px 33px 53px;
+    position:relative;
+    border-bottom:1px solid #eee;
+}
+
+.marketing ul li:after{
+    /* 가상요소 */
+    content:"";
+    position:absolute;
+    width:1px;
+    height:100%;
+    top:0;
+    right:0;
+    background-color: #eee;
+}
+
+.marketing ul li:nth-of-type(3n):after{
+    display:none;
+}
+
+.marketing ul li:nth-of-type(n+4){
+    border-bottom:0;
+}
+
+.marketing li div{
+    height:60px;
+    width:60px;
+    margin:0 auto;
+}
+
+.marketing li h4{
+    font-size: 26px;
+    margin:24px 0 6px 0;
+}
+
+.marketing li p{
+    color: #666666;
+    line-height: 30px;
+}
+
+
+.marketing li:nth-of-type(1) div{
+    background: url('../../imgs/gif/gif1.gif') no-repeat center / cover;
+}
+
+.marketing li:nth-of-type(2) div{
+    background: url('../../imgs/gif/gif2.gif') no-repeat center / cover;
+}
+
+.marketing li:nth-of-type(3) div{
+    background: url('../../imgs/gif/gif3.gif') no-repeat center / cover;
+}
+
+.marketing li:nth-of-type(4) div{
+    background: url('../../imgs/gif/gif4.gif') no-repeat center / cover;
+}
+
+.marketing li:nth-of-type(5) div{
+    background: url('../../imgs/gif/gif5.gif') no-repeat center / cover;
+}
+
+.marketing li:nth-of-type(6) div{
+    background: url('../../imgs/gif/gif6.gif') no-repeat center / cover;
+}
+
+.marketing li a{
+    color:#aaa;
+    display:block;
+    transition:0.5s;
+    font-weight:700px;
+    width:max-content;
+    margin:19px auto 0 auto;
+}
+
+.marketing li a:hover{
+    color:#1e90ff;
+}
