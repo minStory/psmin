@@ -1,0 +1,135 @@
+Mysql -> 프로그램(데이터를 저장하는 프로그램)
+디비버 -> DB를 연결시켜주는 프로그램(혹은 SQL 에디터)
+무료이기 때문에 스타트업에서 많이 사용
+ex) 자바 설치하면 이클립스 설치하듯이
+
+실제 데이터 저장
+데이터베이스 -> 테이블 -> 데이터(실제 데이터는 테이블 안에 있음)
+
+개발자는 테이블만 보면 된다.
+데이터베이스 관리는 따로 직업이 있다.
+(DBA, 운영팀, dev(개발)ops(운영), mlops(AI))
+
+dept : 부서 테이블
+ -> 부서정보가 저장되어 있음
+emp : 사원 테이블
+ -> 사원정보가 저장되어 있음
+
+1. SELECT 컬럼(변수) 조회
+2. FROM 테이블 조회
+3. AS 별칭(생략 가능)
+4. WHERE 조건(원하는 데이터 추출)
+5. AND, >=, <=, >, <, OR
+
+SQL 실행 순서
+1. FROM
+2. WHERE
+3. SELECT
+
+----------------------------------------------------------------
+
+-- SELECT -> 데이터 조회
+-- 사원 테이블 조회
+select
+	ename,
+	job,
+	empno,
+	hiredate
+from emp;
+-- 부서 테이블 조회
+select
+	dname,
+	deptno
+from dept;
+-- select 컬럼이름 from 테이블명
+
+-- Q. 사원번호, 사원이름, 사원 사수번호, 직책을 조회하시오.
+select
+	empno as "사원번호",
+	ename as "사원이름",
+	mgr as "사수번호",
+	job as "직책"
+from emp;
+
+-- Q1. 사원이름만 조회
+select
+	ename
+from emp;
+
+-- Q2. 사원번호, 사원이름 조회, as이용해서 풀 것
+-- as는 생략 가능
+select
+	empno as "사원번호",
+	ename as "사원이름"
+from emp;
+
+-- Q3. 사원테이블에 있는 모든 컬럼 조회
+-- *(애스터리스크) -> 전체 컬럼 조회
+-- 실무에서는 거의 사용 안함
+select
+	*
+from emp;
+
+-- WHERE -> 원하는 데이터를 추출
+select
+	ename,
+	empno,
+	hiredate,
+	job
+from emp
+where job = "SALESMAN";
+
+-- Q. 사원번호가 7782인 사원의 번호, 이름, 직업 조회
+select
+	empno,
+	ename,
+	job
+from emp
+where empno = 7782;
+
+-- 급여가 2000이상인 사원이름, 직책 조회
+select
+	ename,
+	job,
+	sal
+from emp
+where sal >= 2000
+
+-- Q.  1981-12-03 이후에 입사한 사원 이름, 직책, 급여, 사수번호, 입사날짜 조회
+select
+	ename,
+	job,
+	sal,
+	mgr,
+	hiredate
+from emp
+where hiredate >= "1981-12-03";
+
+-- job이 Manager이고 급여가 2000이상인 사원의 이름, 직책, 급여, 입사날짜 조회
+select
+	ename,
+	job,
+	sal,
+	hiredate
+from emp
+where job = "MANAGER" and sal >= 2000;
+
+-- Q. 입사날짜가 1981-12-03이고 직업이 ANALYST인 사원의 이름, 직책, 입사날짜, 급여 조회
+select
+	ename,
+	job,
+	hiredate,
+	sal
+from emp
+where hiredate = "1981-12-03" and job = "ANALYST";
+
+
+
+
+
+
+
+
+
+
+
