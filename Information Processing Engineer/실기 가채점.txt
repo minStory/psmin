@@ -1,5 +1,4 @@
 X	O
-
 	1. BDCDD
 2. Oauth
 	3. chmod 751
@@ -21,4 +20,4 @@ X	O
 	19. join, project, select, division
 	20. 참조
 
-6     /	17
+4     /	16
