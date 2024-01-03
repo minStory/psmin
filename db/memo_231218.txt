@@ -43,38 +43,48 @@ where job = "manager";
 -- 서브쿼리가 먼저 실행 된 후, 외부 쿼리와 비교/연산 된다.
 -- 서브쿼리가 가능한 곳
 -- select, from, where, having, order by, insert, update
--- select, from, where절에 서브쿼리를 종종 사용하며, 특이 from절에 서브쿼리를 많이 사용한다.
+-- select, from, where절에 서브쿼리를 종종 사용하며, 특히 from절에 서브쿼리를 많이 사용한다.
 -- 서브쿼리는 언제사용할까? 1. 데이터를 필터링할 때 2. 통계데이터를 추출할 때
 
--- select 서브쿼리(스칼라 서브쿼리)
--- ex) select절에 서브쿼리 이용해보기
-select
-	(select count(*) from emp) as "사원 수",
-	(select sum(sal) from emp) as "사원 총 급여"
-from emp;
--- from 서브쿼리(인라인 뷰)
--- ex) from절에 서브쿼리 이용
+-- SELECT 서브쿼리 (스칼라 서브쿼리)
+-- ex) select 절에 서브쿼리 이용해보기
+select 
+	(select count(*) from emp) as '사원 수',
+	(select sum(sal) from emp) as '사원 총 급여'
+from emp 
+-- FROM 서브쿼리 (인라인 뷰)
+-- ex) from 절에 서브쿼리 이용
 -- sql 실행 순서
--- 서브쿼리가 먼저 실행 서브from -> 서브where -> 서브select -> from -> select
-
-select
+-- 서브쿼리가 먼저 실행! from -> where -> select -> from -> select 
+select 
 	*
 from emp as e inner join
-(select empno from emp where job = "manager") as manager_emp
-on e.empno = manager_emp.empno;
+(select empno from emp where job = 'MANAGER') as manager_emp
+on e.empno = manager_emp.empno
 
--- where 서브쿼리
--- 문제. 급여를 가장 많이 받는 사원의 이름과 급여 조회 (서브쿼리 없이)
-select ename, sal
-from emp
-where sal = (select max(sal) from emp);
+-- WHERE 서브쿼리 (중첩 서브쿼리)
+-- 문제) 급여를 가장많이 받는 사원의 이름과 급여 조회 
+select ename, sal from emp
+where sal = (select max(sal) from emp)
+-- 가격이 제일 비싼 식품의 정보 출력하기 (from 절 서브쿼리, where절 서브쿼리로도 풀어보기)
 
-select max(sal) from emp;
-select ename from emp where sal > 2000;
--- where절에 서브쿼리 결과가 여러 행일 때는 =가 아니라 in을 사용해야한다.
--- exists, not exists
-select ename from emp
-where sal in (select sal from emp where sal > 2000);
+-- where 서브쿼리 이어서
+select max(sal) from emp
+select ename from emp where sal > 2000
+-- where절에 서브쿼리 결과가 여러 행일 때는 = 가 아니라 *****in을 사용해야한다!
+-- 단일행 =
+-- 다중행 in
+-- EXISTS, NOT EXISTS (다음시간에~ 한번에 빠르게 정리~)
+select ename,sal from emp 
+where sal in (select sal from emp where sal > 2000)
+
+-- 서브쿼리 문제
+-- 프로그래머스 3단계 -> 헤비 유저가 소유한 장소 (서브쿼리 이용해서 풀 것)
+-- 같이 풀 것 리스트
+-- 레벨2. 자동차 평균 대여 기간 구하기
+-- 레벨2. 카테고리 별 상품 개수 구하기
+-- 레벨2. NULL 처리하기
+-- 레벨2. 가격이 제일 비싼 식품의 정보 출력하기 (서브쿼리 문제)
 
 -- select(조회)
 -- insert(저장), delete(삭제), update(수정) -> CRUD
