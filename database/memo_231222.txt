@@ -194,7 +194,7 @@ delete from movie where movie_id = 2;
 
 -- foreign key없이 join(데이터타입만 같다면 join이 됨) <- 대형 프로젝트에서 종종 이런식으로 운영한다.
 -- 장점) 데이터를 쉽게 삭제&수정 할 수 있다.
--- 단점) 테이블 관꼐를 파악하기 어렵다.
+-- 단점) 테이블 관계를 파악하기 어렵다.
 select
 	m.movie_name,
 	a.actor_name,

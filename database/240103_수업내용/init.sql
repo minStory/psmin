@@ -1,98 +1,110 @@
---CREATE
+-- CREATE
 -- 진료과 테이블
 CREATE TABLE TB_DEPT (
-DEPT_CD INTEGER NOT NULL,
-DEPT_NAME VARCHAR (100) ,
-DEPT_FLOOR INTEGER ,
-CREATE_DATE TIMESTAMP ,
-TEL_NUMBER VARCHAR (100) );
+DEPT_CD INTEGER auto_increment primary key comment "진료과 고유번호",
+DEPT_NAME VARCHAR (50) unique comment "진료과 이름" ,
+DEPT_FLOOR INTEGER comment "진료과 위치(층)" ,
+CREATE_DATE TIMESTAMP comment "진료과 생성일" ,
+TEL_NUMBER VARCHAR (50) comment "진료과 전화번호");
 
 -- 의사 테이블
-CREATE TABLE TB_DOCTOR_LIST (
-LICENSE_CD INTEGER NOT NULL,
-DOCTOR_NAME VARCHAR (100) ,
-GET_LICENSE_DATE TIMESTAMP ,
-JOIN_COM_DATE TIMESTAMP ,
-GENDER VARCHAR (100) ,
-BIRTH_DATE TIMESTAMP ,
-DEPT_CD INTEGER ,
-DEPT_NAME VARCHAR (100) ,
-SUSPEND_LICENSE VARCHAR (100) ,
-TEL_NUMBER VARCHAR (100) ,
-CLOSED_DAY VARCHAR (100) );
+CREATE TABLE TB_DOCTOR (
+LICENSE_CD INTEGER primary key comment "의사 면허번호",
+DOCTOR_NAME VARCHAR (50) comment "의사 이름" ,
+GENDER VARCHAR (10) comment "성별" ,
+BIRTH_DATE TIMESTAMP comment "생년월일" ,
+TEL_NUMBER VARCHAR (50) comment "전화번호" ,
+GET_LICENSE_DATE TIMESTAMP comment "면허 취득일" ,
+JOIN_COM_DATE TIMESTAMP comment "입사일" ,
+DEPT_CD INTEGER comment "담당과 고유번호" ,
+DEPT_NAME VARCHAR (50) comment "담당과 이름" ,
+SUSPEND_LICENSE VARCHAR (10) comment "면허 취소 여부" ,
+CLOSED_DAY VARCHAR (50) comment "휴무일",
+foreign key(dept_cd) references tb_dept(dept_cd));
 
 -- 간호사 테이블
-CREATE TABLE TB_NURSE_LIST (
-LICENSE_CD INTEGER NOT NULL,
-NURSE_NAME VARCHAR (100) ,
-GET_LICENSE_DATE TIMESTAMP ,
-JOIN_COM_DATE TIMESTAMP ,
-GENDER VARCHAR (100) ,
-BIRTH_DATE TIMESTAMP ,
-DEPT_CD INTEGER ,
-DEPT_NAME VARCHAR (100) ,
-TEL_NUMBER VARCHAR (100) ,
-CLOSED_DAYS VARCHAR (100) );
+CREATE TABLE TB_NURSE (
+LICENSE_CD INTEGER primary key comment "간호사 면허번호",
+NURSE_NAME VARCHAR (50) comment "간호사 이름" ,
+GENDER VARCHAR (10) comment "성별" ,
+BIRTH_DATE TIMESTAMP comment "생년월일" ,
+TEL_NUMBER VARCHAR (50) comment "전화번호" ,
+GET_LICENSE_DATE TIMESTAMP comment "면허 취득일" ,
+JOIN_COM_DATE TIMESTAMP comment "입사일" ,
+DEPT_CD INTEGER comment "담당과 고유번호" ,
+DEPT_NAME VARCHAR (50) comment "담당과 이름" ,
+CLOSED_DAYS VARCHAR (50) comment "휴무일",
+foreign key(dept_cd) references tb_dept(dept_cd));
 
 -- 환자 테이블
-CREATE TABLE TB_PATIENT_LIST (
-PATIENT_CD INTEGER NOT NULL,
-PATIENT_NAME VARCHAR (100) ,
-GENDER VARCHAR (100) ,
-BIRTH_DATE TIMESTAMP ,
-BLOOD_TYPE VARCHAR (100) ,
-TEL_NUMBER VARCHAR (100) ,
-DEPT_NAME VARCHAR (100) ,
-DOCTOR_NAME VARCHAR (100) ,
-DOCTOR_LICENSE_CD INTEGER ,
-LAST_TREAT TIMESTAMP ,
-ADMIT_STATUS VARCHAR (100) ,
-ADMIT_DATE TIMESTAMP );
+CREATE TABLE TB_PATIENT (
+PATIENT_CD INTEGER primary key comment "환자 등록번호",
+PATIENT_NAME VARCHAR (50) comment "환자 이름" ,
+GENDER VARCHAR (10) comment "성별" ,
+BIRTH_DATE TIMESTAMP comment "생년월일" ,
+TEL_NUMBER VARCHAR (50) comment "전화번호",
+BLOOD_TYPE VARCHAR (10) comment "혈액형",
+DEPT_NAME VARCHAR (50) comment "진료과 이름" ,
+DOCTOR_NAME VARCHAR (50) comment "담당의 이름" ,
+DOCTOR_LICENSE_CD INTEGER comment "담당의 면허번호" ,
+LAST_TREAT_DATE TIMESTAMP comment "최근 진료일" ,
+ADMIT_STATUS VARCHAR (10) comment "입원 여부" ,
+ADMIT_DATE TIMESTAMP comment "입원일",
+foreign key(dept_name) references tb_dept(dept_name),
+foreign key(doctor_license_cd) references tb_doctor(license_cd));
 
 -- 진료차트 테이블
 CREATE TABLE TB_MEDICAL_CHART (
-TREAT_DATE TIMESTAMP NOT NULL,
-PATIENT_CD INTEGER ,
-PATIENT_NAME VARCHAR (100) ,
-DEPT_NAME VARCHAR (100) ,
-DOCTOR_CD INTEGER ,
-DOCTOR_NAME VARCHAR (100) ,
-DISEASE_NAME VARCHAR (100) ,
-DETAIL VARCHAR (100) ,
-PRESCRIPTION VARCHAR (100) );
+CHART_CD INTEGER primary key comment "차트 고유번호",
+TREAT_DATE TIMESTAMP comment "진료일시",
+PATIENT_CD INTEGER comment "환자 등록번호" ,
+PATIENT_NAME VARCHAR (50) comment "환자 이름" ,
+DEPT_NAME VARCHAR (50) comment "진료과 이름" ,
+DOCTOR_CD INTEGER comment "담당의 면허번호" ,
+DOCTOR_NAME VARCHAR (50) comment "담당의 이름" ,
+DISEASE_NAME VARCHAR (50) comment "병명" ,
+DETAIL VARCHAR (100) comment "상세 내용",
+PRESCRIPTION VARCHAR (100) comment "처방",
+foreign key(patient_cd) references tb_patient(patient_cd),
+foreign key(doctor_cd) references tb_doctor(license_cd));
 
 -- 실적 테이블
 CREATE TABLE TB_PERFORMANCE (
-MONTH_SALES TIMESTAMP NOT NULL,
-DEPT_CD INTEGER ,
-DEPT_NAME VARCHAR (100) ,
-SALES INTEGER );
+MONTH_SALES TIMESTAMP primary key comment "실적월",
+DEPT_CD INTEGER comment "진료과 고유번호",
+DEPT_NAME VARCHAR (50) comment "진료과 이름" ,
+SALES INTEGER comment "매출액",
+foreign key(dept_cd) references tb_dept(dept_cd));
 
 -- 결제부서 테이블
 CREATE TABLE TB_PAYMENT_DEPT (
-PAYMENT_CD INTEGER NOT NULL,
-PAYMENT_DATE TIMESTAMP ,
-PATIENT_CD INTEGER ,
-PATIENT_NAME VARCHAR (100) ,
-DEPT_CD INTEGER ,
-SEVERE_STATUS VARCHAR (100) ,
-AMOUNT INTEGER );
+PAYMENT_CD INTEGER primary key comment "결제 코드",
+PAYMENT_DATE TIMESTAMP comment "결제일시",
+PATIENT_CD INTEGER comment "환자 등록번호",
+PATIENT_NAME VARCHAR (50) comment "환자 이름" ,
+DEPT_CD INTEGER comment "진료과 고유번호",
+SEVERE_STATUS VARCHAR (10) comment "중증 환자 여부(할인)",
+AMOUNT INTEGER comment "결제 금액",
+foreign key(patient_cd) references tb_patient(patient_cd),
+foreign key(dept_cd) references tb_dept(dept_cd));
 
 -- 채혈부서 테이블
 CREATE TABLE TB_BLOOD_DEPT (
-TEST_DATE TIMESTAMP NOT NULL,
-PATIENT_CD INTEGER ,
-PATIENT_NAME VARCHAR (100) ,
-BLOOD_TYPE VARCHAR (100) ,
-DETAIL VARCHAR (100) );
+TEST_DATE TIMESTAMP primary key comment "채혈 일시",
+PATIENT_CD INTEGER comment "환자 등록번호",
+PATIENT_NAME VARCHAR (50) comment "환자 이름",
+BLOOD_TYPE VARCHAR (10) comment "혈액형",
+DETAIL VARCHAR (100) comment "상세 내용",
+foreign key(patient_cd) references tb_patient(patient_cd));
 
 -- CT부서 테이블
 CREATE TABLE TB_CT_DEPT (
-SCAN_DATE TIMESTAMP NOT NULL,
-PATIENT_CD INTEGER ,
-PATIENT_NAME VARCHAR (100) ,
-CONTRAST_STATUS VARCHAR (100) ,
-DETAIL VARCHAR (100) );
+SCAN_DATE TIMESTAMP primary key comment "촬영 일시",
+PATIENT_CD INTEGER comment "환자 등록번호",
+PATIENT_NAME VARCHAR (50) comment "환자 이름",
+CONTRAST_STATUS VARCHAR (10) comment "조영제 투여 여부",
+DETAIL VARCHAR (100) comment "상세 내용",
+foreign key(patient_cd) references tb_patient(patient_cd));
 
 
 -- INSERT
