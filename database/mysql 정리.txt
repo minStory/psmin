@@ -1,0 +1,38 @@
+select 컬럼 from 테이블 where 조건 group by 그룹핑대상 having 그룹핑후조건 order by 정렬
+insert into 컬럼(컬럼1, 컬럼2,...) values (컬럼1, 컬럼2,...)
+update 테이블 set 수정 내용 where 해당조건
+delete from 테이블 where 해당조건
+
+조회 순서
+from -> where -> group by -> having -> select -> order by
+
+함수
+
+ - 날짜/시간
+DATE_FORMAT (대상, "%Y%m%d%H%i%s") -> 날짜/시간 원하는 형식으로 추출
+DATE_ADD (대상, INTERVAL 30 day) -> 해당 날짜에서 더하기
+ - year, month, day, hour, minute, second 대체 가능
+DATE_SUB (대상, INTERVAL 30 day) -> 해당 날짜에서 더하기
+ - year, month, day, hour, minute, second 대체 가능
+YEAR, MONTH, DAY, HOUR, MINUTE, SECOND (대상) -> 부분 추출
+DATEDIFF (end_date, start_date) -> 두 날짜의 차이 추출
+TIMEDIFF (end_time, start_time) -> 두 시간의 차이 추출
+
+ - 숫자
+CEIL (대상) -> 가까운 정수로 올림
+FLOOR (대상) -> 가까운 정수로 내림
+ROUND (대상, 반올림할 자릿수)
+TRUCATE (대상, 버릴 자릿수)
+
+ - 문자
+대상 LIKE "%_" -> 문자 포함 여부 확인
+대상 REGEXP "^(1 | 2 | 3)$" -> 정규표현식 참고
+SUBSTR (대상, 시작위치, 추출할 개수)
+CONCAT("문자열", "문자열", "문자열",...) -> 문자열 붙이기
+CONCAT_WS("구분자", "문자열", "문자열",...) -> 구분자를 포함한 문자열 붙이기
+SUBSTRING("문자열", 시작위치, 추출할 개수) -> 문자열 추출
+
+DISTINCT -> 전체 컬럼 중복 제거
+
+LIMIT 2 -> 위에서 2개만 출력
+LIMIT 2 OFFSET 2 -> 위에서 3번째부터 인덱스부터 2개만 출력

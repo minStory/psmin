@@ -1,0 +1,79 @@
+-------------------------------------------------------------
+IntelliJ 단축키 모음
+
+F2 : 다음 오류 찾아가기
+
+Ctrl+O : 메서드 오버라이딩 단축키
+Ctrl+W : 단어 단위로 선택 범위 확장
+Ctrl+Backspace : 한번에 지우기
+Ctrl+Tab : 탭 이동
+Ctrl+D : 코드 줄 단위 복사
+Ctrl+E : 최근 탭 이동
+Ctrl+P : 필요한 매개변수 보기
+Ctrl+Y : 한줄 지우기
+Ctrl+N : 생성된 Class 검색 -> 찾아가기
+Ctrl+Z : Undo
+Ctrl+B : 해당 클래스와 관련있는 클래스 찾아가기
+Ctrl + F12 : 해당 클래스 필드 멤버 확인
+Ctrl+/ : 한줄주석
+Ctrl+Shift+/ : 여러줄 주석
+Ctrl+Shift+Z : Redo
+Ctrl+Shift+Enter : 문장 자동 완성 후 줄바꿈
+Ctrl+Shift+T : Test Class 자동 생성
+Ctrl+Alt+B : 해당 인터페이스를 구현한 인터페이스 찾아가기
+Ctrl+Alt+S : Setting
+Ctrl+Alt+Shift+S : Project Structure(Java Version 변경 등)
+Ctrl+Alt+V : 대입할 변수(앞부분) 자동 완성
+Ctrl+Alt+N : Inline Method(리팩토링)
+Ctrl+Alt+M : Extract Method(코드 메서드로 변환)
+Alt+Insert : Generate(Constructor, Getter, Setter)
+Alt+Enter : 에러 해결(import ,Create Method 등)
+Alt+Shift+방향키 : 코드 줄 단위로 이동
+Alt+방향키(←, →) : 탭 전환
+Shift+F6 : 같은 글자 한번에 변경, 패키지명 변경
+Shift+F10 : 이전에 실행한 빌드 재실행
+Shift 2번 : 생성된 Class(All) 검색 -> 찾아가기
+
+psvm 엔터 : public static void main(String[] args) { } 자동 완성
+soutv 엔터 : System.out.println(" "); 자동 완성
+iter 엔터 : for-each문 자동 완성
+
+단축키 모를 때 Setting -> keymap 에서 검색
+
+-------------------------------------------------------------
+
+Spring Setting 순서
+
+ - start.spring.io 접속하여 spring 다운로드
+
+ - build.gradle 파일 선택하고 Open as Project
+	->build.gradle 수정 시 Reload 해줘야 한다.
+
+ - Setting -> gradle 검색해서 Build and run using, Run tests using을 Gradle에서 IntelliJ IDEA로 변경(속도 개선)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
