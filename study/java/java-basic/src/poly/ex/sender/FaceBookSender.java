@@ -1,4 +1,4 @@
-package poly.ex;
+package poly.ex.sender;
 
 public class FaceBookSender implements Sender{
     @Override

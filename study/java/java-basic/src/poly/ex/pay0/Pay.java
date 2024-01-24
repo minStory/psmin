@@ -1,5 +1,5 @@
 package poly.ex.pay0;
 
-public interface Payment {
+public interface Pay {
     boolean pay(int amount);
 }

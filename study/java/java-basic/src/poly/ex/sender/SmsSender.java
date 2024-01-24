@@ -1,4 +1,4 @@
-package poly.ex;
+package poly.ex.sender;
 
 public class SmsSender implements Sender{
     @Override
