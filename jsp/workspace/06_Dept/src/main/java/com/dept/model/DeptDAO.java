@@ -15,6 +15,25 @@ public class DeptDAO {
 	String sql = null;
 	
 	public DeptDAO() {
+		//JSP 나머지
+		//1. EL, JSTL 사용법
+		//2. 게시판 구현(CRUD)
+		//3. 댓글 구현
+		//4. 페이징(고난이도)
+		
+		//웹프로젝트
+		//1. 프로젝트(백엔드 초간단 쇼핑몰)
+		// - 게시판, 댓글, 페이징, 장바구니, 상품등록, 검색
+		// - 나머지는 팀프로젝트(프론트 포함)
+		
+		//2. 스프링(방식, 문법)
+		// - 스프링 프로젝트
+		
+		//포트폴리오
+		//스프링을 활용한
+		//게시판 작성
+		//페이징 처리
+		//세션 처리
 		
 		String driver = "com.mysql.cj.jdbc.Driver";
 		String url = "jdbc:mysql://localhost:3306/psm";

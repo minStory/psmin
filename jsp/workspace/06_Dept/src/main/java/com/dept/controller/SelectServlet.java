@@ -33,7 +33,7 @@ public class SelectServlet extends HttpServlet {
 		request.setAttribute("List", list);
 		
 		//jsp파일의 경로 설정
-		RequestDispatcher rd = request.getRequestDispatcher("views/DeptList.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("views/dept_list.jsp");
 		
 		//설정한 경로로 이동시킨다.
 		rd.forward(request, response);

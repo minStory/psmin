@@ -25,7 +25,7 @@ public class UpdateServlet extends HttpServlet {
 		DeptDAO dao = new DeptDAO();
 		
 		//jsp파일에서 넘어온 no 변수를 대입
-		int deptno = Integer.parseInt(request.getParameter("no").trim());
+		int deptno = Integer.parseInt(request.getParameter("deptno").trim());
 		
 		//변수를 이용하여 조회한 데이터를 dto에 저장
 		DeptDTO dto = dao.updateList(deptno);
@@ -34,7 +34,7 @@ public class UpdateServlet extends HttpServlet {
 		request.setAttribute("DTO", dto);
 		
 		//전송 경로 설정
-		RequestDispatcher rd = request.getRequestDispatcher("views/DeptUpdate.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("views/dept_update.jsp");
 		
 		//실제 전송
 		rd.forward(request, response);		

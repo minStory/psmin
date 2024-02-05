@@ -49,7 +49,7 @@ public class InsertServlet extends HttpServlet {
 			out.println("location.href='select'");
 		}else {
 			out.println("alert('부서 추가 실패..')");
-			out.println("history.back");
+			out.println("history.back()");
 		}
 		out.println("</script>");
 	}

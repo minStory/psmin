@@ -28,7 +28,7 @@ public class DeleteServlet extends HttpServlet {
 		DeptDAO dao = new DeptDAO();
 		
 		//jsp파일에서 넘어온 no 변수를 대입
-		int deptno = Integer.parseInt(request.getParameter("no").trim());
+		int deptno = Integer.parseInt(request.getParameter("deptno").trim());
 		
 		//삭제 여부를 리턴하여 check에 대입
 		int check = dao.deleteList(deptno);
