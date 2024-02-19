@@ -29,7 +29,7 @@
 	   <br> <br>
 	   
 	   <form method="post"
-	      action="<%=request.getContextPath() %>/insert.do">
+	      action="<%=request.getContextPath() %>/insert_ok.do">
 	   
 	      <table border="1" width="350">
 	         <tr>

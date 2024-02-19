@@ -11,8 +11,9 @@
 		<hr width="50%" color="blue">
 			<h3>BOARD 테이블 메인 페이지</h3>
 		<hr width="50%" color="blue">
+		
+	<a href="<%=request.getContextPath() %>/list.go">[전체 목록 조회]</a>
 	</div>
 	
-	<a href="<%=request.getContextPath() %>/list.go"></a>
 </body>
 </html>

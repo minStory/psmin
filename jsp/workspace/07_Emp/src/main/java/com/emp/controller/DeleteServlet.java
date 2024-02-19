@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.emp.model.EmpDAO;
 
-@WebServlet("/delete")
+@WebServlet("/delete.do")
 public class DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,11 +24,11 @@ public class DeleteServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		
-		int empno = Integer.parseInt(request.getParameter("empno").trim());
+		int empno = Integer.parseInt(request.getParameter("num").trim());
 		
 		EmpDAO dao = EmpDAO.getInstance();
 		
-		int check = dao.deleteList(empno);
+		int check = dao.deleteEmp(empno);
 		
 		PrintWriter out = response.getWriter();
 		out.println("<script>");

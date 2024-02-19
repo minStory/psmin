@@ -10,33 +10,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.emp.model.DeptDTO;
 import com.emp.model.EmpDAO;
 import com.emp.model.EmpDTO;
 
-@WebServlet("/select.do")
-public class SelectServlet extends HttpServlet {
+@WebServlet("/update.do")
+public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public SelectServlet() {
+       
+    public UpdateServlet() {
+        super();
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//DB에 접속해서 EMP 테이블의 전체 사원 목록을
-		//조회 후 가져와서 views page로 이동시키는 비즈니스 로직
 		
-		//DB와 드라이버 로딩 및 데이터베이스 접속 진행
-		//싱글톤 방식으로 EmpDAO 객체 생성
 		EmpDAO dao = EmpDAO.getInstance();
 		
-		//확인
-		//System.out.println("list dao >>> " + dao);
+		int empno = Integer.parseInt(request.getParameter("num").trim());
 		
-		//emp 테이블에서 전체 사원 리스트를 조회하는 메서드 호출
-		List<EmpDTO> list = dao.allList();
+		EmpDTO dto = dao.updateEmp(empno);
 		
-		request.setAttribute("List", list);
+		List<String> jobList = dao.getJobList();
 		
-		RequestDispatcher rd = request.getRequestDispatcher("views/emp_list.jsp");
+		List<EmpDTO> mgrList = dao.getMgrList();
+		
+		List<DeptDTO> deptList = dao.getDeptList();
+		
+		request.setAttribute("jobList", jobList);
+		request.setAttribute("mgrList", mgrList);
+		request.setAttribute("deptList", deptList);
+		request.setAttribute("Modify", dto);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("views/emp_modify.jsp");
 		
 		rd.forward(request, response);
 		

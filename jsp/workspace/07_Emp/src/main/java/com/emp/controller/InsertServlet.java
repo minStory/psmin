@@ -32,7 +32,7 @@ public class InsertServlet extends HttpServlet {
 		//따라서 new EmpDAO()를 안쓴다.
 		EmpDAO dao = EmpDAO.getInstance(); //이미 EmpDAO 안에 메서드를 만들어 놨다.
 		
-		System.out.println("insert dao >>> " + dao);
+//		System.out.println("insert dao >>> " + dao);
 		
 		//EMP 테이블에서 담당업무 리스트를 조회해보자
 		List<String> jobList = dao.getJobList();
@@ -51,39 +51,6 @@ public class InsertServlet extends HttpServlet {
 		
 		rd.forward(request, response);
 		
-		
-		
-		
-		
-//		request.setCharacterEncoding("utf-8");
-//		response.setContentType("text/html;charset=utf-8");
-//		
-//		EmpDTO dto = new EmpDTO();
-//		
-//		dto.setEmpno(Integer.parseInt(request.getParameter("empno").trim()));
-//		dto.setEname(request.getParameter("ename").trim());
-//		dto.setJob(request.getParameter("job").trim());
-//		dto.setMgr(Integer.parseInt(request.getParameter("mgr").trim()));
-//		dto.setHiredate(request.getParameter("hiredate").trim());
-//		dto.setSal(Integer.parseInt(request.getParameter("sal").trim()));
-//		dto.setComm(Integer.parseInt(request.getParameter("comm").trim()));
-//		dto.setDeptno(Integer.parseInt(request.getParameter("deptno").trim()));
-//
-//		EmpDAO dao = EmpDAO.getInstance();
-//		
-//		int check = dao.insertList(dto);
-//		
-//		PrintWriter out = response.getWriter();
-//		out.println("<script>");
-//		if(check > 0) {
-//			out.println("alert('사원 추가 완료!')");
-//			out.println("location.href='select.do'");
-//		}else {
-//			out.println("alert('사원 추가 실패..')");
-//			out.println("history.back()");
-//		}
-//		out.println("</script>");
-			
 	}
 
 }

@@ -29,11 +29,9 @@ public class ContentServlet extends HttpServlet {
 		
 		EmpDAO dao = EmpDAO.getInstance();
 		
-		EmpDTO dto = new EmpDTO();
+		EmpDTO cont = dao.contentEmp(empno);
 		
-		dto = dao.showContent(empno);
-		
-		request.setAttribute("DTO", dto);
+		request.setAttribute("Content", cont);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("views/emp_content.jsp");
 		
