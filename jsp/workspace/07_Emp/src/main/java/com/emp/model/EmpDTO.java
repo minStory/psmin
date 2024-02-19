@@ -61,4 +61,3 @@ public class EmpDTO {
 		this.deptno = deptno;
 	}
 }
-

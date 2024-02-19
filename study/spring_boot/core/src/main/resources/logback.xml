@@ -6,7 +6,7 @@
         </encoder>
     </appender>
     <root level="IFNO">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="INFO" />
     </root>
 </configuration>
 

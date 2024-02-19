@@ -119,53 +119,159 @@ public class EmpDAO {
 		return list;
 	} //allList() end
 
-	public int deleteList(int empno) {
+
+	public List<String> getJobList() {
 		
-		int result = 0;
+		//리스트에 담당업무 글자를 넣기 위해 객체를 생성한다.
+		List<String> list = new ArrayList<>();
+		
+		//드라이버 로딩 및 데이터베이스와 연동 작업 진행
+		openConn();
+		
+		try {
+			//emp테이블에서 job을 중복없이 가져오면서 job을 기준으로 오름차순 정렬
+			sql = "select distinct(job) from emp order by job";
+			
+			//SQL문을 데이터베이스 전송 객체에 인자로 전달
+			ps = con.prepareStatement(sql);
+			
+			//SQL문을 DB에 전송 및 실행
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				//rs가 가져온 job을 list에 추가한다.
+				list.add(rs.getString("job"));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		
+		return list;
+	}//getJobList() end
+	
+	//EMP 테이블에서 관리자를 조회하는 메서드
+	public List<EmpDTO> getMgrList() {
+		
+		List<EmpDTO> list = new ArrayList<>();
 		
 		openConn();
 		
 		try {
-			sql = "delete from emp where empno = ?";
+			
+			//EMP 테이블에서 관리자를 중복없이 검색 후
+			//관리자번호에 해당하는 사람의 모든 정보를 가져와라
+			sql = "select * from emp where empno in (select distinct(mgr) from emp)";
+			
+			ps = con.prepareStatement(sql);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				EmpDTO dto = new EmpDTO();
+				
+				dto.setEmpno(rs.getInt("empno"));
+				dto.setEname(rs.getString("ename"));
+				dto.setJob(rs.getString("job"));
+				dto.setMgr(rs.getInt("mgr"));
+				dto.setHiredate(rs.getString("hiredate"));
+				dto.setSal(rs.getInt("sal"));
+				dto.setComm(rs.getInt("comm"));
+				dto.setDeptno(rs.getInt("deptno"));
+				
+				list.add(dto);
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return list;
+	} //getMgrList() end
+	
+	//DEPT 테이블의 전체 부서 리스트를 조회하는 메서드
+	public List<DeptDTO> getDeptList() {
+		
+		List<DeptDTO> list = new ArrayList<>();
+		
+		openConn();
+		
+		try {
+			sql = "select * from dept order by deptno";
+			
+			ps = con.prepareStatement(sql);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				//DEPT 테이블 정보를 dto(객체)로 만들어서 리턴할 예정
+				DeptDTO dto = new DeptDTO();
+				
+				dto.setDeptno(rs.getInt("deptno"));
+				dto.setDname(rs.getString("dname"));
+				dto.setLoc(rs.getString("loc"));
+				
+				list.add(dto);
+			}
+		}catch(SQLException e) {
+			
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return list;
+	}
+	
+	
+	
+	
+	
+	
+
+	public EmpDTO showContent(int empno) {
+		
+		EmpDTO dto = new EmpDTO();
+		
+		openConn();
+		
+		try {
+			sql = "select * from emp where empno = ?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, empno);
-			result = ps.executeUpdate();
+			System.out.println(empno+"ㅋㅋ");
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				dto.setEmpno(rs.getInt("empno"));
+				dto.setEname(rs.getString("ename"));
+				dto.setJob(rs.getString("job"));
+				dto.setMgr(rs.getInt("mgr"));
+				dto.setHiredate(rs.getString("hiredate"));
+				dto.setSal(rs.getInt("sal"));
+				dto.setComm(rs.getInt("comm"));
+				dto.setDeptno(rs.getInt("deptno"));
+			}
+			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			closeConn(ps, con);
+			closeConn(rs, ps, con);
 		}
 		
-		return result;
-		
+		return dto;
 	}
 
-	public int insertList(EmpDTO dto) {
-		
-		int result = 0;
-		
-		openConn();
-		
-		try {
-			sql = "insert into emp values(?, ?, ?, ?, ?, ?, ?, ?)";
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, dto.getEmpno());
-			ps.setString(2, dto.getEname());
-			ps.setString(3, dto.getJob());
-			ps.setInt(4, dto.getMgr());
-			ps.setString(5, dto.getHiredate());
-			ps.setInt(6, dto.getSal());
-			ps.setInt(7, dto.getComm());
-			ps.setInt(8, dto.getDeptno());
-			result = ps.executeUpdate();
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}finally {
-			closeConn(ps, con);
-		}
-		
-		return result;
+	public int deleteList(int empno) {
+		return 0;
 	}
-	
-	
+
+
 } //class end

@@ -221,11 +221,3 @@ public class DeptDAO {
 		return result;
 	}
 }
-
-
-
-
-
-
-
-
