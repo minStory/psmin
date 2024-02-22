@@ -35,7 +35,12 @@ public class ListServlet extends HttpServlet {
 		System.out.println("전체 게시물 갯수 >>> " + count);
 		
 		//게시물의 전체 리스트를 구하는 메서드 호출
-//		List<BoardDTO> boardList = dao.getBoardList();
+		List<BoardDTO> boardList = dao.getBoardList();
+		
+		request.setAttribute("Count", count);
+		request.setAttribute("Boards", boardList);
+		
+		request.getRequestDispatcher("board/board_list.jsp").forward(request, response);
 		
 	}
 

@@ -1,10 +1,16 @@
 package com.board.model;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 public class BoardDAO {
 	
@@ -44,19 +50,36 @@ public class BoardDAO {
 	
 	public void openConn() {
 		
-		String driver = "com.mysql.cj.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/psm";
-		String user = "root";
-		String pwd = "1234";
-		
 		try {
-			Class.forName(driver);
 			
-			con = DriverManager.getConnection(url, user, pwd);
+			//DBCP 방식
+			Context initCtx = new InitialContext();
 			
-		}catch(Exception e) {
+			Context Ctx = (Context) initCtx.lookup("java:comp/env");
+			
+			DataSource ds = (DataSource) Ctx.lookup("jdbc/mysql");
+			
+			con = ds.getConnection();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		//JDBC 방식
+//		String driver = "com.mysql.cj.jdbc.Driver";
+//		String url = "jdbc:mysql://localhost:3306/psm";
+//		String user = "root";
+//		String pwd = "1234";
+//		
+//		try {
+//			Class.forName(driver);
+//			
+//			con = DriverManager.getConnection(url, user, pwd);
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
 		
 	} //openConn() end
 	
@@ -114,14 +137,247 @@ public class BoardDAO {
 		
 		return count;
 	} //getBoardCount() end
-	
 
+	public List<BoardDTO> getBoardList() {
+		
+		List<BoardDTO> list = new ArrayList<>();
+		
+		try {
+			openConn();
+			
+			sql = "select * from board order by 1 desc";
+			
+			ps = con.prepareStatement(sql);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				BoardDTO dto = new BoardDTO();
+				
+				dto.setBoard_no(rs.getInt("board_no"));
+				dto.setBoard_writer(rs.getString("board_writer"));
+				dto.setBoard_title(rs.getString("board_title"));
+				dto.setBoard_cont(rs.getString("board_cont"));
+				dto.setBoard_pwd(rs.getString("board_pwd"));
+				dto.setBoard_hit(rs.getInt("board_hit"));
+				dto.setBoard_date(rs.getString("board_date"));
+				dto.setBoard_update(rs.getString("board_update"));
+				
+				list.add(dto);						
+			}
+			
+		}catch(SQLException e) {
+			
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return list;
+	}
+
+	public int insertBoard(BoardDTO dto) {
+		
+		int result = 0, count = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select count(*) from board";
+			
+			ps = con.prepareStatement(sql);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+			sql = "insert into board values(?, ?, ?, ?, ?, default, now(), null)";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, count + 1);
+			ps.setString(2, dto.getBoard_writer());
+			ps.setString(3, dto.getBoard_title());
+			ps.setString(4, dto.getBoard_cont());
+			ps.setString(5, dto.getBoard_pwd());
+			
+			result = ps.executeUpdate();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return result;
+	}
+
+	public BoardDTO getBoardContent(int board_no) {
+		
+		BoardDTO dto = null;
+		
+		try {
+			openConn();
+			
+			sql = "select * from board where board_no = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, board_no);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				dto = new BoardDTO();
+				
+				dto.setBoard_no(rs.getInt("board_no"));
+				dto.setBoard_writer(rs.getString("board_writer"));
+				dto.setBoard_title(rs.getString("board_title"));
+				dto.setBoard_cont(rs.getString("board_cont"));
+				dto.setBoard_pwd(rs.getString("board_pwd"));
+				dto.setBoard_hit(rs.getInt("board_hit"));
+				dto.setBoard_date(rs.getString("board_date"));
+				dto.setBoard_update(rs.getString("board_update"));
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return dto;
+		
+	}
+
+	public int deleteBoard(int board_no, String board_pwd) {
+		
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select * from board where board_no = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, board_no);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				if(board_pwd.equals(rs.getString("board_pwd"))) {
+					
+					sql = "delete from board where board_no = ?";
+					
+					ps = con.prepareStatement(sql);
+					
+					ps.setInt(1, board_no);
+					
+					result = ps.executeUpdate();
+				}
+			}	
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return result;
+	}
+
+	public int modifyBoard(BoardDTO dto) {
+		
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select * from board where board_no = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, dto.getBoard_no());
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				if(dto.getBoard_pwd().equals(rs.getString("board_pwd"))) {
+					
+					sql = "update board set board_title = ?, board_cont = ?, board_update = now() "
+							+ "where board_no = ?";
+					
+					ps = con.prepareStatement(sql);
+					
+					ps.setString(1, dto.getBoard_title());
+					ps.setString(2, dto.getBoard_cont());
+					ps.setInt(3, dto.getBoard_no());
+					
+					result = ps.executeUpdate();
+				}
+				
+			}
 	
-	
-	
-	
-	
-}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return result;
+	}
+
+	public void boardHit(int board_no) {
+		
+		try {
+			openConn();
+			
+			sql = "update board set board_hit = board_hit + 1 where board_no = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, board_no);
+			
+			ps.executeUpdate();			
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(ps, con);
+		}
+		
+	}
+
+	public void updateSequence(int board_no) {
+		
+		try {
+			openConn();
+			
+			sql = "update board set board_no = board_no - 1 where board_no > ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, board_no);
+			
+			ps.executeUpdate();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(ps, con);
+		}
+		
+	}
+
+
+
+} //class end
 
 
 

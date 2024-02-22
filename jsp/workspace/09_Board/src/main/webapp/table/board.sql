@@ -1,19 +1,19 @@
 create table board(
-	board_no INT(7) primary key,		-- ê¸€ë²ˆí˜¸
-	board_writer varchar(50) not null,	-- ì‘ì„±ì
-	board_title varchar(200) not null,	-- ê¸€ì œëª©
-	board_cont varchar(2000),			-- ê¸€ë‚´ìš©
-	board_pwd varchar(50) not null,		-- ì‘ì„±ì ë¹„ë°€ë²ˆí˜¸
-	board_hit INT(5) default 0,			-- í´ë¦­ìˆ˜
-	board_date DATE,					-- ì‘ì„±ì¼
-	board_update DATE					-- ìˆ˜ì •ì¼
+	board_no INT(7) primary key,		-- ±Û¹øÈ£
+	board_writer varchar(50) not null,	-- ÀÛ¼ºÀÚ
+	board_title varchar(200) not null,	-- ±ÛÁ¦¸ñ
+	board_cont varchar(2000),			-- ±Û³»¿ë
+	board_pwd varchar(50) not null,		-- ÀÛ¼ºÀÚ ºñ¹Ğ¹øÈ£
+	board_hit INT(5) default 0,			-- Å¬¸¯¼ö
+	board_date DATE,					-- ÀÛ¼ºÀÏ
+	board_update DATE					-- ¼öÁ¤ÀÏ
 );
 
--- board í…Œì´ë¸”ì— ê²Œì‹œê¸€ì„ ì¶”ê°€í•´ ë³´ì.
-insert into board values(1, 'í™ê¸¸ë™','ì œëª©1', 'ê¸¸ë™ì´ ì…ë‹ˆë‹¤.', '1111', default, current_date(), null);
-INSERT INTO board VALUES(2, 'ì´ìˆœì‹ ', 'ì´ì¥êµ°', 'ì¥êµ°ë‹˜ ê¸€ì…ë‹ˆë‹¤.', '2222', DEFAULT, CURRENT_DATE(), NULL);
-INSERT INTO board VALUES(3, 'ìœ ê´€ìˆœ', 'ëŒ€í•œë…ë¦½ë§Œì„¸', 'ìœ ê´€ìˆœ ì—´ì‚¬ ê¸€ì…ë‹ˆë‹¤.', '3333', DEFAULT, CURRENT_DATE(), NULL);
-INSERT INTO board VALUES(4, 'ê¹€ìœ ì‹ ', 'ì œëª©4', 'í™”ë‘ ê¹€ìœ ì‹ ì…ë‹ˆë‹¤.', '4444', DEFAULT, CURRENT_DATE(), NULL);
-INSERT INTO board VALUES(5, 'ê¹€ì—°ì•„', 'ì—°ì•„', 'ê¹€ì—°ì•„ ê¸€ì…ë‹ˆë‹¤.', '5555', DEFAULT, CURRENT_DATE(), NULL);
+-- board Å×ÀÌºí¿¡ °Ô½Ã±ÛÀ» Ãß°¡ÇØ º¸ÀÚ.
+insert into board values(1, 'È«±æµ¿','Á¦¸ñ1', '±æµ¿ÀÌ ÀÔ´Ï´Ù.', '1111', default, current_date(), null);
+INSERT INTO board VALUES(2, 'ÀÌ¼ø½Å', 'ÀÌÀå±º', 'Àå±º´Ô ±ÛÀÔ´Ï´Ù.', '2222', DEFAULT, CURRENT_DATE(), NULL);
+INSERT INTO board VALUES(3, 'À¯°ü¼ø', '´ëÇÑµ¶¸³¸¸¼¼', 'À¯°ü¼ø ¿­»ç ±ÛÀÔ´Ï´Ù.', '3333', DEFAULT, CURRENT_DATE(), NULL);
+INSERT INTO board VALUES(4, '±èÀ¯½Å', 'Á¦¸ñ4', 'È­¶û ±èÀ¯½ÅÀÔ´Ï´Ù.', '4444', DEFAULT, CURRENT_DATE(), NULL);
+INSERT INTO board VALUES(5, '±è¿¬¾Æ', '¿¬¾Æ', '±è¿¬¾Æ ±ÛÀÔ´Ï´Ù.', '5555', DEFAULT, CURRENT_DATE(), NULL);
 
 commit;
