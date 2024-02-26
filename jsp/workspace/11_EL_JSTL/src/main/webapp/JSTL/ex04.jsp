@@ -15,5 +15,23 @@
 	<c:set var="now" value="<%=new Date() %>"/>
 	
 	<fmt:formatDate value="${now }" type="date" dateStyle="full"/><br>
+	<fmt:formatDate value="${now }" type="date" dateStyle="long"/><br>
+	<fmt:formatDate value="${now }" type="date" dateStyle="medium"/><br>
+	<fmt:formatDate value="${now }" type="date" dateStyle="short"/><br>
+	<fmt:formatDate value="${now }" type="time" timeStyle="full"/><br>
+	<fmt:formatDate value="${now }" type="time" timeStyle="long"/><br>
+	<fmt:formatDate value="${now }" type="time" timeStyle="medium"/><br>
+	<fmt:formatDate value="${now }" type="time" timeStyle="short"/><br>
+	<fmt:formatDate value="${now }" type="both" dateStyle="full" timeStyle="full"/><br>
+	<fmt:formatDate value="${now }" type="both" dateStyle="full" timeStyle="medium"/><br>	
+	<fmt:formatDate value="${now }" pattern="MM-dd-yyyy hh:mm:ss"/><br>
+	
+	한국 현재 시간:
+	<fmt:formatDate value="${now }" type="both" dateStyle="full" timeStyle="full"/><br>
+	
+	<fmt:timeZone value="America/LA">
+		미국 LA 현재 시간: <fmt:formatDate value="${now }" type="both" dateStyle="full" timeStyle="full" />
+	</fmt:timeZone>
+	
 </body>
 </html>
