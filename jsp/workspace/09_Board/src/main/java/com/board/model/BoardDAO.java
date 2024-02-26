@@ -138,6 +138,7 @@ public class BoardDAO {
 		return count;
 	} //getBoardCount() end
 
+	// 게시판의 모든 정보를 가져오는 메서드
 	public List<BoardDTO> getBoardList() {
 		
 		List<BoardDTO> list = new ArrayList<>();
@@ -145,7 +146,7 @@ public class BoardDAO {
 		try {
 			openConn();
 			
-			sql = "select * from board order by 1 desc";
+			sql = "select * from board order by board_no desc";
 			
 			ps = con.prepareStatement(sql);
 			
@@ -176,6 +177,7 @@ public class BoardDAO {
 		return list;
 	}
 
+	// 게시글을 추가하는 메서드
 	public int insertBoard(BoardDTO dto) {
 		
 		int result = 0, count = 0;
@@ -214,6 +216,7 @@ public class BoardDAO {
 		return result;
 	}
 
+	// 한 게시글의 모든 정보를 가져오는 메서드
 	public BoardDTO getBoardContent(int board_no) {
 		
 		BoardDTO dto = null;
@@ -253,6 +256,7 @@ public class BoardDAO {
 		
 	}
 
+	// 비밀번호가 일치할 때 게시글을 삭제하는 메서드
 	public int deleteBoard(int board_no, String board_pwd) {
 		
 		int result = 0;
@@ -291,6 +295,7 @@ public class BoardDAO {
 		return result;
 	}
 
+	// 비밀번호가 일치할 때 게시글을 수정하는 메서드
 	public int modifyBoard(BoardDTO dto) {
 		
 		int result = 0;
@@ -333,6 +338,7 @@ public class BoardDAO {
 		return result;
 	}
 
+	// 게시글 내용을 볼 때 마다 조회수 올려주는 메서드
 	public void boardHit(int board_no) {
 		
 		try {
@@ -354,6 +360,7 @@ public class BoardDAO {
 		
 	}
 
+	// 중간에 있는 게시글 1개 삭제 시 더 큰 번호들을 1씩 당겨주는 메서드
 	public void updateSequence(int board_no) {
 		
 		try {
@@ -372,10 +379,77 @@ public class BoardDAO {
 		}finally {
 			closeConn(ps, con);
 		}
-		
 	}
-
-
+	
+	//제목, 내용, 제목+내용, 작성자 형식으로 검색하는 메서드
+	public List<BoardDTO> searchList(String keyword, String field){
+		
+		List<BoardDTO> list = new ArrayList<>();
+		
+		try {
+			openConn();
+			
+			if(field.equals("title")) {
+			
+				sql = "select * from board where board_title like ? order by board_no desc";
+				
+				ps = con.prepareStatement(sql);
+				
+				ps.setString(1, "%" + keyword + "%");
+			
+			} else if(field.equals("cont")) {
+				
+				sql = "select * from board where board_cont like ? order by board_no desc";
+				
+				ps = con.prepareStatement(sql);
+				
+				ps.setString(1, "%" + keyword + "%");
+				
+			}else if(field.equals("writer")) {
+				 
+				sql = "select * from board where board_writer like ? order by board_no desc";
+				
+				ps = con.prepareStatement(sql);
+				
+				ps.setString(1, "%" + keyword + "%");
+				
+			}else if(field.equals("title_cont")) {
+				
+				sql = "select * from board where board_cont like ? or board_title like ? order by board_no desc";
+				
+				ps = con.prepareStatement(sql);
+				
+				ps.setString(1, "%" + keyword + "%");
+				ps.setString(2, "%" + keyword + "%");
+				
+			}
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				BoardDTO dto = new BoardDTO();
+				
+				dto.setBoard_no(rs.getInt("board_no"));
+				dto.setBoard_writer(rs.getString("board_writer"));
+				dto.setBoard_title(rs.getString("board_title"));
+				dto.setBoard_cont(rs.getString("board_cont"));
+				dto.setBoard_pwd(rs.getString("board_pwd"));
+				dto.setBoard_hit(rs.getInt("board_hit"));
+				dto.setBoard_date(rs.getString("board_date"));
+				dto.setBoard_update(rs.getString("board_update"));
+				
+				list.add(dto);
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return list;
+	}
 
 } //class end
 

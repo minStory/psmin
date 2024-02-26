@@ -1,0 +1,69 @@
+# JSTL(JSP Standard Tag Library)
+
+  - JSP 페이지에서 스크립트릿(자바 코드)과 HTML 코드가
+    뒤 섞이게 되는 현상이 발생을 함.
+    
+  - 이렇게 뒤 섞인 코드는 알아보기가 쉽지 않게 되는 단점이 발생함.
+    따라서 가독성이 낮아짐.
+    
+  - JSP 페이지에서 스크립트릿에 들어가는 자바 코드 중에 논리적인
+    판단, 반복 처리, 포멧(형식) 처리 등을 HTML 태그처럼 사용할 수
+    있도록 표준으로 만들어서 정의한 것이 JSTL 라이브러리임.
+    
+  - JSTL을 사용하기 위해서는 라이브러리 파일이 필요함.
+    * jstl.jar
+    * standard.jar
+    
+    
+    
+    
+    SBS아카데미컴퓨터아트학원 수신자 모두 8:32 PM
+기본적인 JSTL 태그 ==> 출력을 할 때는 EL 언어를 사용함.
+		
+		1. 변수 선언 태그(set)
+		   ==> 변수를 생성하거나, 기존 변수의 값을 덮어쓸 때 사용하는 태그.
+		       형식) <c:set var="변수명" value="값"> </c:set>
+		            예) <c:set var="su" value="20" />
+		                ==> int su = 20;
+		            
+		               <c:set var="str" value="Hello" />
+		                ==> String str = "Hello";
+	    
+	    2. 출력 태그(out)
+	       형식) <c:out value="변수명" />
+	            예) <c:out value="str" />
+	            
+	    3. 삭제 태그(remove)
+	       ==> 변수에 저장된 값을 제거할 때 사용하는 태그.
+	           형식) <c:remove var="변수명" />
+	                예) <c:remove var="str" />
+4. 조건 처리 태그(if)
+	       ==> 조건식이 참인 경우 실행하는 태그.
+	       ==> 주의) else문은 없음.
+	       형식) <c:if test="조건식" var="변수명" />
+	       
+	    5. 다중 처리 태그(choose)
+	       ==> 여러 가지 조건에 따라 다른 작업을 해야 할
+	           필요가 있는 경우에 사용하는 태그.
+	       ==> 자바에서의 switch~case문과 유사함.
+	       형식)
+	       		<c:choose>
+	       		   <c:when test="조건식1">
+	       				조건식1이 참인 경우 실행 문장 </c:when>
+	       		   <c:when test="조건식2">
+	       				조건식2이 참인 경우 실행 문장 </c:when>
+	       		   <c:when test="조건식3">
+	       				조건식3이 참인 경우 실행 문장 </c:when>
+	       		   <c:otherwise>
+	       		        상기의 조건식 이외의 경우 실행 문장 </c:otherwise>
+	       		</c:choose>
+	       		
+	    6. 반복 태그(forEach)
+	       ==> 반복적인 작업을 해야 하는 경우에 사용하는 태그.
+	       ==> 자바에서의 for문과 유사함.
+	       형식) <c:forEach begin="시작값" end="마지막값"
+	       					step="증감값" var="변수명">
+	       			반복 실행 문장
+	       	    </c:forEach>
+	       	    
+	       형식) <c:forEach items="객체명" var="변수명">

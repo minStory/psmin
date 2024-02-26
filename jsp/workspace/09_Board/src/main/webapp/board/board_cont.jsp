@@ -104,7 +104,7 @@
 			onclick="if(confirm('정말로 게시글을 삭제하시겠습니까?')){
 				location.href='board/board_delete.jsp?board_no=<%=board.getBoard_no()%>'
 			}">
-		<input type="button" value="세기글 목록"
+		<input type="button" value="게시글 목록"
 			onclick="location.href='list.go'">
 		
 	</div>

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<%
 		int res = 45 + 171;
 	
@@ -14,18 +15,16 @@
 		
 		request.setAttribute("R", 1000);
 		
-		session.setAttribute("s", 10000);
+		session.setAttribute("S", 10000);
 		
-		application.setAttribute("A", 10000);
+		application.setAttribute("A", 100000);
 		
 		//request.getRequestDispatcher("Ex06.jsp").forward(request, response);
-		
-		
 	
 	%>
 	
 	<h3>
-		결과 >>> <%=res %> <br/>
+		결과 >>> <%=res %> <br>
 		
 		결과(EL) >>> ${Res }
 	</h3>
