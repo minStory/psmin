@@ -12,7 +12,7 @@
 			<h2>MEMBER 테이블 메인 페이지 </h2>
 		<hr width="50%" color="blue">
 		
-	<a href="<%=request.getContextPath() %>/select.do">[전체 회원 목록]</a>
+	<a href="${pageContext.request.contextPath }/select.do">[전체 회원 목록]</a>
 	</div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.member.action;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;

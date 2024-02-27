@@ -9,7 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.member.action.Action;
+import com.member.action.MemberContentAction;
+import com.member.action.MemberDeleteAction;
+import com.member.action.MemberDeleteOkAction;
+import com.member.action.MemberInsertAction;
+import com.member.action.MemberInsertOkAction;
 import com.member.action.MemberListAction;
+import com.member.action.MemberModifyAction;
+import com.member.action.MemberModifyOkAction;
 
 public class FrontController extends HttpServlet {
 	
@@ -41,14 +48,30 @@ public class FrontController extends HttpServlet {
 		
 		if(command.equals("select.do")) {
 			action = new MemberListAction();	
+		} else if(command.equals("insert.do")) {
+			action = new MemberInsertAction();
+		} else if(command.equals("insert_ok.do")) {
+			action = new MemberInsertOkAction();
+		} else if(command.equals("content.do")) {
+			action = new MemberContentAction();
+		} else if(command.equals("modify.do")) {
+			action = new MemberModifyAction();
+		} else if(command.equals("modify_ok.do")) {
+			action = new MemberModifyOkAction();
+		} else if(command.equals("delete.do")) {
+			action = new MemberDeleteAction();
+		} else if(command.equals("delete_ok.do")) {
+			action = new MemberDeleteOkAction();
 		}
+					
+		if(action.execute(request, response) != null) {
+			
+			String viewPage = action.execute(request, response);
+			
+			RequestDispatcher rd = request.getRequestDispatcher(viewPage);
 		
-		String viewPage = action.execute(request, response);
-		
-		RequestDispatcher rd = request.getRequestDispatcher(viewPage);
-		
-		rd.forward(request, response);
-		
+			rd.forward(request, response);
+		}
 		
 	}
 

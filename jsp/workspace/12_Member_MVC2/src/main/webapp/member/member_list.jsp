@@ -6,6 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+table, th, td{
+	text-align: center;
+	border: 1px solid black;
+	width: 500px;
+}
+</style>
 </head>
 <body>
 	<div align="center">
@@ -13,7 +20,7 @@
 			<h3>MEMBER 테이블 전체 회원 목록 페이지</h3>
 		<hr width="50%" color="red">
 		
-		<form method="post" action="<%=request.getContextPath() %>/search.do">
+		<form method="post" action="${pageContext.request.contextPath }/search.do">
 			<select name="field">
 				<option value="id">아이디</option>
 				<option value="name">이름</option>
@@ -26,7 +33,7 @@
 		</form>
 		<br>
 		
-		<table border="1" width="500">
+		<table>
 			<tr>
 				<th>회원번호</th>
 				<th>회원명</th>
@@ -53,8 +60,8 @@
 							<c:out value="${dto.getRegdate().substring(0, 10) }" />
 						</td>
 						<td>
-							<input type="button" value="상세내역"
-								onclick="location.href='content.do'">
+							<input type="button" value="상세정보"
+								onclick="location.href='content.do?num=${dto.getNum()}'">
 						</td>
 					</tr>
 				</c:forEach>
@@ -62,7 +69,7 @@
 			
 			<c:if test="${empty list }">
 				<tr>
-					<td colspan="5" align="center">
+					<td colspan="5">
 						<h3>전체 회원 리스트가 없습니다..</h3>
 					</td>
 				</tr>

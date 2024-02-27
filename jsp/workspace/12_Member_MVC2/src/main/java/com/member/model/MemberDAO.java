@@ -122,10 +122,207 @@ public class MemberDAO {
 		
 		return list;
 	}
+	
+	public int memberInsert(MemberDTO dto) {
+		
+		int result = 0, count = 0;
+		
+		try {
+			openConn();
 			
+			sql = "select max(num) from member";
+			
+			ps = con.prepareStatement(sql);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+			sql = "insert into member values(?, ?, ?, ?, ?, ?, ?, ?, now())";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, count + 1);
+			ps.setString(2, dto.getMemid());
+			ps.setString(3, dto.getMemname());
+			ps.setString(4, dto.getPwd());
+			ps.setInt(5, dto.getAge());
+			ps.setInt(6, dto.getMileage());
+			ps.setString(7, dto.getJob());
+			ps.setString(8, dto.getAddr());
+			
+			result = ps.executeUpdate();			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return result;
+	}
 	
+	public MemberDTO getMemberContent(int num) {
+		
+		MemberDTO dto = null;
+		
+		try {
+			openConn();
+			
+			sql = "select * from member where num = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, num);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				dto = new MemberDTO();
+				
+				dto.setNum(rs.getInt("num"));
+				dto.setMemid(rs.getString("memid"));
+				dto.setMemname(rs.getString("memname"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setAge(rs.getInt("age"));
+				dto.setMileage(rs.getInt("mileage"));
+				dto.setJob(rs.getString("job"));
+				dto.setAddr(rs.getString("addr"));
+				dto.setRegdate(rs.getString("regdate"));
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return dto;
+	}
+
+	public int memberModify(MemberDTO dto) {
+		
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select pwd from member where num = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, dto.getNum());
+			
+			rs = ps.executeQuery();
+			
+			String temp = null;
+			
+			if(rs.next()) {
+				temp = rs.getString(1);
+			}
+			
+			System.out.println("설정된 비번 >>> " + temp);
+			
+			if(temp.equals(dto.getPwd())) {
+				
+				sql = "update member set memname = ?, age = ?, job = ?, addr = ? where num = ?";
+				
+				ps = con.prepareStatement(sql);
+				
+				ps.setString(1, dto.getMemname());
+				ps.setInt(2, dto.getAge());
+				ps.setString(3, dto.getJob());
+				ps.setString(4, dto.getAddr());
+				ps.setInt(5, dto.getNum());
+				
+				result = ps.executeUpdate();
+			}else {
+				
+				result = -1;
+			}
+			
+		}catch(Exception e) {
+			
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		return result;
+	}
 	
+	public int memberDelete(int num, String pwd) {
+		
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select pwd from member where num = ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, num);
+			
+			rs = ps.executeQuery();
+			
+			String temp = null;
+			
+			if(rs.next()) {
+				temp = rs.getString(1); 
+			}
+			
+			System.out.println("설정된 비번 >>> " + temp);
+			
+			if(temp.equals(pwd)) {
+				
+				sql = "delete from member where num = ?";
+				
+				ps = con.prepareStatement(sql);
+				
+				ps.setInt(1, num);
+				
+				result = ps.executeUpdate();
+				
+			}else {
+				
+				result = -1;
+			}
+					
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return result;
+		
+	}
 	
+	public void updateSequence(int num) {
+		
+		try {
+			openConn();
+			
+			sql = "update member set num = num - 1 where num > ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, num);
+			
+			ps.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(ps, con);
+		}
+		
+	}
 	
 }
 
