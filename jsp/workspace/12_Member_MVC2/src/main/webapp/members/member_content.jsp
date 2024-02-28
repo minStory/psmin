@@ -9,16 +9,16 @@
 <style>
 table, th, td{
 	text-align: center;
-	border: 1px solid black;
+	border: 1px solid darkgray;
 	width: 400px;
 }
 </style>
 </head>
 <body>
 	<div align="center">
-		<hr width="50%" color="red">
+		<hr width="50%" color="navy">
 			<h3>MEMBER 회원 상세정보 조회 페이지</h3>
-		<hr width="50%" color="red">
+		<hr width="50%" color="navy">
 		<br>
 		
 		<table>
@@ -90,22 +90,17 @@ table, th, td{
 				</tr>
 
 			</c:if>
-			
-			<tr>
-				<td colspan="2">
-					<input type="button" value="회원수정"
-						onclick="location.href='modify.do?num=${member.getNum() }'">&nbsp;&nbsp;&nbsp;
-					<input type="button" value="회원목록"
-						onclick="location.href='select.do'">&nbsp;&nbsp;&nbsp;
-					<input type="button" value="회원삭제"
-						onclick="if(confirm('정말로 게시글을 삭제하시겠습니까?')){
-							location.href='delete.do?num=${member.getNum() }'
-							}">
-				</td>
-			</tr>
-		
 		</table>
+		<br>
 		
+		<input type="button" value="회원수정"
+			onclick="location.href='modify.do?num=${member.getNum() }'">&nbsp;&nbsp;&nbsp;
+		<input type="button" value="뒤로가기"
+			onclick="history.back()">&nbsp;&nbsp;&nbsp;
+		<input type="button" value="회원삭제"
+			onclick="if(confirm('정말로 게시글을 삭제하시겠습니까?')){
+				location.href='delete.do?num=${member.getNum() }'
+				}">
 	</div>
 </body>
 </html>

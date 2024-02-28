@@ -27,7 +27,7 @@ public class MemberListAction implements Action {
 		
 		request.setAttribute("List", list);
 		
-		return "member/member_list.jsp";
+		return "members/member_list.jsp";
 	}
 
 }

@@ -139,7 +139,7 @@ public class MemberDAO {
 			if(rs.next()) {
 				count = rs.getInt(1);
 			}
-			
+
 			sql = "insert into member values(?, ?, ?, ?, ?, ?, ?, ?, now())";
 			
 			ps = con.prepareStatement(sql);
@@ -153,8 +153,8 @@ public class MemberDAO {
 			ps.setString(7, dto.getJob());
 			ps.setString(8, dto.getAddr());
 			
-			result = ps.executeUpdate();			
-			
+			result = ps.executeUpdate();
+
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {

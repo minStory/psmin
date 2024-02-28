@@ -10,6 +10,6 @@ public class MemberInsertAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "member/member_insert.jsp";
+		return "members/member_insert.jsp";
 	}
 }

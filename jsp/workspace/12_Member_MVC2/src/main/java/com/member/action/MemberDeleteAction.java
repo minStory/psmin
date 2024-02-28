@@ -17,7 +17,7 @@ public class MemberDeleteAction implements Action {
 		
 		request.setAttribute("Num", num);
 		
-		return "member/member_delete.jsp";
+		return "members/member_delete.jsp";
 	}
 
 }

@@ -23,7 +23,7 @@ public class MemberSearchAction implements Action {
 		
 		request.setAttribute("List", list);
 		
-		return "member/member_search.jsp";
+		return "members/member_search.jsp";
 	}
 
 }

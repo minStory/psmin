@@ -9,42 +9,35 @@
 <style>
 table, th, td{
 	text-align: center;
-	border: 1px solid black;
+	border: 1px solid darkgray;
 	width: 400px;
 }
 </style>
 </head>
 <body>
 	<div align="center">
-		<hr width="50%" color="marmonn">
+		<hr width="50%" color="navy">
 			<h3>MEMBER 테이블 회원 삭제 페이지</h3>
-		<hr width="50%" color="marmonn">
+		<hr width="50%" color="navy">
 		<br>
 		
 		<form method="post" action="${pageContext.request.contextPath }/delete_ok.do">
 			<input type="hidden" name="num" value="${Num }">
 			<table>
 				<tr>
-					<th>삭제할 게시글<br>비밀번호</th>
+					<th>비밀번호 입력</th>
 					<td>
 						<input type="password" name="pwd">
 					</td>
-				</tr>
-				
-				<tr>
-					<td colspan="2">
-						<input type="submit" value="글삭제">&nbsp;&nbsp;&nbsp;
-						<input type="reset" value="다시작성">&nbsp;&nbsp;&nbsp;
-						<input type="button" value="뒤로가기"
-							onclick="history.back()">
-					</td>
-				</tr>
-			
+				</tr>		
 			</table>
-		
-		
+			<br>
+			
+			<input type="submit" value="회원삭제">&nbsp;&nbsp;&nbsp;
+			<input type="reset" value="다시작성">&nbsp;&nbsp;&nbsp;
+			<input type="button" value="뒤로가기"
+				onclick="history.back()">
 		</form>
-		
 	</div>
 </body>
 </html>

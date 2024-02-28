@@ -21,7 +21,7 @@ public class MemberContentAction implements Action {
 		
 		request.setAttribute("Content", dto);
 		
-		return "member/member_content.jsp";
+		return "members/member_content.jsp";
 	}
 
 }

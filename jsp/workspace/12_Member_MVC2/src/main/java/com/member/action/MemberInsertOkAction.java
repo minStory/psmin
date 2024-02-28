@@ -17,7 +17,7 @@ public class MemberInsertOkAction implements Action {
 		String id = request.getParameter("id").trim();
 		String name = request.getParameter("name").trim();
 		String pwd = request.getParameter("pwd").trim();
-		int age = Integer.parseInt(request.getParameter("age").trim());
+		int	age = Integer.parseInt(request.getParameter("age").trim());
 		int mileage = Integer.parseInt(request.getParameter("mileage").trim());
 		String job = request.getParameter("job").trim();
 		String addr = request.getParameter("addr").trim();
@@ -29,7 +29,7 @@ public class MemberInsertOkAction implements Action {
 		dto.setAge(age);
 		dto.setMileage(mileage);
 		dto.setJob(job);
-		dto.setAddr(addr);		
+		dto.setAddr(addr);
 		
 		MemberDAO dao = MemberDAO.getInstance();
 		
@@ -42,7 +42,7 @@ public class MemberInsertOkAction implements Action {
 			out.println("location.href='select.do'");
 		}else {
 			out.println("alert('회원 추가 실패...')");
-			out.println("history.back()");
+			out.println("history.back()");			
 		}
 		out.println("</script>");
 		

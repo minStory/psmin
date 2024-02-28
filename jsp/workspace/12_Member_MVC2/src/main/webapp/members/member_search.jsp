@@ -9,16 +9,16 @@
 <style>
 table, th, td{
 	text-align: center;
-	border: 1px solid black;
+	border: 1px solid darkgray;
 	width: 500px;
 }
 </style>
 </head>
 <body>
 	<div align="center">
-		<hr width="50%" color="red">
-			<h3>MEMBER 테이블 전체 회원 조회 페이지</h3>
-		<hr width="50%" color="red">
+		<hr width="50%" color="navy">
+			<h3>MEMBER 테이블 회원 검색 목록 페이지</h3>
+		<hr width="50%" color="navy">
 		<br>
 		
 		<form method="post" action="${pageContext.request.contextPath }/search.do">
@@ -80,15 +80,9 @@ table, th, td{
 		
 		<input type="button" value="회원등록"
 			onclick="location.href='insert.do'">&nbsp;&nbsp;&nbsp;
-		<input type="button" value="메인페이지 이동"
-			onclick="location.href='main.jsp'">
+		<input type="button" value="전체목록 이동"
+			onclick="location.href='select.do'">
 	</div>
+
 </body>
 </html>
-
-
-
-
-
-
-
