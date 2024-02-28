@@ -16,7 +16,7 @@ table, th, td{
 <body>
 	<div align="center">
 		<hr width="50%" color="marmonn">
-			<h3>MEMBER 테이블 회원 추가 폼 페이지</h3>
+			<h3>MEMBER 테이블 회원 추가 페이지</h3>
 		<hr width="50%" color="marmonn">
 		<br>
 		
@@ -74,7 +74,9 @@ table, th, td{
 				<tr>
 					<td colspan="2" align="center">
 						<input type="submit" value="회원추가">&nbsp;&nbsp;&nbsp;
-						<input type="reset" value="다시작성">
+						<input type="reset" value="다시작성">&nbsp;&nbsp;&nbsp;
+						<input type="button" value="뒤로가기"
+							onclick="history.back()">
 					</td>
 				</tr>
 				

@@ -320,9 +320,65 @@ public class MemberDAO {
 			e.printStackTrace();
 		}finally {
 			closeConn(ps, con);
+		}	
+	}
+	
+	public List<MemberDTO> memberSearch(String field, String keyword) {
+		
+		List<MemberDTO> list = new ArrayList<>();
+		
+		try {
+			openConn();
+			
+			if(field.equals("id")) {
+				sql = "select * from member where memid like ? order by memid desc";
+				ps = con.prepareStatement(sql);
+				ps.setString(1, "%" + keyword + "%");
+			} else if(field.equals("name")) {
+				sql = "select * from member where memname like ? order by memid desc";
+				ps = con.prepareStatement(sql);
+				ps.setString(1, "%" + keyword + "%");
+			} else if(field.equals("job")) {
+				sql = "select * from member where job like ? order by memid desc";
+				ps = con.prepareStatement(sql);
+				ps.setString(1, "%" + keyword + "%");
+			} else if(field.equals("addr")) {
+				sql = "select * from member where addr like ? order by memid desc";
+				ps = con.prepareStatement(sql);
+				ps.setString(1, "%" + keyword + "%");
+			}
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				MemberDTO dto = new MemberDTO();
+				
+				dto.setNum(rs.getInt("num"));
+				dto.setMemid(rs.getString("memid"));
+				dto.setMemname(rs.getString("memname"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setAge(rs.getInt("age"));
+				dto.setMileage(rs.getInt("mileage"));
+				dto.setJob(rs.getString("job"));
+				dto.setAddr(rs.getString("addr"));
+				dto.setRegdate(rs.getString("regdate"));
+				
+				list.add(dto);
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
 		}
 		
+		return list;
+		
 	}
+
+	
 	
 }
 

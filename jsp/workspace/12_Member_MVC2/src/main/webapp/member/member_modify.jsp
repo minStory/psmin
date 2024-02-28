@@ -21,7 +21,7 @@ input{
 <body>
 	<div align="center">
 		<hr width="50%" color="red">
-			<h3>MEMBER 회원정보 수정 페이지</h3>
+			<h3>MEMBER 테이블 회원정보 수정 페이지</h3>
 		<hr width="50%" color="red">
 		<br>
 		
@@ -97,8 +97,10 @@ input{
 				
 				<tr>
 					<td colspan="2">
-						<input type="submit" value="회원수정">
-						<input type="reset" value="다시작성">
+						<input type="submit" value="회원수정">&nbsp;&nbsp;&nbsp;
+						<input type="reset" value="다시작성">&nbsp;&nbsp;&nbsp;
+						<input type="button" value="뒤로가기"
+							onclick="history.back()">
 					</td>
 				</tr>
 			

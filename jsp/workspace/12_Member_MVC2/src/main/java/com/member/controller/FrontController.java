@@ -17,6 +17,7 @@ import com.member.action.MemberInsertOkAction;
 import com.member.action.MemberListAction;
 import com.member.action.MemberModifyAction;
 import com.member.action.MemberModifyOkAction;
+import com.member.action.MemberSearchAction;
 
 public class FrontController extends HttpServlet {
 	
@@ -62,6 +63,8 @@ public class FrontController extends HttpServlet {
 			action = new MemberDeleteAction();
 		} else if(command.equals("delete_ok.do")) {
 			action = new MemberDeleteOkAction();
+		} else if(command.equals("search.do")){
+			action = new MemberSearchAction();
 		}
 					
 		if(action.execute(request, response) != null) {

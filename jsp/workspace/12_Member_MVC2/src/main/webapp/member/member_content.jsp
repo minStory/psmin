@@ -19,6 +19,7 @@ table, th, td{
 		<hr width="50%" color="red">
 			<h3>MEMBER 회원 상세정보 조회 페이지</h3>
 		<hr width="50%" color="red">
+		<br>
 		
 		<table>
 			<c:set var="member" value="${Content }" />
