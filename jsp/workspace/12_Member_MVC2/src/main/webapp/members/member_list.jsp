@@ -38,9 +38,9 @@ table, th, td{
 			<tr>
 				<th>회원번호</th>
 				<th>회원명</th>
-				<th>회원직업</th>
+				<th>직업</th>
 				<th>회원가입일</th>
-				<th>상세내역</th>
+				<th>상세정보</th>
 			</tr>
 			
 			<c:set var="list" value="${List }" />
