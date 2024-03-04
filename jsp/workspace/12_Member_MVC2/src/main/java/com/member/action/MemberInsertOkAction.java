@@ -39,7 +39,7 @@ public class MemberInsertOkAction implements Action {
 		out.println("<script>");
 		if(check > 0) {
 			out.println("alert('회원 추가 성공!')");
-			out.println("location.href='select.do'");
+			out.println("location.href='select'");
 		}else {
 			out.println("alert('회원 추가 실패...')");
 			out.println("history.back()");			

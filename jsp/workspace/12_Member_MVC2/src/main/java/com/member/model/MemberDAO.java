@@ -123,6 +123,56 @@ public class MemberDAO {
 		return list;
 	}
 	
+
+	public List<MemberDTO> getMemberList(int page, int rowSize) {
+		
+		List<MemberDTO> list = new ArrayList<>();
+		
+		// 해당 페이지에서 시작 번호
+		int startNo = (page * rowSize) - (rowSize - 1);
+		
+		// 해당 페이지에서 끝 번호
+		int endNo = (page * rowSize);
+		
+		try {
+			
+			openConn();
+			
+			sql = "select * from (select (@rnum:=@rnum+1) as rnum, m.* member as m, (select @rnum:=0) as dummy order by num) as subquery where rnum >= ? and rnum <= ?";
+			
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, startNo);
+			ps.setInt(2, endNo);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				MemberDTO dto = new MemberDTO();
+				
+				dto.setNum(rs.getInt("num"));
+				dto.setMemid(rs.getString("memid"));
+				dto.setMemname(rs.getString("memname"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setAge(rs.getInt("age"));
+				dto.setMileage(rs.getInt("mileage"));
+				dto.setJob(rs.getString("job"));
+				dto.setAddr(rs.getString("addr"));
+				dto.setRegdate(rs.getString("regdate"));
+				
+				list.add(dto);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, ps, con);
+		}
+		
+		return null;
+	}
+	
 	public int memberInsert(MemberDTO dto) {
 		
 		int result = 0, count = 0;
@@ -377,6 +427,30 @@ public class MemberDAO {
 		return list;
 		
 	}
+	
+	
+	public int getMemberCount() {
+		
+		int result = 0;
+		
+		try {
+			openConn();
+			
+			sql = "select count(*) from member";
+			
+			ps = con.prepareStatement(sql);
+			
+			result = ps.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			closeConn(ps, con);
+		}
+		
+		return result;
+	}
+
 
 	
 	

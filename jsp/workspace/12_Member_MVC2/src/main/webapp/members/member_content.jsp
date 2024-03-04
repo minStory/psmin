@@ -94,12 +94,12 @@ table, th, td{
 		<br>
 		
 		<input type="button" value="회원수정"
-			onclick="location.href='modify.do?num=${member.getNum() }'">&nbsp;&nbsp;&nbsp;
+			onclick="location.href='modify?num=${member.getNum() }'">&nbsp;&nbsp;&nbsp;
 		<input type="button" value="뒤로가기"
 			onclick="history.back()">&nbsp;&nbsp;&nbsp;
 		<input type="button" value="회원삭제"
 			onclick="if(confirm('정말로 게시글을 삭제하시겠습니까?')){
-				location.href='delete.do?num=${member.getNum() }'
+				location.href='delete?num=${member.getNum() }'
 				}">
 	</div>
 </body>

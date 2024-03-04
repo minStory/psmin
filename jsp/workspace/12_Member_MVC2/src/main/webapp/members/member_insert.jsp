@@ -59,7 +59,7 @@ table, th, td{
 		<hr width="50%" color="navy">
 		<br>
 		
-		<form method="post" action="${pageContext.request.contextPath }/insert_ok.do"
+		<form method="post" action="${pageContext.request.contextPath }/insert_ok"
 			name="frm" onsubmit="return check()">
 			<table>
 				<tr>

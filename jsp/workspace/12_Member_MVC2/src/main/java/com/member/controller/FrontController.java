@@ -47,23 +47,23 @@ public class FrontController extends HttpServlet {
 		//Action 인터페이스를 구현한 객체를 만들기 위해 일단 선언
 		Action action = null;
 		
-		if(command.equals("select.do")) {
+		if(command.equals("select")) {
 			action = new MemberListAction();	
-		} else if(command.equals("insert.do")) {
+		} else if(command.equals("insert")) {
 			action = new MemberInsertAction();
-		} else if(command.equals("insert_ok.do")) {
+		} else if(command.equals("insert_ok")) {
 			action = new MemberInsertOkAction();
-		} else if(command.equals("content.do")) {
+		} else if(command.equals("content")) {
 			action = new MemberContentAction();
-		} else if(command.equals("modify.do")) {
+		} else if(command.equals("modify")) {
 			action = new MemberModifyAction();
-		} else if(command.equals("modify_ok.do")) {
+		} else if(command.equals("modify_ok")) {
 			action = new MemberModifyOkAction();
-		} else if(command.equals("delete.do")) {
+		} else if(command.equals("delete")) {
 			action = new MemberDeleteAction();
-		} else if(command.equals("delete_ok.do")) {
+		} else if(command.equals("delete_ok")) {
 			action = new MemberDeleteOkAction();
-		} else if(command.equals("search.do")){
+		} else if(command.equals("search")){
 			action = new MemberSearchAction();
 		}
 					

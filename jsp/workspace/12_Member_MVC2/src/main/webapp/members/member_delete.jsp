@@ -21,7 +21,7 @@ table, th, td{
 		<hr width="50%" color="navy">
 		<br>
 		
-		<form method="post" action="${pageContext.request.contextPath }/delete_ok.do">
+		<form method="post" action="${pageContext.request.contextPath }/delete_ok">
 			<input type="hidden" name="num" value="${Num }">
 			<table>
 				<tr>

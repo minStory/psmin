@@ -21,7 +21,7 @@ table, th, td{
 		<hr width="50%" color="navy">
 		<br>
 		
-		<form method="post" action="${pageContext.request.contextPath }/search.do">
+		<form method="post" action="${pageContext.request.contextPath }/search">
 			<select name="field">
 				<option value="id">아이디</option>
 				<option value="name">이름</option>
@@ -62,7 +62,7 @@ table, th, td{
 						</td>
 						<td>
 							<input type="button" value="상세정보"
-								onclick="location.href='content.do?num=${dto.getNum()}'">
+								onclick="location.href='content?num=${dto.getNum()}'">
 						</td>
 					</tr>
 				</c:forEach>

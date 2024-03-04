@@ -12,7 +12,17 @@ table, th, td{
 	border: 1px solid darkgray;
 	width: 500px;
 }
+
+.pagination {
+	justify-content: center;
+}
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div align="center">
@@ -21,7 +31,7 @@ table, th, td{
 		<hr width="50%" color="navy">
 		<br>
 		
-		<form method="post" action="${pageContext.request.contextPath }/search.do">
+		<form method="post" action="${pageContext.request.contextPath }/search">
 			<select name="field">
 				<option value="id">아이디</option>
 				<option value="name">이름</option>
@@ -62,7 +72,7 @@ table, th, td{
 						</td>
 						<td>
 							<input type="button" value="상세정보"
-								onclick="location.href='content.do?num=${dto.getNum()}'">
+								onclick="location.href='content?num=${dto.getNum()}'">
 						</td>
 					</tr>
 				</c:forEach>
@@ -78,8 +88,118 @@ table, th, td{
 		</table>
 		<br>
 		
+		<%-- Modal 창 만드는 버튼 --%>
+	   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+		  게시글 작성
+	   </button>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">BOARD 테이블 게시글 등록 폼 페이지</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		         <form method="post"
+		            action="<%=request.getContextPath() %>/member_insert_ok">
+		            
+		            <table border="1" width="300">
+		               <tr>
+		                  <th>작성자</th>
+		                  <td>
+		                     <input type="text" name="writer">
+		                  </td>
+		               </tr>
+		               
+		               <tr>
+		                  <th>글제목</th>
+		                  <td>
+		                     <input type="text" name="title">
+		                  </td>
+		               </tr>
+		               
+		               <tr>
+		                  <th>글내용</th>
+		                  <td>
+		                     <textarea rows="7" cols="25" name="cont"></textarea>
+		                  </td>
+		               </tr>
+		               
+		               <tr>
+		                  <th>글 비밀번호</th>
+		                  <td>
+		                     <input type="password" name="pwd">
+		                  </td>
+		               </tr>
+		            </table>
+		            <br>
+		            
+		            <div class="submit1">
+		               <input class="submit_btn btn-primary" type="submit" value="글쓰기">
+		               <input class="submit_btn btn-primary" type="reset" value="다시작성">
+		            </div>
+		         </form> 
+		      </div>
+		      
+		    </div>
+		  </div>
+		</div>
+	    <br>
+	    
+	    <%-- 페이징 처리 영역 --%>
+	   
+	   <nav>
+		  <ul class="pagination">
+		    <li class="page-item">
+		      <a class="page-link" 
+		      	 href="select?page=1">First</a>
+		    </li>
+		    
+		    <li>
+		      <a class="page-link" 
+		      	 href="select?page=${page - 1 }">Previous</a>
+		    </li>
+		    
+		    <c:forEach begin="${startBlock }" end="${endBlock }" var="i">
+		    
+		       <c:if test="${i == page }">
+		          <li class="page-item active" aria-current="page">
+		      			<a class="page-link" 
+		      			   href="select?page=${i }">${i }</a>
+		    	  </li>
+		       </c:if>
+		       
+		       <c:if test="${i != page }">
+		          <li class="page-item">
+		      			<a class="page-link" 
+		      			   href="select?page=${i }">${i }</a>
+		    	  </li>
+		       </c:if>
+		       
+		    </c:forEach>
+		    
+		    <c:if test="${endBlock < allPage }">
+		       <li class="page-item">
+		      			<a class="page-link" 
+		      			   href="select?page=${page + 1 }">Next</a>
+		       </li>
+		    
+		       <li class="page-item">
+		      			<a class="page-link" 
+		      			   href="select?page=${allPage }">End</a>
+		       </li>
+		    
+		    </c:if>
+		    
+		  </ul>
+	   </nav>
+		
 		<input type="button" value="회원등록"
-			onclick="location.href='insert.do'">&nbsp;&nbsp;&nbsp;
+			onclick="location.href='insert'">&nbsp;&nbsp;&nbsp;
 		<input type="button" value="메인페이지 이동"
 			onclick="location.href='main.jsp'">
 	</div>

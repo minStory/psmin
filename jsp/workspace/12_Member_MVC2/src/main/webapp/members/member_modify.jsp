@@ -25,7 +25,7 @@ input{
 		<hr width="50%" color="navy">
 		<br>
 		
-		<form method="post" action="${pageContext.request.contextPath }/modify_ok.do">
+		<form method="post" action="${pageContext.request.contextPath }/modify_ok">
 			<table>
 				<c:set var="member" value="${Content }" />
 				<tr>
