@@ -21,7 +21,10 @@ public class MemberSearchAction implements Action {
 		
 		List<MemberDTO> list = dao.memberSearch(field, keyword);
 		
+		int count = list.size();
+		
 		request.setAttribute("List", list);
+		request.setAttribute("count", count);
 		
 		return "members/member_search.jsp";
 	}

@@ -84,6 +84,7 @@ public class MemberDAO {
 		}
 	}
 	
+	// 페이징 처리 없이 리스트 출력
 	public List<MemberDTO> getMemberList(){
 		
 		List<MemberDTO> list = new ArrayList<>();
@@ -123,7 +124,7 @@ public class MemberDAO {
 		return list;
 	}
 	
-
+	//페이징 처리하여 리스트 출력 (오버로딩)
 	public List<MemberDTO> getMemberList(int page, int rowSize) {
 		
 		List<MemberDTO> list = new ArrayList<>();
@@ -138,7 +139,7 @@ public class MemberDAO {
 			
 			openConn();
 			
-			sql = "select * from (select (@rnum:=@rnum+1) as rnum, m.* member as m, (select @rnum:=0) as dummy order by num) as subquery where rnum >= ? and rnum <= ?";
+			sql = "select * from (select @row_number:=@row_number+1 as rnum, m.* from member as m, (select @row_number:=0) as dummy order by num desc) as subquery where rnum >= ? and rnum <= ?";
 			
 			ps = con.prepareStatement(sql);
 			
@@ -170,7 +171,7 @@ public class MemberDAO {
 			closeConn(rs, ps, con);
 		}
 		
-		return null;
+		return list;
 	}
 	
 	public int memberInsert(MemberDTO dto) {
@@ -353,6 +354,7 @@ public class MemberDAO {
 		
 	}
 	
+	// 삭제 시 회원번호 정렬
 	public void updateSequence(int num) {
 		
 		try {
@@ -428,10 +430,9 @@ public class MemberDAO {
 		
 	}
 	
-	
 	public int getMemberCount() {
 		
-		int result = 0;
+		int count = 0;
 		
 		try {
 			openConn();
@@ -440,18 +441,21 @@ public class MemberDAO {
 			
 			ps = con.prepareStatement(sql);
 			
-			result = ps.executeUpdate();
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			closeConn(ps, con);
+			closeConn(rs, ps, con);
 		}
 		
-		return result;
+		return count;
 	}
-
-
 	
 	
 }
