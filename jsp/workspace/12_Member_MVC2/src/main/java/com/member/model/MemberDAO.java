@@ -20,16 +20,20 @@ public class MemberDAO {
 	
 	String sql = null;
 	
-	private static MemberDAO instance = null;
+	// 싱글톤 방식 start
+	private static MemberDAO instance = new MemberDAO();
 	
 	public static MemberDAO getInstance() {
-		
-		if(instance == null) {
-			instance = new MemberDAO();
-		}
-		
+		/*
+		 * if(instance == null) { instance = new MemberDAO(); }
+		 */
 		return instance;
 	}
+	
+	// private 생성자로 이미 생성한 객체 외의 객체 생성 방지 -> 싱글톤
+	private MemberDAO() {
+	}
+	// 싱글톤 방식 end
 	
 	public void openConn(){
 		
