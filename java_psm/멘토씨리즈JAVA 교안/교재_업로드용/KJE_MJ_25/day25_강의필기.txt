@@ -1,5 +1,0 @@
-public
-private -> 자식이 상속받을 수 없는 필드
-defualt
-protected
-

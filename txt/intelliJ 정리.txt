@@ -42,22 +42,46 @@ iter 엔터 : for-each문 자동 완성
 
 -------------------------------------------------------------
 
-Spring Setting 순서
+Spring Setting Check List
 
  - start.spring.io 접속하여 spring 다운로드
 
- - build.gradle 파일 선택하고 Open as Project
-	->build.gradle 수정 시 Reload 해줘야 한다.
+ - 해당 build.gradle 파일 선택 후 Open as Project
+	-> build.gradle 수정 시 Reload
 
- - Setting -> gradle 검색해서 Build and run using, Run tests using을 Gradle에서 IntelliJ IDEA로 변경(속도 개선)
+ - Project Structure -> Project
+	-> SDK를 openjdk-21 으로 변경
 
- - tomcat port 충돌
+ - Setting -> gradle 검색
+	-> Build and run using, Run tests using을 Gradle에서 IntelliJ IDEA로 변경(속도 개선)
+	-> Gradle JVM Project SDK로 변경
+
+- Lombok 사용 시
+	-> plugin에서 lombok 설치
+	-> Setting -> Annotation Processors 검색 -> Enable annotation processing 체크
+
+- 서블릿 사용 시
+main(Application) -> @ServletComponentScan 입력(서블릿 자동 등록)
+
+ - JSP 사용 시
+build.gradle -> dependencies {
+//JSP 추가 시작
+implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+implementation 'jakarta.servlet:jakarta.servlet-api' //스프링부트 3.0 이상
+implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' //스프링부트 3.0 이상
+implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.0 이상
+//JSP 추가 끝
+}
+
+ - tomcat port 충돌 시
 cmd -> C:\Windows\System32 -> netstat -ano -> port PID 확인 -> taskkill /f /pid PID번호
+or
+build.gradle -> providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat' 삭제
+or
+index.html 내용을 전체 잘라내기, 전체 복사, 저장 후 서버 재시작
 
  - HTTP 정보 콘솔 출력(헤더 등)
 main -> resource -> applicationproperties -> logging.level.org.apache.coyote.http11=trace 입력
-
-
 
 
 

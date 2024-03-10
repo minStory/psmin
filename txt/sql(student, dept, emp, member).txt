@@ -93,8 +93,8 @@ commit;
 -- MEMBER 테이블
 create table member(
     num int(7) primary key,              -- 회원 번호
-    memid varchar(20) not null,             -- 회원 아이디
-    memname varchar(20) not null,        -- 회원 이름
+    id varchar(20) not null,             -- 회원 아이디
+    name varchar(20) not null,        -- 회원 이름
     pwd varchar(20) not null,                -- 회원 비밀번호
     age int(3),                                -- 회원 나이
     mileage int(5) not null,              -- 회원 마일리지
