@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table{
+		width: 700px;
+	}
+	table, th, td{
+		border: 1px solid black;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<hr width="50%" color="red">
+			<h3>JSP_BBS 답변형 게시판 테이블 게시글 추가 페이지</h3>
+		<hr width="50%" color="red">
+		<br><br>
+		
+		<table>
+		
+		</table>
+	
+	</div>
+</body>
+</html>

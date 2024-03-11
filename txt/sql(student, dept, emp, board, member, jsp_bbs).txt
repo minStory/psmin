@@ -1,0 +1,160 @@
+-- student 테이블
+CREATE TABLE student (
+    id VARCHAR(20) PRIMARY KEY, 
+    name VARCHAR(30) NOT NULL,
+    major VARCHAR(50),
+    phone VARCHAR(20) NOT NULL,
+    addr VARCHAR(200),
+    regdate DATE NOT NULL
+);
+
+INSERT INTO student VALUES ('2023_001', '홍길동', '경제학과', '010-1111-1234', '서울 구로구', CURDATE());
+INSERT INTO student VALUES ('2023_003', '이순신', '영문학과', '010-3333-1234', '서울 영등포구', CURDATE());
+INSERT INTO student VALUES ('2023_004', '강감찬', '체육학과', '010-4444-1234', '경기 의정부시', CURDATE());
+INSERT INTO student VALUES ('2023_005', '김유신', '세무학과', '010-5555-1234', '서울 도봉구', CURDATE());
+INSERT INTO student VALUES ('2023_006', '이길동', '전산학과', '010-6666-1234', '서울 노원구', CURDATE());
+INSERT INTO student VALUES ('2023_007', '박길동', '유아교육학과', '010-7777-1234', '서울 강북구', CURDATE());
+INSERT INTO student (id, name, phone, regdate) VALUES ('2023_008', '최길동', '010-8888-1234', CURDATE());
+INSERT INTO student (id, name, phone, regdate) VALUES ('2023_009', '임길동', '010-9999-1234', CURDATE());
+INSERT INTO student (id, name, phone, regdate) VALUES ('2023_010', '황길동', '010-1234-1234', CURDATE());
+
+commit;
+
+==
+
+-- DEPT 테이블
+CREATE TABLE DEPT (
+    DEPTNO INT(2) PRIMARY KEY AUTO_INCREMENT,
+    DNAME VARCHAR(14),
+    LOC VARCHAR(13)
+);
+
+-- 데이터 삽입
+INSERT INTO DEPT VALUES (10, 'ACCOUNTING', 'NEW YORK');
+INSERT INTO DEPT VALUES (20, 'RESEARCH', 'DALLAS');
+INSERT INTO DEPT VALUES (30, 'SALES', 'CHICAGO');
+INSERT INTO DEPT VALUES (40, 'OPERATIONS', 'BOSTON');
+
+commit;
+
+
+-- EMP테이블
+CREATE TABLE EMP (
+    EMPNO INT(4) PRIMARY KEY AUTO_INCREMENT,
+    ENAME VARCHAR(10),
+    JOB VARCHAR(9),
+    MGR INT(4),
+    HIREDATE DATE,
+    SAL DECIMAL(7, 2),
+    COMM DECIMAL(7, 2),
+    DEPTNO INT(2)
+);
+
+
+-- 데이터 삽입
+INSERT INTO EMP VALUES (7369, 'SMITH', 'CLERK', 7902, STR_TO_DATE('1980-12-17', '%Y-%m-%d'), 800, NULL, 20);
+INSERT INTO EMP VALUES (7499, 'ALLEN', 'SALESMAN', 7698, STR_TO_DATE('1981-02-20', '%Y-%m-%d'), 1600, 300, 30);
+INSERT INTO EMP VALUES (7521, 'WARD', 'SALESMAN', 7698, STR_TO_DATE('1981-02-22', '%Y-%m-%d'), 1250, 500, 30);
+INSERT INTO EMP VALUES (7566, 'JONES', 'MANAGER', 7839, STR_TO_DATE('1981-04-02', '%Y-%m-%d'), 2975, NULL, 20);
+INSERT INTO EMP VALUES (7654, 'MARTIN', 'SALESMAN', 7698, STR_TO_DATE('1981-09-28', '%Y-%m-%d'), 1250, 1400, 30);
+INSERT INTO EMP VALUES (7698, 'BLAKE', 'MANAGER', 7839, STR_TO_DATE('1981-05-01', '%Y-%m-%d'), 2850, NULL, 30);
+INSERT INTO EMP VALUES (7782, 'CLARK', 'MANAGER', 7839, STR_TO_DATE('1981-06-09', '%Y-%m-%d'), 2450, NULL, 10);
+INSERT INTO EMP VALUES (7788, 'SCOTT', 'ANALYST', 7566, STR_TO_DATE('1982-12-09', '%Y-%m-%d'), 3000, NULL, 20);
+INSERT INTO EMP VALUES (7839, 'KING', 'PRESIDENT', NULL, STR_TO_DATE('1981-11-17', '%Y-%m-%d'), 5000, NULL, 10);
+INSERT INTO EMP VALUES (7844, 'TURNER', 'SALESMAN', 7698, STR_TO_DATE('1981-09-08', '%Y-%m-%d'), 1500, 0, 30);
+INSERT INTO EMP VALUES (7876, 'ADAMS', 'CLERK', 7788, STR_TO_DATE('1983-01-12', '%Y-%m-%d'), 1100, NULL, 20);
+INSERT INTO EMP VALUES (7900, 'JAMES', 'CLERK', 7698, STR_TO_DATE('1981-12-03', '%Y-%m-%d'), 950, NULL, 30);
+INSERT INTO EMP VALUES (7902, 'FORD', 'ANALYST', 7566, STR_TO_DATE('1981-12-03', '%Y-%m-%d'), 3000, NULL, 20);
+
+commit;
+
+-- board 테이블
+create table board(
+	board_no INT(7) primary key,		-- 글번호
+	board_writer varchar(50) not null,	-- 작성자
+	board_title varchar(200) not null,	-- 글제목
+	board_cont varchar(2000),			-- 글내용
+	board_pwd varchar(50) not null,		-- 작성자 비밀번호
+	board_hit INT(5) default 0,			-- 클릭수
+	board_date DATE,					-- 작성일
+	board_update DATE					-- 수정일
+);
+
+-- board 데이터 삽입
+insert into board values(1, '홍길동','제목1', '길동이 입니다.', '1111', default, current_date(), null);
+INSERT INTO board VALUES(2, '이순신', '이장군', '장군님 글입니다.', '2222', DEFAULT, CURRENT_DATE(), NULL);
+INSERT INTO board VALUES(3, '유관순', '대한독립만세', '유관순 열사 글입니다.', '3333', DEFAULT, CURRENT_DATE(), NULL);
+INSERT INTO board VALUES(4, '김유신', '제목4', '화랑 김유신입니다.', '4444', DEFAULT, CURRENT_DATE(), NULL);
+INSERT INTO board VALUES(5, '김연아', '연아', '김연아 글입니다.', '5555', DEFAULT, CURRENT_DATE(), NULL);
+
+commit;
+
+
+-- MEMBER 테이블
+create table member(
+    num int(7) primary key,              -- 회원 번호
+    id varchar(20) not null,             -- 회원 아이디
+    name varchar(20) not null,        -- 회원 이름
+    pwd varchar(20) not null,                -- 회원 비밀번호
+    age int(3),                                -- 회원 나이
+    mileage int(5) not null,              -- 회원 마일리지
+    job VARCHAR(30),                          -- 회원 직업
+    addr varchar(200),                          -- 회원 주소
+    regdate date not null                        -- 회원 가입일
+);
+
+
+
+-- 데이터 삽입
+insert into member values(1, 'id1', '홍길동', '1111', 25, 0, '학생', '부산시 동래구', '2013-08-08');
+insert into member values(2, 'id2', '김길동', '2222', 30, 1500, '직장인', '서울시 강남구', '2013-09-15');
+insert into member values(3, 'id3', '공성현', '3333', 33, 10000, '직장인', '부산시 중구', '2013-09-09');
+insert into member values(4, 'id4', '김영희', '4444', 18, 3000, '학생', '경상남도 마산시', '2012-01-02');
+insert into member values(5, 'id5', '박말자', '5555', 45, 5000, '주부', '경기도 남양주시', '2013-05-23');
+insert into member values(6, 'id6', '김철수', '6666', 55, 0, '교수', '제주도 서귀포시', '2013-01-10');
+insert into member values(7, 'id7', '홍길동', '7777', 17, 0, '학생', '경상북도 경주시', '2012-12-25');
+insert into member values(8, 'id8', '김성현', '8888', 31, 0, '무직', '서울시 마포구', '2013-04-18');
+insert into member values(9, 'id9', '이지연', '9999', 25, 3000, '학생', '부산시 동래구', '2013-08-08');
+insert into member values(10, 'id10', '홍길동', '1010', 52, 10000, '주부', '서울시 구로구', '2013-09-17');
+
+-- jsp_bbs 테이블 생성
+-- BBS(Bulletin Board System : 전자 게시판)
+
+CREATE TABLE jsp_bbs(
+	board_no int(7) primary key,		-- 게시판 글 번호
+	board_writer varchar(50) not null,	-- 게시판 글 작성자
+	board_title varchar(200) not null,	-- 게시판 글 제목
+	board_cont varchar(2000) not null,	-- 게시판 글 내용
+	board_pwd varchar(50) not null,		-- 게시판 글 비밀번호
+	board_hit int(5) default 0,			-- 게시판 글 조회수
+	board_date datetime not null,		-- 게시판 글 작성일
+	board_update datetime,				-- 게시판 글 수정일
+	board_group int(7),					-- 게시판 글 그룹
+	board_step int(5),					-- 게시판 글 답변 단계
+	board_indent int(5)					-- 게시판 답변 글 들여쓰기
+);
+
+-- jsp_bbs 테이블에 데이터 추가하기
+INSERT INTO jsp_bbs values(1, '홍길동', '제목1', '내용1', '1111', default, now(), null, 1, 0, 0);
+INSERT INTO jsp_bbs values(2, '이순신', '장군님 글', '장군님의 글입니다.', '1111', default, now(), null, 2, 0, 0);
+INSERT INTO jsp_bbs values(3, '유관순', '열사', '유관순 열사 글입니다.', '1111', default, now(), null, 3, 0, 0);
+INSERT INTO jsp_bbs values(4, '김유신', '화랑도', '화랑도 글입니다.', '1111', default, now(), null, 4, 0, 0);
+INSERT INTO jsp_bbs values(5, '김연아', '연아글', '내용5', '1111', default, now(), null, 5, 0, 0);
+
+commit;
+
+
+-- jsp_bbs_reply(댓글) 테이블 생성
+create table jsp_bbs_reply(
+	board_group int not null,
+    board_writer varchar(50) not null,
+    board_reply varchar(2000) not null,
+    board_pwd varchar(50) not null,
+    board_date datetime not null,
+    board_step int(5) default 1,
+    board_indent int(5) default 1,
+    
+    foreign key(board_group) references jsp_bbs (board_no) on delete cascade on update cascade
+);
+
+

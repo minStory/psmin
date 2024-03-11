@@ -1,0 +1,5 @@
+package com.reply.model;
+
+public class BbsReplyDTO {
+
+}

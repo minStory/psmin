@@ -1,0 +1,36 @@
+package com.reply.action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.reply.model.BbsDAO;
+import com.reply.model.BbsDTO;
+
+public class BbsInsertOkAction implements Action{
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		String writer = request.getParameter("board_writer").trim();
+		String title = request.getParameter("board_title").trim();
+		String cont = request.getParameter("board_cont").trim();
+		String pwd = request.getParameter("board_pwd").trim();
+		
+		BbsDTO dto = new BbsDTO();
+		dto.setBoard_writer(writer);
+		dto.setBoard_title(title);
+		dto.setBoard_cont(cont);
+		dto.setBoard_pwd(pwd);
+		
+		BbsDAO dao = BbsDAO.getInstance(dto);
+		
+		dao.bbsInsert();
+		
+		ActionForward forward = new ActionForward();
+		
+		
+		return forward;
+	}
+	
+
+}

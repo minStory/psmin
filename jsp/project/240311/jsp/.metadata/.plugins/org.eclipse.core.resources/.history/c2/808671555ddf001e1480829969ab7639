@@ -1,0 +1,6 @@
+# BBS 게시판 Action Class
+bbs_list.go = execute|com.reply.action.BbsListAction
+insert.go = execute|com.reply.action.BbsInsertAction
+insert_ok.go = execute|com.reply.action.BbsInsertOkAction
+
+# BBS 게시판 View Page

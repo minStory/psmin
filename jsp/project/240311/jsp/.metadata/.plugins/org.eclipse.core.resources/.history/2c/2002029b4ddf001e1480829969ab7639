@@ -1,0 +1,5 @@
+# BBS 게시판 Action Class
+bbs_list.go = execute|com.reply.action.BbsListAction
+insert.do = execute|com.reply.action.BbsInsertAction
+
+# BBS 게시판 View Page
