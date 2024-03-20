@@ -10,7 +10,7 @@
 </head>
 <body>
 <%-- 
-        <fmt:formatDate> 태그의 여러 가지 속성
+        fmt:formatDate 태그의 여러 가지 속성
         - value : 포맷팅될 날짜를 지정하는 속성.
         - type : 포맷팅할 타입을 지정하는 속성.
                  * date : 날짜를 지정.
