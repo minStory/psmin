@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector URIEncoding="UTF-8" connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="07_Emp" path="/07_Emp" reloadable="true" source="org.eclipse.jst.jee.server:07_Emp"/><Context docBase="06_Dept" path="/06_Dept" reloadable="true" source="org.eclipse.jst.jee.server:06_Dept"/><Context docBase="09_Board" path="/09_Board" reloadable="true" source="org.eclipse.jst.jee.server:09_Board"/><Context docBase="10_ConnPool" path="/10_ConnPool" reloadable="true" source="org.eclipse.jst.jee.server:10_ConnPool"/><Context docBase="11_EL_JSTL" path="/11_EL_JSTL" reloadable="true" source="org.eclipse.jst.jee.server:11_EL_JSTL"/><Context docBase="12_Member_MVC2" path="/12_Member_MVC2" reloadable="true" source="org.eclipse.jst.jee.server:12_Member_MVC2"/></Host>
+      <Context docBase="Latte_Cinema" path="/Latte_Cinema" reloadable="true" source="org.eclipse.jst.jee.server:Latte_Cinema"/></Host>
     </Engine>
   </Service>
 </Server>

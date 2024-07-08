@@ -28,17 +28,15 @@
     -->
     
     <Resource
-    
     	name = "jdbc/mysql"
     	auth = "Container"
     	type = "javax.sql.DataSource"
     	driverClassName = "com.mysql.cj.jdbc.Driver"
-    	url = "jdbc:mysql://localhost:3306/psm"
+    	url = "jdbc:mysql://localhost:3306/latte"
     	username = "root"
     	password = "1234"
     	maxActive = "100"
     	maxIdle = "50"
-    	
     />
     
 </Context>
