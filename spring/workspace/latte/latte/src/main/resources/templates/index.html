@@ -1,0 +1,160 @@
+<html layout:decorate="~{common/layout}" xmlns:th="http://www.thymeleaf.org" lang="ko"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<div layout:fragment="content">
+    <div class="main-movie-list-container">
+        <section class="main-movie-list">
+            <ul th:if="${movieList != null}">
+                <li class="main-movie-list-li" th:each="movie, iterStat : ${movieList}" th:if="${iterStat.index < 5}">
+                    <div class="main-movie-list-photo-frame">
+                        <div class="frame-btn-area">
+                            <button
+                                    onclick="location.href='reserve?movie_no='">예매하기</button>
+                            <button
+                                    onclick="location.href='movie_specific?no='">상세정보</button>
+                        </div>
+                    </div>
+                    <div class="main-movie-list-photo"
+                         th:style="'background: url(\'/images/movie_image/' + ${movie.no} + '/poster.png\') no-repeat center/cover;'">
+                        <p th:text="${iterStat.count}"></p>
+                    </div>
+                    <div class="main-movie-list-title">
+                        <span th:style="'background: url(\'/images/grade_' + ${movie.limit_age} + '.png\') no-repeat;'" th:text="${movie.title}"></span>
+                    </div>
+                    <div class="main-movie-list-util">
+                        <span>예매율</span> <span>평점</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="main-arrow-area">
+                <button class="main-arrow main-arrow-left"></button>
+                <button class="main-arrow main-arrow-right"></button>
+            </div>
+        </section>
+    </div>
+    <div class="main-container">
+        <section class="main-special-list">
+            <div class="main-special-title">
+                <h3>스페셜관</h3>
+                <a href="special_hall">더보기</a>
+            </div>
+            <ul class="main-special-list-contents">
+                <li class="main-special-list-charlotte"></li>
+                <li class="main-special-list-s_plex"></li>
+                <li class="main-special-list-s_mx4d"></li>
+                <li class="main-special-list-super_4d"></li>
+                <li class="main-special-list-super_s"></li>
+                <li class="main-special-list-s_led"></li>
+                <li class="main-special-list-cine_comfort"></li>
+                <li class="main-special-list-cine_family"></li>
+                <li class="main-special-list-cine_couple"></li>
+            </ul>
+            <ul class="main-special-content-media">
+                <li class="main-special-content-charlotte"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/charlotte_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>C H A R L O T T E</h3>
+                        <p>단 하나의 프리미엄 상영관</p>
+                    </div></li>
+
+                <li class="main-special-content-charlotte"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/super_s_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>SUPER PLEX</h3>
+                        <p>압도적 경험을 만나다</p>
+                    </div></li>
+
+                <li class="main-special-content-s-mx4d"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/charlotte_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>S MX4D</h3>
+                        <p>압도적 4D를 만나다</p>
+                    </div></li>
+
+                <li class="main-special-content-super-4d"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/super_s_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>SUPER 4D</h3>
+                        <p>다이나믹한 오감 만족 체험</p>
+                    </div></li>
+
+                <li class="main-special-content-super-s"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/charlotte_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>SUPER S</h3>
+                        <p>세계 최초 LED 시네마</p>
+                    </div></li>
+
+                <li class="main-special-content-s-led"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/super_s_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>S LED</h3>
+                        <p>세상의 모든 색으로 영화를 보다</p>
+                    </div></li>
+
+                <li class="main-special-content-s-led"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/charlotte_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>cineComfort</h3>
+                        <p>몰입을 위한 나만의 리클라이너</p>
+                    </div></li>
+
+                <li class="main-special-content-s-led"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/super_s_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>cineFamily</h3>
+                        <p>사랑하는 사람들과 함께 편안하고 안전하게 즐기는 프라이빗한 무비 피크닉</p>
+                    </div></li>
+
+                <li class="main-special-content-cine-couple"><video
+                        class="main-special-content-video" autoplay muted loop>
+                    <source src="videos/charlotte_visual.mp4" type="video/mp4" />
+                </video>
+                    <div class="main-special-content-textarea">
+                        <h3>cineCouple</h3>
+                        <p>연인을 위한 두근두근 커플석</p>
+                    </div></li>
+            </ul>
+        </section>
+
+        <section class="main-notice-list">
+            <div class="main-notice-title">
+                <h3>공지사항</h3>
+                <a href="customer?notice">더보기</a>
+            </div>
+            <div th:if="${noticeList != null}">
+                <table>
+                    <tr>
+                        <th>작성자</th>
+                        <th>제목</th>
+                        <th>작성일시</th>
+                    </tr>
+                    <tr th:each="notice, iterStat : ${noticeList}" th:if="${iterStat.index < 5}"
+                            onclick="location.href='notice_content?no='">
+                            <td th:text="${notice.writer_id}"></td>
+                            <td th:text="${notice.title}"></td>
+                            <td th:text="${notice.created_date}"></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+    <script th:src="@{/js/index.js}"></script>
+    <script th:src="@{/js/timer.js}"></script>
+</div>
+</html>
