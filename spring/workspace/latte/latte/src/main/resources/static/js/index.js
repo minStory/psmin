@@ -1,6 +1,5 @@
 // 페이지 로드 시 실행되는 코드
 document.addEventListener("DOMContentLoaded", () => {
-
 	// ------ 메인페이지 영화이미지 효과 ------
 	const li = Array.from(document.getElementsByClassName("main-movie-list-li"));
 	const frame = Array.from(document.getElementsByClassName("main-movie-list-photo-frame"));

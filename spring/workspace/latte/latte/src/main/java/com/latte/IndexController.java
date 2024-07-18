@@ -27,7 +27,7 @@ public class IndexController {
         return "index";
     }
 
-    // 기본 페이지 강제 설정
+    // 기본 페이지 설정
     @GetMapping("/")
     public String root() {
         return "redirect:/index";

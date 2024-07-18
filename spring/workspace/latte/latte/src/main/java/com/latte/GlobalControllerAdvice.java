@@ -1,5 +1,6 @@
 package com.latte;
 
+import com.latte.user.CustomUserDetails;
 import lombok.Getter;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.ui.Model;
@@ -13,31 +14,27 @@ import java.util.List;
 // 전역적인 설정을 제공하는 클래스
 @Getter
 @ControllerAdvice
-class GlobalControllerAdvice {
+public class GlobalControllerAdvice {
 
     // 각 컨트롤러 메서드가 실행되기 전에 호출
-//    @ModelAttribute
-//    public void addAttribute(Model model, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
-//        // 시큐리티 인증 객체가 있다면
-//        if (customUserDetails != null) {
-//            model.addAttribute("user", customUserDetails);
-//        }
-//    }
-
     @ModelAttribute
-    public void addAttribute(Model model) {
-        model.addAttribute("specialHallList", getSpecialHallList());
-        model.addAttribute("localList", getLocalList());
-        model.addAttribute("seoulList", getSeoulList());
-        model.addAttribute("gyeonggiIncheonList", getGyeonggiIncheonList());
-        model.addAttribute("chungCheongDaeJeonList", getChungCheongDaeJeonList());
-        model.addAttribute("jeollaGwangjuList", getJeollaGwangjuList());
-        model.addAttribute("gyeongbukDaeguList", getGyeongbukDaeguList());
-        model.addAttribute("gyeongnamBusanUlsanList", getGyeongnamBusanUlsanList());
-        model.addAttribute("gangwonList", getGangwonList());
-        model.addAttribute("jejuList", getJejuList());
-        model.addAttribute("sizeList", getSizeList());
-        model.addAttribute("mobileCarrierList", getMobileCarrierList());
+    public void addAttribute(Model model, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
+        // 로그인 성공 시
+        if (customUserDetails != null) {
+            model.addAttribute("user", customUserDetails);
+        }
+        model.addAttribute("specialHallList", this.getSpecialHallList());
+        model.addAttribute("localList", this.getLocalList());
+        model.addAttribute("seoulList", this.getSeoulList());
+        model.addAttribute("gyeonggiIncheonList", this.getGyeonggiIncheonList());
+        model.addAttribute("chungCheongDaeJeonList", this.getChungCheongDaeJeonList());
+        model.addAttribute("jeollaGwangjuList", this.getJeollaGwangjuList());
+        model.addAttribute("gyeongbukDaeguList", this.getGyeongbukDaeguList());
+        model.addAttribute("gyeongnamBusanUlsanList", this.getGyeongnamBusanUlsanList());
+        model.addAttribute("gangwonList", this.getGangwonList());
+        model.addAttribute("jejuList", this.getJejuList());
+        model.addAttribute("sizeList", this.getSizeList());
+        model.addAttribute("mobileCarrierList", this.getMobileCarrierList());
     }
 
     // 글로벌 멤버 변수

@@ -1,7 +1,7 @@
 package com.latte.user;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,29 +9,32 @@ import lombok.Setter;
 @Setter
 public class UserCreateForm {
 
-    @NotEmpty
+    @NotBlank
+    private String id;
+
+    @NotBlank
     private String pwd;
 
-    @NotEmpty
+    @NotBlank
     private String pwd_check;
 
-    @NotEmpty
+    @NotBlank
     private String name;
 
-    @NotEmpty
+    @NotBlank
     private String mobile_carrier;
 
-    @NotEmpty
+    @NotBlank
     private String phone1;
 
-    @NotEmpty
+    @NotBlank
     private String phone2;
 
-    @NotEmpty
+    @NotBlank
     private String phone3;
 
-    @NotEmpty
-    @Email
+    @NotBlank
+    @Email(message = "이메일 형식이 올바르지 않습니다.")
     private String email;
 
 }

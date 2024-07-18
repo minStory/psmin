@@ -1,5 +1,5 @@
-<html layout:decorate="~{common/layout}" xmlns:th="http://www.thymeleaf.org" lang="ko"
-      xmlns:layout="http://www.w3.org/1999/xhtml">
+<html layout:decorate="~{common/layout}" xmlns:th="http://www.w3.org/1999/xhtml" lang="ko"
+      xmlns:layout="http://www.w3.org/1999/xhtml" >
 <main layout:fragment="content" class="signup">
     <div class="main-container">
         <h2>회원가입</h2>
@@ -8,7 +8,7 @@
             <h4>회원 정보 입력</h4>
         </div>
 
-        <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+        <form th:action="@{/user/signup_ok}" th:object="${userCreateForm}" method="post" onsubmit="return validate()">
             <ul class="signup-content">
                 <li>
                     <label>
@@ -30,7 +30,7 @@
                     <label>
                         <em>*</em>
                         <span>이메일주소</span>
-                        <input type="text" th:field="*{email}" placeholder="이메일주소를 입력해주세요." required>
+                        <input type="text" class="email" th:field="*{email}" placeholder="이메일주소를 입력해주세요." required>
                     </label>
                 </li>
                 <li>
@@ -54,9 +54,7 @@
                         <em>*</em>
                         <span>휴대폰번호</span>
                         <select th:field="*{mobile_carrier}">
-                            <option>LGU+</option>
-                            <option>SKT</option>
-                            <option>KT</option>
+                            <option th:each="carrier : ${mobileCarrierList}" th:value="${carrier}" th:text="${carrier}"></option>
                         </select>
                         <input type="text" class="phone" th:field="*{phone1}" oninput="movePhoneBox()" maxlength="3" required>
                         -<input type="text" class="phone" th:field="*{phone2}" oninput="movePhoneBox()" maxlength="4" required>

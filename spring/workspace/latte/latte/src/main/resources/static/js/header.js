@@ -1,55 +1,57 @@
 // 페이지 로드 시 실행되는 코드
 document.addEventListener("DOMContentLoaded", () => {
-
 	// ------ 로그인 상태에 따라 헤더 문구를 변경해주는 메서드 ------
 	const dto_field = document.getElementsByClassName("dto-field")[0];
 	const name_field = document.getElementsByClassName("name-field")[0];
 	const myinfo_field = document.getElementsByClassName("header-modal-popup-content-myinfo")[0];
-	const dto = dto_field.getAttribute("data-value");
+	//const dto = dto_field.getAttribute("data-value");
 	const session_field = document.getElementsByClassName("session-field")[0];
 
-    dto_field.innerHTML = "<a href='login'>로그인</a>";
-    name_field.innerHTML = "<a href='user/signup' class='btn-signup'>회원가입</a>";
+    //const test = dto_field.dataset.value;
+    //alert(test);
+    dto_field.innerHTML = "<a href='/user/login'>로그인</a>";
+    name_field.innerHTML = "<a href='/user/signup' class='btn-signup'>회원가입</a>";
     myinfo_field.innerHTML = "<div class='content-myinfo-bottom'>"
                                     + "<p>로그인하시면<br>다양한 혜택을 확인할 수 있습니다.</p>"
-                                    + "<ul><li><a href='login'>로그인</a></li>"
-                                    + "<li><a href='user/signup'>회원가입</a></li></ul></div>";
-	if(dto === ""){
-		dto_field.innerHTML = "<a href='login'>로그인</a>";
-		name_field.innerHTML = "<a th:href='@{/user/signup}' class='btn-signup'>회원가입</a>";
-		myinfo_field.innerHTML = "<div class='content-myinfo-bottom'>"
-								+ "<p>로그인하시면<br>다양한 혜택을 확인할 수 있습니다.</p>"
-								+ "<ul><li><a href='login'>로그인</a></li>"
-								+ "<li><a th:href='@{/user/signup}'>회원가입</a></li></ul></div>";
-		session_field.style.display = "none";
-	}else if(dto === "M"){
-		const member_check = document.getElementsByClassName("member-check")[0];
-		const dto_name = member_check.getAttribute("data-value1");
-		const dto_mileage = member_check.getAttribute("data-value2");
-		const dto_grade = member_check.getAttribute("data-value3");
-		dto_field.innerHTML = "<a href='logout' onclick='return confirmLogout()'>로그아웃</a>";
-		name_field.innerHTML = `<a href='mypage' class='btn-signup'>${dto_name }님</a>`;
-		myinfo_field.innerHTML = `<div class='content-myinfo-top'><span>${dto_grade }</span>`
-								+ `<p><strong>${dto_name }님</strong> 반갑습니다!</p>`
-								+ `<p>Latte Point ${dto_mileage }</p>`
-								+ "<span class='myinfo-top-btn'><a href='mypage'>마이페이지</a></span></div>"
-								+ "<div class='content-myinfo-bottom'>"
-								+ "<div class='content-myinfo-bottom-title'><p>MY 영화관</p>"
-								+ "<span class='setup'><a href='#'></a></span>"
-								+ "</div><ul><li><a href='#'>합정</a></li><li><a href='#'>라페스타</a></li>"
-								+ "<li><a href='#'>천안불당</a></li></ul></div>";
-	}else if(dto === "A"){
-		dto_field.innerHTML = "<a href='logout' onclick='return confirmLogout()'>로그아웃</a>";
-		name_field.innerHTML = "<a href='admin_main' class='btn-signup'>관리자님</a>";
-		myinfo_field.innerHTML = "<div class='content-myinfo-top'><span>Admin</span>"
-								+ "<p><strong>관리자님</strong> 반갑습니다!</p>"
-								+ "<span class='myinfo-top-btn'><a href='admin_main'>관리자페이지</a></span>"
-								+ "</div><div class='content-myinfo-bottom'><div class='content-myinfo-bottom-title'>"
-								+ "<p>사이트 관리</p><span class='setup'><a href='admin_main'></a></span></div>"
-								+ "<ul><li><a href='admin_main?memberinfo'>회원 관리</a></li>"
-								+ "<li><a href='admin_main'>공지사항 관리</a></li>"
-								+ "<li><a href='admin_main?movie'>영화 목록 관리</a></li></ul></div>";
-	}
+                                    + "<ul><li><a href='/user/login'>로그인</a></li>"
+                                    + "<li><a href='/user/signup'>회원가입</a></li></ul></div>";
+    session_field.style.display = "none";
+//	if(dto === ""){
+//		dto_field.innerHTML = "<a href='/user/login'>로그인</a>";
+//		name_field.innerHTML = "<a href='/user/signup' class='btn-signup'>회원가입</a>";
+//		myinfo_field.innerHTML = "<div class='content-myinfo-bottom'>"
+//								+ "<p>로그인하시면<br>다양한 혜택을 확인할 수 있습니다.</p>"
+//								+ "<ul><li><a href='/user/login'>로그인</a></li>"
+//								+ "<li><a href='/user/signup'>회원가입</a></li></ul></div>";
+//		session_field.style.display = "none";
+//	}else if(dto === "M"){
+//		const member_check = document.getElementsByClassName("member-check")[0];
+//		const dto_name = member_check.getAttribute("data-value1");
+//		const dto_mileage = member_check.getAttribute("data-value2");
+//		const dto_grade = member_check.getAttribute("data-value3");
+//		dto_field.innerHTML = "<a href='/user/logout' onclick='return confirmLogout()'>로그아웃</a>";
+//		name_field.innerHTML = `<a href='#' class='btn-signup'>${dto_name }님</a>`;
+//		myinfo_field.innerHTML = `<div class='content-myinfo-top'><span>${dto_grade }</span>`
+//								+ `<p><strong>${dto_name }님</strong> 반갑습니다!</p>`
+//								+ `<p>Latte Point ${dto_mileage }</p>`
+//								+ "<span class='myinfo-top-btn'><a href='#'>마이페이지</a></span></div>"
+//								+ "<div class='content-myinfo-bottom'>"
+//								+ "<div class='content-myinfo-bottom-title'><p>MY 영화관</p>"
+//								+ "<span class='setup'><a href='#'></a></span>"
+//								+ "</div><ul><li><a href='#'>합정</a></li><li><a href='#'>라페스타</a></li>"
+//								+ "<li><a href='#'>천안불당</a></li></ul></div>";
+//	}else if(dto === "A"){
+//		dto_field.innerHTML = "<a href='/user/logout' onclick='return confirmLogout()'>로그아웃</a>";
+//		name_field.innerHTML = "<a href='#' class='btn-signup'>관리자님</a>";
+//		myinfo_field.innerHTML = "<div class='content-myinfo-top'><span>Admin</span>"
+//								+ "<p><strong>관리자님</strong> 반갑습니다!</p>"
+//								+ "<span class='myinfo-top-btn'><a href='#'>관리자페이지</a></span>"
+//								+ "</div><div class='content-myinfo-bottom'><div class='content-myinfo-bottom-title'>"
+//								+ "<p>사이트 관리</p><span class='setup'><a href='#'></a></span></div>"
+//								+ "<ul><li><a href='#'>회원 관리</a></li>"
+//								+ "<li><a href='#'>공지사항 관리</a></li>"
+//								+ "<li><a href='#'>영화 목록 관리</a></li></ul></div>";
+//	}
 	// ------ end ------
 
 
