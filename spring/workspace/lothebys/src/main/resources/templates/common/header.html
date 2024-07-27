@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.w3.org/1999/XSL/Transform" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ko">
+<div>
+<header th:fragment="headerFragment">
+    <div class="main-page-header">
+        <div class="main-page-header-top">
+            <a href="./login.html">LOG IN</a>
+            <a href="">PREFERRED ACCESS</a>
+            <a href="">ABOUT</a>
+            <a href="">DISCOVER</a>
+            <a href="">SERVICES</a>
+            <a href="">HOW TO BUY & SELL</a>
+            <a href="">LANGUAGE</a>
+        </div>
+        <div class="main-page-header-middle">
+            <a href="#"><img th:src="@{/images/mainImage/lotheby's_logo.png}" alt="로고" height="81px" width="100px"></a>
+            <div class="main-page-header-middle-menus">
+                <a href="/stuffList.html">AUCTIONS</a>
+                <a href="./buy_detail.html">BUY NOW</a>
+                <a href="">PRIVATE SALES</a>
+                <a href="">SELL</a>
+            </div>
+            <div class="main-page-header-middle-search">
+                <input type="text" />
+                <button class="buy-bag">basket</button>
+            </div>
+        </div>
+    </div>
+</header>
+</div>
+</html>
