@@ -82,9 +82,9 @@ create table interior_upload(
 -- 이미지 테이블
 create table image(
 	no int primary key,								-- 이미지 고유 번호
-	image1 varchar(255),							-- 이미지1
-    image2 varchar(255),							-- 이미지2
-    image3 varchar(255)								-- 이미지3
+	f_image varchar(255),							-- 이미지1
+    s_image varchar(255),							-- 이미지2
+    t_image varchar(255)							-- 이미지3
 );
 -- 제품 최종 등록 테이블
 create table product(

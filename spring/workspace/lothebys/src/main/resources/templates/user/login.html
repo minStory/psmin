@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" th:href="@{/css/common/style.css}" />
+    <title>LOTHEBY'S</title>
+    <!-- favicon -->
+    <link rel="icon" th:href="@{/images/mainImage/lothebys_main_icon.png}" sizes="32x32" />
+</head>
+<main class="login">
+    <div id="login_content"><!-- 로그인 콘텐트-->
+        <div class="registration_container"><!-- 등록 컨테이너-->
+            <div class="login_header">
+                <a th:href="@{/index}">
+                    <img th:src="@{/images/mainImage/lothebys_logo.png}" alt="메인아이콘">
+                </a>
+            </div>
+            <div class="login_main_container">
+                <div class="login_sub_container">
+                    <div class="login_sub_title">
+                        <h1 class="login_sub_title_h1">
+                            Login to your account
+                        </h1>
+                    </div>
+                </div>
+                <div class="login_form">
+                    <form th:action="@{/user/login}" method="post">
+                        <!-- 스프링 시큐리티를 적용하려면 name="username", name="password" 를 고정해야 한다. -->
+                        <input type="text" name="username" class="login_form_id" placeholder="ID" autocomplete="off">
+                        <input type="password" name="password" class="login_form_pwd" placeholder="Password">
+                        <div class="login_forgot_pwd">
+                            <p class="login_forgot_pwd_p">
+                                <a class="login_forgot_pwd_a" href="#">Forgot your password?</a>
+                            </p>
+                        </div>
+                        <input type="submit" class="login_form_submit" value="Login">
+                    </form>
+                </div>
+                <div id="footer_login">
+                    <p class="footer_login_p">Don't have an account?&nbsp;
+                        <a th:href="@{/user/signup}" class="footer_login_a">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script th:src="@{/js/login.js}"></script>
+</html>

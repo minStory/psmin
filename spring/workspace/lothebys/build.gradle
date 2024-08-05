@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.8'
-	id 'io.spring.dependency-management' version '1.1.6'
+	id 'org.springframework.boot' version '3.3.1'
+	id 'io.spring.dependency-management' version '1.1.5'
 }
 
 group = 'com'
@@ -54,6 +54,9 @@ dependencies {
 
 	// ------ markdown ------
 	implementation 'org.commonmark:commonmark:0.21.0'
+
+	// FileUpload에서 FilenameUtils와 같이 파일명과 확장자를 분리할 때 필요한 라이브러리
+	implementation 'commons-io:commons-io:2.11.0'
 }
 
 tasks.named('test') {

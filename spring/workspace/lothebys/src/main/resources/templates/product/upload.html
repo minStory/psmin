@@ -1,0 +1,30 @@
+<html layout:decorate="~{common/layout}" xmlns:th="http://www.thymeleaf.org" lang="ko"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+<div layout:fragment="content">
+    <main>
+        <h1>Upload Files</h1>
+        <form th:action="@{/product/upload}" method="post" enctype="multipart/form-data"
+              th:object="${fileUploadForm}" onsubmit="return fileAttachedValidate();">
+            <div class="upload-container">
+                <div class="upload-box">
+                    <img class="img">
+                    <div class="plus">┼</div>
+                    <input class="file" name="file1" type="file" accept="image/*">
+                </div>
+                <div class="upload-box">
+                    <img class="img">
+                    <div class="plus">┼</div>
+                    <input class="file" name="file2" type="file" accept="image/*">
+                </div>
+                <div class="upload-box">
+                    <img class="img">
+                    <div class="plus">┼</div>
+                    <input class="file" name="file3" type="file" accept="image/*">
+                </div>
+            </div>
+            <input type="submit" value="Upload">
+        </form>
+    </main>
+    <script th:src="@{/js/upload.js}"></script>
+</div>
+</html>

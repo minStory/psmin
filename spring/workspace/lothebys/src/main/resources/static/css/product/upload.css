@@ -1,0 +1,39 @@
+.upload-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+}
+
+.upload-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.upload-box .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.upload-box .plus {
+    position: absolute;
+    font-size: 40px;
+    color: #aaa;
+    z-index: -1;
+}
+
+.upload-box .file {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}

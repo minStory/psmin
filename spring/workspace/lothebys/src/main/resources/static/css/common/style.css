@@ -1,2 +1,6 @@
 @import url("./reset.css");
 @import url("./index.css");
+
+@import url("../user/signup.css");
+@import url("../user/login.css");
+@import url("../product/upload.css");

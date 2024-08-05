@@ -1,30 +1,75 @@
 <html xmlns:th="http://www.w3.org/1999/XSL/Transform" xmlns:sec="http://www.w3.org/1999/xhtml" lang="ko">
 <div>
-<header th:fragment="headerFragment">
-    <div class="main-page-header">
-        <div class="main-page-header-top">
-            <a href="./login.html">LOG IN</a>
-            <a href="">PREFERRED ACCESS</a>
-            <a href="">ABOUT</a>
-            <a href="">DISCOVER</a>
-            <a href="">SERVICES</a>
-            <a href="">HOW TO BUY & SELL</a>
-            <a href="">LANGUAGE</a>
-        </div>
-        <div class="main-page-header-middle">
-            <a href="#"><img th:src="@{/images/mainImage/lotheby's_logo.png}" alt="로고" height="81px" width="100px"></a>
-            <div class="main-page-header-middle-menus">
-                <a href="/stuffList.html">AUCTIONS</a>
-                <a href="./buy_detail.html">BUY NOW</a>
-                <a href="">PRIVATE SALES</a>
-                <a href="">SELL</a>
+    <header th:fragment="headerFragment">
+        <div class="main-page-header">
+            <div class="main-page-header-top">
+                <span sec:authorize="isAuthenticated()" th:if="${user != null}">
+                    <a class="dto-field" th:data-dto="${user}"></a>
+                    <a th:href="@{#}" class="btn-session"></a>
+                    <a th:href="@{/user/logout}">LOG OUT</a>
+                    <a th:each="authority, iterStat : ${user.authorities}" th:if="${iterStat.index == 0}"
+                       th:href="@{#}" th:text="${authority.authority}" ></a>
+                    <a th:href="@{#}" th:text="${user.name} + 님"></a>
+                </span>
+                <span sec:authorize="isAnonymous()" th:if="${user == null}">
+                    <a class="dto-field" th:data-dto="${user}"></a>
+                    <a th:href="@{#}" class="btn-session" style="color: red;"></a>
+                    <a th:href="@{/user/login}">LOG IN</a>
+                </span>
+
+                <a href="">PREFERRED ACCESS</a>
+                <a th:href="@{/test}">ABOUT</a>
+                <a th:href="@{/product/upload}">DISCOVER</a>
+                <a href="">SERVICES</a>
+                <a th:href="@{/user/home}">HOW TO BUY & SELL</a>
+                <a th:href="@{/admin/home}">LANGUAGE</a>
             </div>
-            <div class="main-page-header-middle-search">
-                <input type="text" />
-                <button class="buy-bag">basket</button>
+            <div class="main-page-header-middle">
+                <a th:href="@{/index}"><img th:src="@{/images/mainImage/lothebys_logo.png}" alt="로고" height="81px" width="100px"></a>
+                <div class="main-page-header-middle-menus">
+                    <a href="/stuffList.html">AUCTIONS</a>
+                    <a href="./buy_detail.html">BUY NOW</a>
+                    <a href="">PRIVATE SALES</a>
+                    <a href="">SELL</a>
+                </div>
+                <div class="main-page-header-middle-menus-hidden">
+                    <ul>
+                        <li>
+                            <p><a href="">JEWELRY</a></p>
+                        </li>
+                        <li><a href="">Van Cleef & Arpels</a></li>
+                        <li><a href="">Cartier</a></li>
+                        <li><a href="">Tiffany & Co.</a></li>
+                        <li><a href="">Bvlgari</a></li>
+                        <li><a href="">Diamonds</a></li>
+                        <li><a href="">All Jewlery</a></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p><a href="">WATCHES</a></p>
+                        </li>
+                        <li><a href="">Rolex</a></li>
+                        <li><a href="">Patek Philippe</a></li>
+                        <li><a href="">Audemars Piguet</a></li>
+                        <li><a href="">Cartier</a></li>
+                        <li><a href="">All Watches</a></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p><a href="">Art & Decoration</a></p>
+                        </li>
+                        <li><a href="">Art</a></li>
+                        <li><a href="">Deco</a></li>
+                        <li><a href="">Sculpture</a></li>
+                        <li><a href="">All Arts</a></li>
+                    </ul>
+                </div>
+                <div class="main-page-header-middle-search">
+                    <input type="text" />
+                    <button class="buy-bag">basket</button>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 </div>
 </html>
