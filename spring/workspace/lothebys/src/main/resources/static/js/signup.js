@@ -35,7 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     id_validate = false;
                 }
             })
-            .catch(error => console.error("Error:", error));
+            .catch(() => {
+                // 서버 재시작 또는 통신 오류 시 에러 문구 처리
+                idText.style.color = "red";
+                idText.innerText = "Communication Error";
+            });
     });
 
     // 비밀번호 자릿수 및 두 비밀번호가 같은지 확인

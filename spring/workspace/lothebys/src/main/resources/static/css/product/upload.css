@@ -27,7 +27,10 @@
     position: absolute;
     font-size: 40px;
     color: #aaa;
-    z-index: -1;
+}
+
+.upload-box .plus.hide{
+    display: none;
 }
 
 .upload-box .file {

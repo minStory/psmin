@@ -9,4 +9,10 @@ public class SessionResponseDTO {
 
     private Long minute;
     private Long second;
+
+    public SessionResponseDTO(Long minute, Long second) {
+        this.minute = minute;
+        this.second = second;
+    }
+
 }

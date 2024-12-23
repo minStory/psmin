@@ -1263,6 +1263,7 @@ public class LatteDAO {
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
+				System.out.println("진입");
 
 				TicketingHistoryDTO dto = new TicketingHistoryDTO();
 

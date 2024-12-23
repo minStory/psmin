@@ -22,8 +22,10 @@
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
   -->
-  <!-- APR library loader. Documentation at /docs/apr.html -->
-  <Listener SSLEngine="on" className="org.apache.catalina.core.AprLifecycleListener"/>
+  <!-- APR connector and OpenSSL support using Tomcat Native -->
+  <Listener className="org.apache.catalina.core.AprLifecycleListener"/>
+  <!-- OpenSSL support using FFM API from Java 22 -->
+  <!-- <Listener className="org.apache.catalina.core.OpenSSLLifecycleListener" /> -->
   <!-- Prevent memory leaks due to use of particular java/javax APIs-->
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
@@ -84,7 +86,7 @@
                >
         <SSLHostConfig>
             <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
-                         type="RSA" />
+                         certificateKeystorePassword="changeit" type="RSA" />
         </SSLHostConfig>
     </Connector>
     -->
@@ -160,7 +162,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Latte_Cinema" path="/Latte_Cinema" reloadable="true" source="org.eclipse.jst.jee.server:Latte_Cinema"/></Host>
+      <Context docBase="Latte_Cinema" path="/Latte_Cinema" reloadable="true" source="org.eclipse.jst.jee.server:Latte_Cinema"/><Context docBase="4S_Car" path="/4S_Car" reloadable="true" source="org.eclipse.jst.jee.server:4S_Car"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -82,9 +82,9 @@ create table interior_upload(
 -- 이미지 테이블
 create table image(
 	no int primary key,								-- 이미지 고유 번호
-	f_image varchar(255),							-- 이미지1
-    s_image varchar(255),							-- 이미지2
-    t_image varchar(255)							-- 이미지3
+	image1 varchar(255),							-- 이미지1
+    image2 varchar(255),							-- 이미지2
+    image3 varchar(255)								-- 이미지3
 );
 -- 제품 최종 등록 테이블
 create table product(
@@ -129,89 +129,3 @@ create table transaction(
     product_no int,									-- 제품 번호
     transaction_date datetime						-- 거래 일시
 );
-
-insert into company (no, name, ceo, addr, phone) values
-(0701, 'Lothebys', '이동훈', '천안시 서북구 불당동', '010-1234-7890');
-
-insert into admin (no, id, pwd, name, job, phone) values
-('1', 'admin1', '1111', '이동훈', 'ceo', '010-1111-2222'),
-('2', 'admin2', '1111', '박성민', 'manager', '010-3333-4444'),
-('3', 'admin3', '1111', '권용진', 'manager', '010-5555-6666'),
-('4', 'admin4', '1111', '최유경', 'manager', '010-7777-8888'),
-('5', 'admin5', '1111', '염종원', 'manager', '010-9999-1111');
-
-insert into user (no, id, pwd, name, phone, email, addr, regdate) values
-('2024001', 'user01', '1234', 'John Smith', '010-1234-5678','john@example.com', '123 Oak St, City X', NOW()),
-('2024002', 'user02', '1234', 'Olivia Brown', '010-1234-5678', 'olivia@example.com', '123 Elm St, City Q', NOW()),
-('2024003', 'user03', '1234', 'Michael Johnson', '010-2345-6789', 'michael@example.com', '456 Pine St, City Y', NOW()),
-('2024004', 'user04', '1234', 'Emily Davis', '010-3456-7890', 'emily@example.com', '789 Maple St, City Z', NOW()),
-('2024005', 'user05', '1234', 'Daniel Wilson', '010-4567-8901', 'daniel@example.com', '890 Cedar St, City W', NOW()),
-('2024006', 'user06', '1234', 'Sophia Martinez', '010-5678-9012', 'sophia@example.com', '234 Birch St, City V', NOW()),
-('2024007', 'user07', '1234', 'Matthew Taylor', '010-6789-0123', 'matthew@example.com', '567 Willow St, City U', NOW()),
-('2024008', 'user08', '1234', 'Isabella Garcia', '010-7890-1234', 'isabella@example.com', '890 Ash St, City T', NOW()),
-('2024009', 'user09', '1234', 'David Martinez', '010-8901-2345', 'david@example.com', '456 Oak St, City S', NOW()),
-('2024010', 'user10', '1234', 'Emma Hernandez', '010-9012-3456', 'emma@example.com', '123 Pine St, City R', NOW());
-
-insert into brand (no, name, regdate) values
-('202401', 'Rolex', NOW()),             -- 시계 롤렉스
-('202402', 'Omega', NOW()),             -- 시계 오메가
-('202403', 'Patek Philippe', NOW()),    -- 시계 파텍 필립
-('202404', 'Audemars Piguet', NOW()),   -- 시계 오데마 피게
-('202405', 'Bvlgari', NOW()),           -- 쥬얼리
-('202406', 'Cartier', NOW()),           -- 쥬얼리
-('202407', 'Tiffany & Co.', NOW()),     -- 쥬얼리
-('202408', 'Van Cleef & Arpels', NOW());-- 쥬얼리
-
-insert into jewelry_upload (no, seller_no, type, material, price, karat, brand_no, image_no, regdate) values
- ('JWLC01', '20240722', 'Necklace', 'Gold', 1500.00, 18, '202406', '2024072301',  NOW()),
- ('JWLC02', '20240721', 'Necklace', 'Platinum', 2500.00, 22, '202406', '2024072302',  NOW()),
- ('JWLC03', '20240720', 'Necklace', 'Silver', 800.00, 14, '202406', '2024072303',  NOW()),  	-- 까르띠에
- ('JWLB01', '20240720', 'Ring', 'Gold', 2000.00, 22, '202405', '2024072304',  NOW()),
- ('JWLB02', '20240718', 'Ring', 'Silver', 1800.00, 14, '202405', '2024072305',  NOW()),		-- 불가리
- ('JWLT01', '20240715', 'Bracelet', 'Gold', 2000.00, 18, '202407', '2024072306',  NOW()),
- ('JWLT02', '20240713', 'Necklace', 'Gold', 2500.00, 22, '202407', '2024072307',  NOW()),
- ('JWLT03', '20240716', 'Ring', 'Platinum', 3500.00, 22, '202407', '2024072308',  NOW());		-- 티파니엔코		
-
-insert into watch_upload(no, seller_no, movement_type, case_size, band_material, price, is_box, is_paper, brand, image_no, regdate) values
-('WATR01', 20240723, 'automatic', 38, 'steel', 5000.00, true, true, 'Rolex', '2024072309', NOW()),
-('WATR02', 20240722, 'quartz', 44, 'rubber', 5500.00, true, false, 'Rolex', '2024072310', NOW()),
-('WATR03', 20240710, 'quartz', 44, 'steel', 5500.00, true, false, 'Rolex', '2024072311', NOW()),			-- 롤렉스
-('WATO01', 20240723, 'automatic', 38, 'leather', 5600.00, false, true, 'Omega', '2024072312', NOW()),
-('WATO02', 20240721, 'quartz', 42, 'gold', 5600.00, false, true, 'Omega', '2024072313', NOW()),
-('WATO03', 20240701, 'automatic', 42, 'gold', 5600.00, true, true, 'Omega', '2024072314', NOW()),
-('WATO04', 20240723, 'automatic', 38, 'leather', 5600.00, false, true, 'Omega', '2024072315', NOW()),	-- 오메가
-('WATP01', 20240723, 'quartz', 38, 'steel', 8600.00, true, true, 'Patek Philippe', '2024072316', NOW()),
-('WATP02', 20240720, 'quartz', 44, 'leather', 8600.00, true, true, 'Patek Philippe', '2024072317', NOW()), -- 파텍 필립
-('WATA01', 20240721, 'quartz', 44, 'steel', 8600.00, true, true, 'Audemars Piguet', '2024072318', NOW()),
-('WATA02', 20240722, 'quartz', 44, 'steel', 8600.00, true, true, 'Audemars Piguet', '2024072319', NOW()); -- 오데마 피게
-
-insert into interior_upload (no, seller_no, art_size, material, price, decorative_style, artist, country, image_no, regdate) values
-('IN001', 20240723, 38, 'paper', 900.00, 'wall', 'Artist Yuem', 'China', '2024072320', NOW()),
-('IN002', 20240718, 48, 'paper', 1900.00, 'wall', 'Artist Lee', 'Korea', '2024072321', NOW()),			-- 벽화
-('IN003', 20240708, 500, 'wool', 1900.00, 'pillows', 'Hermès', 'Korea', '2024072322', NOW()),			-- 베개
-('IN004', 20240720, 5000, 'walnut', 1900.00, 'daybeds', 'Hermès', 'United States', '2024072323', NOW());	-- 데이베드
-
-insert into image (no, image1, image2, image3) values
-('2024072301', null, null, null),
-('2024072302', null, null, null),
-('2024072303', null, null, null),
-('2024072304', null, null, null),
-('2024072305', null, null, null),
-('2024072306', null, null, null),
-('2024072307', null, null, null),
-('2024072308', null, null, null),
-('2024072309', null, null, null),
-('2024072310', null, null, null),
-('2024072311', null, null, null),
-('2024072312', null, null, null),
-('2024072313', null, null, null),
-('2024072314', null, null, null),
-('2024072315', null, null, null),
-('2024072316', null, null, null),
-('2024072317', null, null, null),
-('2024072318', null, null, null),
-('2024072319', null, null, null),
-('2024072320', null, null, null),
-('2024072321', null, null, null),
-('2024072322', null, null, null),
-('2024072323', null, null, null);

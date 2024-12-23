@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.3.1'
-	id 'io.spring.dependency-management' version '1.1.5'
+	id 'org.springframework.boot' version '3.2.8'
+	id 'io.spring.dependency-management' version '1.1.6'
 }
 
 group = 'com'
@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-	// ------ start-web, devtools ------
+	// ------ starter, devtools ------
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -54,9 +54,12 @@ dependencies {
 
 	// ------ markdown ------
 	implementation 'org.commonmark:commonmark:0.21.0'
+<<<<<<< HEAD
 
-	// FileUpload에서 FilenameUtils와 같이 파일명과 확장자를 분리할 때 필요한 라이브러리
+	// ------ file upload (FilenameUtils Class) ------
 	implementation 'commons-io:commons-io:2.11.0'
+=======
+>>>>>>> parent of 26bc1f5 (240806 업로드)
 }
 
 tasks.named('test') {

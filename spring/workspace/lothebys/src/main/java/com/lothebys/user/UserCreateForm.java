@@ -33,7 +33,7 @@ public class UserCreateForm {
     private String addr; // 주소는 선택 사항이므로 빈 문자열 허용
 
     @NotBlank
-    @Email(message = "이메일 형식이 올바르지 않습니다.")
+    @Email(message = "The email format is invalid.")
     private String email;
 
 }

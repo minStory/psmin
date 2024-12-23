@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+<h1>Chat Room</h1>
+<div>
+    <input type="text" id="chatRoomId" placeholder="Enter chat room ID">
+    <input type="text" id="toUser" placeholder="Send message to (comma separated)">
+    <input type="text" id="message" placeholder="Enter message">
+    <button onclick="createChatRoom()">Create Chat Room</button>
+    <button onclick="sendMessage()">Send</button>
+</div>
+<div id="chatbox">
+    <ul id="messages"></ul>
+</div>
+
+<script>
+    var socket;
+
+    function connect() {
+        var username = document.getElementById('username').value;
+        if (!username) {
+            alert("Please enter your username");
+            return;
+        }
+
+        socket = new WebSocket('ws://localhost:8080/ws/chat');
+
+        socket.onopen = function() {
+            console.log('Connected');
+            socket.send(JSON.stringify({type: 'SET_USERNAME', username: username}));
+        };
+
+        socket.onmessage = function(event) {
+            var messages = document.getElementById('messages');
+            var messageItem = document.createElement('li');
+            messageItem.textContent = event.data;
+            messages.appendChild(messageItem);
+        };
+
+        socket.onclose = function() {
+            console.log('Disconnected');
+        };
+    }
+
+    function createChatRoom() {
+        var usernames = document.getElementById('toUser').value;
+        if (socket && socket.readyState === WebSocket.OPEN) {
+            var message = {
+                type: 'CREATE_CHAT_ROOM',
+                users: usernames
+            };
+            socket.send(JSON.stringify(message));
+        }
+    }
+
+    function sendMessage() {
+        var chatRoomId = document.getElementById('chatRoomId').value;
+        var content = document.getElementById('message').value;
+
+        if (socket && socket.readyState === WebSocket.OPEN) {
+            var message = {
+                type: 'MESSAGE',
+                chatRoomId: chatRoomId,
+                content: content
+            };
+            socket.send(JSON.stringify(message));
+            document.getElementById('message').value = '';
+        }
+    }
+</script>
+</body>
+</html>

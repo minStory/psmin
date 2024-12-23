@@ -18,23 +18,17 @@ public class MainPageAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-//		if(StaticArea.isFirstOpen()) {
-//			HttpSession session = request.getSession(false);
-//			session.invalidate();
-//			StaticArea.setFirstOpen(false);
-//		}
-
+		
 		LatteDAO dao = LatteDAO.getInstance();
-
+		
 		List<MovieDTO> movieList = dao.getNowMovieList();
 		List<NoticeBoardDTO> noticeBoardList = dao.getNoticeBoardList();
-
+		
 		// 헤더에 필요한 영화관 리스트 데이터를 jsp 페이지로 이동
 		request.setAttribute("localList", StaticArea.getLocalList());
 		request.setAttribute("specialHallList", StaticArea.getSpecialHallList());
 		request.setAttribute("seoulList", StaticArea.getSeoulList());
-		request.setAttribute("gyeonggiIncheonList", StaticArea.getGyeonggiIncheonList());
+		request.setAttribute("gyeonggiIncheonList", StaticArea.getGyeongbukDaeguList());
 		request.setAttribute("chungCheongDaeJeonList", StaticArea.getChungCheongDaeJeonList());
 		request.setAttribute("jeollaGwangjuList", StaticArea.getJeollaGwangjuList());
 		request.setAttribute("gyeongbukDaeguList", StaticArea.getGyeongbukDaeguList());
@@ -42,7 +36,7 @@ public class MainPageAction implements Action {
 		request.setAttribute("gangwonList", StaticArea.getGangwonList());
 		request.setAttribute("jejuList", StaticArea.getJejuList());
 		request.setAttribute("sizeList", StaticArea.getSizeList());
-
+		
 		request.setAttribute("movieList", movieList);
 		request.setAttribute("noticeBoardList", noticeBoardList);
 
